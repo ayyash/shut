@@ -1,0 +1,28 @@
+{
+    "shutUrl": "./",
+    "scripts": [
+        "0init", 
+        "behaviors", 
+        "Ajax",
+        "AutoComplete",
+        "Chosen",
+        "Date",
+        "Expand",
+        "FormControls",
+        "Forms",
+        "Label", 
+        "Modal", 
+        "Validate",
+        "Web" 
+    ],
+    "minSupportedSize": "480px",
+    "maxSupportedSize": "1600px",
+    "shutMediaStyles": [
+        "sh.media.1.480.less",
+        "sh.media.2.640.less",
+        "sh.media.3.768.less",
+        "sh.media.4.1024.less",
+        "sh.media.5.1280.less",
+        "sh.media.6.1600.less"
+    ]
+}

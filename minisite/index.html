@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="X-UA-Compatible" http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1,minimal-ui">
+    <!-- inject:css -->
+    <link rel="stylesheet" href="less/all.css">
+    <!-- endinject -->
+</head>
+
+<body>
+
+    <div class="contentwrapper">
+        here is the main site
+    </div>
+    <!--lightboxes: todo: rewrite for angular-->
+
+    <div id="frameDialog" class="dialog">
+        <a class="jqmClose" href="javascript://"></a>
+        <h3 class="jqmTitle"></h3>
+        <div class="loading">
+            loading...
+        </div>
+        <iframe id="jqmContent" src="" frameborder="0"></iframe>
+    </div>
+    <div id="ajaxDialog" class="dialog">
+        <a class="jqmClose" href="javascript://"></a>
+        <h3 class="jqmTitle"></h3>
+        <div class="directionwrapper">
+            <div id="jqmContent">
+
+            </div>
+        </div>
+    </div>
+    <div id="contentDialog" class="dialog">
+        <a class="jqmClose " href="javascript://"></a>
+        <h3 class="jqmTitle"></h3>
+    </div>
+    <!--end lightboxes-->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <!--include jquery ui for: AutoComplete AjaxTip Date PopList (in Expand) ShApplyHiLight Tip (in Web) -->
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
+
+    <!-- development:js -->
+    <script src="js/dev.js"></script>
+    <!-- endinject -->
+
+
+    <!-- data:js -->
+    <script src="js/sh.data.js"></script>
+    <!-- endinject -->
+
+    <!-- inject:js -->
+    <script src="js/sh.js"></script>
+    <script src="js/ui.web.js"></script>
+    <!-- endinject -->
+</body>
+
+</html>
