@@ -7,5 +7,4 @@ gulptasks/
 *.md
 
 minisite/
-.gitignore
 guplfile.js
