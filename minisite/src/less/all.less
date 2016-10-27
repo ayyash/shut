@@ -1,0 +1,32 @@
+
+
+// you vars
+@import url("sh.vars.less");
+// your icons
+@import url("sh.icons.less");
+
+// shut framework
+@import url("@{shut-url}sh.less");
+
+// your custom extension to shut framework
+@import url("sh.Framework.less"); 
+
+// inject:uiless
+@import "ui.jqueryui.less";
+@import "ui.obtn.less";
+@import "ui.ochosen.less";
+@import "ui.ovalidate.less";
+// endinject
+
+
+// media files: for minmum supported, remove "only screen and ...", for maximum supported, comment out the whole line
+@import url("@{shut-url}sh.media.1.480.less") only screen and (min-width: 480px);
+@import url("@{shut-url}sh.media.2.640.less") only screen and (min-width: 640px);
+@import url("@{shut-url}sh.media.3.768.less") only screen and (min-width: 768px);
+@import url("@{shut-url}sh.media.4.1024.less") only screen and (min-width: 1024px);
+@import url("@{shut-url}sh.media.5.1280.less") only screen and (min-width: 1280px);
+@import url("@{shut-url}sh.media.6.1600.less") only screen and (min-width: 1600px); 
+
+
+// inject:medialess
+// endinject

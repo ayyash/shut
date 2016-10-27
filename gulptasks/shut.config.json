@@ -1,5 +1,7 @@
 {
     "shutUrl": "./",
+    "srcUrl": "./minisite/src/",
+    "distUrl": "./minisite/public/",
     "scripts": [
         "0init", 
         "behaviors", 
