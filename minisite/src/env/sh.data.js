@@ -17,8 +17,7 @@
     };
 
     $.Res.Localization = { DateFormat: "dd MM, yy" };
-    // error codes
-    // find new price rule here
+    
 
 
     $.Res.Tiny = {
