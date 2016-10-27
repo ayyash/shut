@@ -1,3 +1,11 @@
-**/*.md
+.vscode
+node_modules/
+local/
+
+gulptasks/
+
+*.md
 
 minisite/
+.gitignore
+guplfile.js
