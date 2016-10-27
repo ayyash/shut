@@ -4,13 +4,13 @@ var requireDir = require('require-dir')('./gulptasks');
 
 
 
-// watching
+// watching minisite
 gulp.task('default', ['rawless', 'rawscripts', 'insertcss'], function () {
     // Watch .less files
-    gulp.watch('less/*.less', ['rawless']);
+    gulp.watch('**/less/*.less', ['rawless']);
 
     // Watch .js files 
-    gulp.watch(['js/ui.*.js', 'src/js/sh.*.js'], ['rawscripts']);
+    gulp.watch(['**/js/ui.*.js', '**/js/sh.*.js'], ['rawscripts']);
 
 
 });
