@@ -40,3 +40,5 @@ The other two files:
 - **ui.web.js** is not essential, and is an example of adding new files to the framework.
 
 When you create your website, include the CSS and JS as in the index.html. Use your own tools to generate files on development, and before distribution. Find some of these tasks in <https://github.com/ayyash/shut/blob/master/gulptasks/shut.js>.
+
+Look into **public** folder to see what files are eventually needed to run the framework. Remember, the Shut framework is based on the idea that it builds the core, letting you build on it. It is not meant to be a plug-and-play framework.
