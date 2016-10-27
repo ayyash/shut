@@ -8,14 +8,14 @@
 /* pads around boxed content */
 @font-face {
   font-family: 'vpicons';
-  src: url('../../public/css/vpicons.ttf') format('truetype'), url('../../public/css/vpicons.woff') format('woff'), url('../../public/css/vpicons.svg#icons') format('svg');
+  src: url('../fonts/vpicons.ttf') format('truetype'), url('../fonts/vpicons.woff') format('woff'), url('../fonts/vpicons.svg#icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   @font-face {
     font-family: 'vpicons';
-    src: url('../../public/css/vpicons.svg#icons') format('svg');
+    src: url('../fonts/vpicons.svg#icons') format('svg');
   }
 }
 .base:after {
@@ -2260,7 +2260,7 @@ h1.sitelogo {
   height: 5vh;
 }
 h1.sitelogo a {
-  background: transparent url("../../public/images/ilogo.png") no-repeat left center;
+  background: transparent url("../images/ilogo.png") no-repeat left center;
   background-size: contain;
 }
 /* stacks */
@@ -2604,14 +2604,14 @@ header nav.tools a {
 .loadings {
   background-position: left top;
   background-repeat: no-repeat;
-  background-image: url("../../public/images/iloading.gif");
+  background-image: url("../images/iloading.gif");
   /*min-height: 20px;*/
 }
 .loading {
   min-height: 52px;
 }
 .loadings {
-  background-image: url("../../public/images/iloadings.gif");
+  background-image: url("../images/iloadings.gif");
 }
 /* controls */
 .radio + label:before {
@@ -4095,7 +4095,7 @@ button {
   display: block;
   width: 12px;
   height: 12px;
-  background: url('../../public/images/chosen-sprite.png') -42px 1px no-repeat;
+  background: url('../images/chosen-sprite.png') -42px 1px no-repeat;
   font-size: 1px;
 }
 .chosen-container-single .chosen-single abbr:hover {
@@ -4116,7 +4116,7 @@ button {
   display: block;
   width: 100%;
   height: 100%;
-  background: url('../../public/images/chosen-sprite.png') no-repeat 5px 8px;
+  background: url('../images/chosen-sprite.png') no-repeat 5px 8px;
 }
 .chosen-container-single .chosen-search {
   position: relative;
@@ -4135,8 +4135,8 @@ button {
   height: auto;
   outline: 0;
   border: 1px solid #aaa;
-  background: white url('../../public/images/chosen-sprite.png') no-repeat 100% -20px;
-  background: url('../../public/images/chosen-sprite.png') no-repeat 100% -20px;
+  background: white url('../images/chosen-sprite.png') no-repeat 100% -20px;
+  background: url('../images/chosen-sprite.png') no-repeat 100% -20px;
   font-size: 1em;
   /*font-family: sans-serif;*/
   line-height: normal;
@@ -4307,7 +4307,7 @@ button {
   display: block;
   width: 12px;
   height: 12px;
-  background: url('../../public/images/chosen-sprite.png') -42px 1px no-repeat;
+  background: url('../images/chosen-sprite.png') -42px 1px no-repeat;
   font-size: 1px;
 }
 .chosen-container-multi .chosen-choices li.search-choice .search-choice-close:hover {
@@ -4396,12 +4396,15 @@ button {
   .chosen-container-multi .chosen-choices .search-choice .search-choice-close,
   .chosen-container .chosen-results-scroll-down span,
   .chosen-container .chosen-results-scroll-up span {
-    background-image: url('../../public/images/chosen-sprite-2x.png') !important;
+    background-image: url('../images/chosen-sprite-2x.png') !important;
     background-size: 52px 37px !important;
     background-repeat: no-repeat !important;
   }
 }
 /* @end */
+/* used for validation behavior
+http://vinepaper.com/shutv2/elements/validation
+ */
 .gtick {
   background-color: #dcffae;
   color: #0097A7;
