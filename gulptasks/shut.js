@@ -76,7 +76,7 @@ gulp.task('rawscripts', ['shutscripts'], function () {
 function getShutScripts() {
     var arr = [];
     // add two major files: 0init and behaviors
-    arr.push(shutConfig.shutUrl + 'js/_init');
+    arr.push(shutConfig.shutUrl + 'js/_Init.js');
     arr.push(shutConfig.shutUrl + 'js/_behaviors.js');
     
     shutConfig.scripts.forEach(function (i) {
