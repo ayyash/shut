@@ -31,7 +31,11 @@ gulp.task('rawless', function () {
         )
         .pipe(concat('all.less', { newLine: '' }))
         .pipe(gulp.dest(shutConfig.srcUrl + 'less/'))
-        .pipe(less())
+        .pipe(less(
+            {modifyVars: 
+                {'@shut-url': '"'+shutConfig.shutUrl + 'less/"',}
+            })
+        )
         .on('error', function (err) {
             console.log(err);
             this.emit('end');
@@ -45,7 +49,10 @@ gulp.task('rawless', function () {
 gulp.task('buildless', function () {
     // build css into sh.min.css
     var g = gulp.src(shutConfig.srcUrl + 'less/all.less')
-        .pipe(less())
+        .pipe(less({modifyVars: 
+                {'@shut-url': '"'+shutConfig.shutUrl + 'less/"',}
+            })
+        )
         .pipe(cssmin())
         .pipe(rename({ basename: 'sh', suffix: '.min' }))
         .pipe(gulp.dest(shutConfig.distUrl + 'css'));

@@ -157,11 +157,22 @@
 	animation: @animation;
 }
 
-.gradient (@startColor, @startStop, @endColor, @endStop: 100%) {
-	background-image: -webkit-linear-gradient(@startColor @startStop, @endColor @endStop); /* For Safari 5.1 to 6.0 */
-	background-image: -o-linear-gradient(@startColor @startStop, @endColor @endStop); /* For Opera 11.1 to 12.0 */
-	background-image: -moz-linear-gradient(@startColor @startStop, @endColor @endStop); /* For Firefox 3.6 to 15 */
-	background-image: linear-gradient(@startColor @startStop, @endColor @endStop); /* Standard syntax */
+
+.gradient (@startColor, @startStop, @endColor, @endStop: 100%, @dir:'v') when ( @dir='v') {
+
+	background: -webkit-linear-gradient(@startColor @startStop, @endColor @endStop); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(@startColor @startStop, @endColor @endStop); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(@startColor @startStop, @endColor @endStop); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(@startColor @startStop, @endColor @endStop); /* Standard syntax */
+}
+
+
+.gradient (@startColor, @startStop, @endColor, @endStop: 100%, @dir) when ( @dir='h') {
+
+	background: -webkit-linear-gradient(left, @startColor @startStop, @endColor @endStop); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(right, @startColor @startStop, @endColor @endStop); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(right, @startColor @startStop, @endColor @endStop); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(right, @startColor @startStop, @endColor @endStop); /* Standard syntax */
 }
 
 .rotate(@deg, @origin: center center) {
