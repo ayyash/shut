@@ -158,7 +158,7 @@
 }
 
 
-.gradient (@startColor, @startStop, @endColor, @endStop: 100%, @dir:'v') when ( @dir='v') {
+.gradient (@startColor, @startStop, @endColor, @endStop: 100%)  {
 
 	background: -webkit-linear-gradient(@startColor @startStop, @endColor @endStop); /* For Safari 5.1 to 6.0 */
 	background: -o-linear-gradient(@startColor @startStop, @endColor @endStop); /* For Opera 11.1 to 12.0 */
@@ -167,7 +167,7 @@
 }
 
 
-.gradient (@startColor, @startStop, @endColor, @endStop: 100%, @dir) when ( @dir='h') {
+.gradient (@startColor, @startStop, @endColor, @endStop, @dir) when ( @dir='h') {
 
 	background: -webkit-linear-gradient(left, @startColor @startStop, @endColor @endStop); /* For Safari 5.1 to 6.0 */
 	background: -o-linear-gradient(right, @startColor @startStop, @endColor @endStop); /* For Opera 11.1 to 12.0 */
