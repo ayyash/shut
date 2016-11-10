@@ -247,7 +247,7 @@ h6 {
 	font-size: 70%;
 }
 
-p.normal, .normal p, .normal {
+p.normalsize, .normalsize p, .normalsize {
 	#rem > .font-size(@baseFontSize)!important;
 	font-family: @fontface;
 }
@@ -255,21 +255,14 @@ ul.normal>li, .normal>ul>li{
 	margin-left: 15px;
 	list-style-type: disc;
 }
-.ar ul.normal>li, .ar .normal>ul>li {
-	margin-left: 0;
-	margin-right: 15px;
-}
+
 ol.normal {
-	padding-left: 25px;
+	> li {
+		list-style-position: inside;
+		list-style-type: decimal;
+	}
 }
-ol.normal>li {
-	list-style-type: decimal;
-	list-style-position: outside;
-}
-.ar ol.normal {
-	padding-left: 0;
-	padding-right: 25px;
-}
+
 /**** nested lists for multiple uls */
 ul.nestedlist>li>ul, div.nestedlist>ul, ol.nestedlist>li>ol {
 	padding-left: 15px;
