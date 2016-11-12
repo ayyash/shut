@@ -2,6 +2,7 @@
     "shutUrl": "./",
     "srcUrl": "./minisite/src/",
     "distUrl": "./minisite/public/",
+    "projectName": "sh",
     "scripts": [
         
         "Ajax",

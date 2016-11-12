@@ -1,5 +1,6 @@
 .vscode
 node_modules/
+_node_modules/
 local/
 
 gulptasks/fw.js
