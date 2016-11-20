@@ -191,7 +191,7 @@
 		}, addTrigger = function (m, key, trigger) {
 			// addTrigger: Adds a jqmShow/jqmHide (key) event click on modal (m)
 			//  to all elements that match trigger string (trigger)
-
+			
 			var jqm = m.data('jqm');
 			if (jqm) return $(trigger).each(function () {
 				this[key] = this[key] || [];
@@ -507,11 +507,11 @@
 				var newHtml = $.Sh.Modals.contentDialog.html();
 
 				// wrap every dialog with contendialog html
-
 				context = context || $.props.$body;
-				
-				
-				$.each(context.find("[data-modal=inpage]"), function (i, o) {
+				var $modals = context.find("[data-modal=inpage]");
+				if (context.is('[data-modal=inpage]')) $modals = context;
+			
+				$.each($modals, function (i, o) {
 					// get handler
 					var o = $(o);
 

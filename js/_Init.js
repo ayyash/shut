@@ -1,5 +1,4 @@
 ﻿
-// TODO: too dangerous to keep in open framework, make them optional
 Array.prototype.remove = function (from, to) {
 	this.splice(from, !to || 1 + to - from + (!(to < 0 ^ from >= 0) && (to < 0 || -1) * this.length));
 	return this.length;

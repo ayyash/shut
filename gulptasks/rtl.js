@@ -1,26 +1,41 @@
 var gulp = require('gulp');
 var transform = require('gulp-transform');
 var rename = require('gulp-rename');
-
-var inject = require('gulp-inject');
-
-var replace = require('gulp-replace');
+var less = require('gulp-less');
+var cssmin = require('gulp-cssmin');
+var concat = require('gulp-concat');
+var uglify = require('gulp-uglify');
 
 
 var shutConfig = require(__dirname + '/shut.config.json');
 
 
+// TODO: im supposed to re-less things instead
+gulp.task('rtlless', function () {
+  // grab minisite seed to create (TODO)
+  return gulp.src([shutConfig.srcUrl + 'less/all.less', shutConfig.shutUrl + 'less/rtl.sh.less', shutConfig.srcUrl + 'less/rtl.*.less'])
+    .pipe(concat('allrtl.less', { newLine: '' }))
+    .pipe(gulp.dest(shutConfig.srcUrl + 'less/'))
+    .pipe(less(
+            {modifyVars: 
+                {'@shut-url': '"'+shutConfig.shutUrl + 'less/"',}
+            })
+        )
+    .pipe(cssmin())
+    .pipe(rename({ basename: shutConfig.projectName, suffix: '.rtl.min' }))
+    .pipe(gulp.dest(shutConfig.distUrl + 'css'));
 
-gulp.task('mirror', function () {
-  var rtlmirror = function(contents, file){
-   
+});
+
+gulp.task('mirror', ['rtlless'], function () {
+  var rtlmirror = function (contents, file) {
+
     return MirrorText(contents);
   };
 
-  gulp.src(shutConfig.distUrl + 'css/sh.min.css')
-    .pipe(transform(rtlmirror, {encoding: 'utf8'}))
-    .pipe(rename({ basename: shutConfig.projectName, suffix: '.rtl.min' }))
-    .pipe(gulp.dest(shutConfig.distUrl +'css/'));
+  gulp.src(shutConfig.distUrl + 'css/' + shutConfig.projectName + '.rtl.min.css')
+    .pipe(transform(rtlmirror, { encoding: 'utf8' }))
+    .pipe(gulp.dest(shutConfig.distUrl + 'css/'));
 });
 
 
