@@ -125,7 +125,7 @@
             //}
 
             // show , if onToggle is defined, i should find out whether to call it or not according to what? visible state
-
+            this.options.state = "show";
             if (!this.gutsElement.is(":visible")) {
 
                 this.options.onToggle && this.options.onToggle.call(this); // fire toggle
@@ -144,7 +144,7 @@
 
             }
             // i think i should return if element is already visibt
-            this.options.state = "show";
+            
             this.element.addClass(this.options.togglecss);
             this.options.onShow && this.options.onShow.call(this); // fire onshow anyway // double check
             return this.element;
@@ -172,7 +172,7 @@
             //	this.options.onBeforeHide.call(this);
             //	return this;
             //}
-
+            this.options.state = null;
             if (this.gutsElement.is(":visible")) {
                 this.options.onToggle && this.options.onToggle.call(this); // fire toggle, this shouldnt fire always
                 switch (this.options.effect) {
@@ -188,7 +188,7 @@
                 }
 
             }
-            this.options.state = null;
+            
             this.element.removeClass(this.options.togglecss);
             this.options.onHide && this.options.onHide.call(this);
             return this.element;
