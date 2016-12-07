@@ -653,7 +653,6 @@ input {
   color: #202020;
 }
 .lightfont {
-  font-family: Roboto, Segoe UI, Lucida Grande, Sans-serif;
   font-weight: 300;
 }
 .boldface {
@@ -996,32 +995,22 @@ h1 {
   font-size: 49px;
   font-size: 4.9rem;
   margin: 10px 0;
-  font-family: Roboto, Segoe UI, Lucida Grande, Sans-serif;
-  font-weight: lighter;
 }
 h2 {
   font-size: 42px;
   font-size: 4.2rem;
-  font-family: Roboto, Segoe UI, Lucida Grande, Sans-serif;
-  font-weight: 300;
 }
 h3 {
   font-size: 35px;
   font-size: 3.5rem;
-  font-family: Roboto, Segoe UI, Lucida Grande, Sans-serif;
-  font-weight: 300;
 }
 h4 {
   font-size: 28px;
   font-size: 2.8rem;
-  font-family: Roboto, Segoe UI, Lucida Grande, Sans-serif;
-  font-weight: 300;
 }
 h5 {
   font-size: 21px;
   font-size: 2.1rem;
-  font-family: Roboto, Segoe UI, Lucida Grande, Sans-serif;
-  font-weight: 300;
 }
 h6 {
   font-size: 14px;
@@ -1135,7 +1124,7 @@ summary::-webkit-details-marker {
 summary:before {
   content: "+";
   font-size: 1.2em;
-  font-weight: bold;
+  font-weight: 700;
   width: 20px;
   padding: 0;
   display: inline-block;
@@ -1696,7 +1685,7 @@ span.req:after {
   content: "*";
   font-size: 18px;
   font-size: 1.8rem;
-  font-weight: bold;
+  font-weight: 700;
   line-height: 1.5;
   color: #ffa400;
 }
@@ -1866,7 +1855,7 @@ fieldset {
   margin-bottom: 20px;
 }
 legend {
-  font-weight: bold;
+  font-weight: 700;
   padding-bottom: 10px;
 }
 /**** definition lists coupled with forms fieldset and legends */
@@ -1885,7 +1874,7 @@ legend {
 }
 .overview legend {
   display: block;
-  font-weight: bold;
+  font-weight: 700;
   padding-top: 10px;
 }
 .detailed fieldset {
@@ -2305,7 +2294,6 @@ ol.stacklist > li .label {
 .ingredients.xlarge dd {
   font-size: 18.2px;
   font-size: 1.82rem;
-  font-family: Roboto, Segoe UI, Lucida Grande, Sans-serif;
   font-weight: 300;
 }
 /***** active list */
@@ -2389,7 +2377,7 @@ ul.activelist li a:hover {
 }
 /* TABULATED */
 table.tabulated th {
-  font-weight: bold;
+  font-weight: 700;
 }
 table.striped tbody tr:nth-child(odd) {
   background-color: #f0f0f0;
@@ -2400,7 +2388,7 @@ table.rich td {
   padding: 5px;
 }
 table.rich th {
-  font-weight: bold;
+  font-weight: 700;
   background-color: #f0f0f0;
   border: 1px solid #cccccc;
   border-bottom: 2px solid #263238;

@@ -35,7 +35,7 @@ fieldset {
 }
 
 legend {
-	font-weight: bold;
+	font-weight: @boldweight;
 	padding-bottom: 10px;
 }
 
@@ -59,7 +59,7 @@ legend {
 
 .overview legend {
 	display: block;
-	font-weight: bold;
+	font-weight: @boldweight;
 	padding-top: 10px;
 }
 
@@ -76,7 +76,7 @@ legend {
 .detailed dt, .detailed fieldset legend {
 	float: left;
 	/*.columns(2);*/
-	font-weight: normal;
+	font-weight: @normalweight;
 	/* unusual decision to pad top to make coding easier */
 	padding-top: 5px;
 	display: block;
