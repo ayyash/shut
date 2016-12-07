@@ -19,7 +19,8 @@
             effect: this.data("effect"),
             togglecss: this.data("toggle-css"),
             hidesrc: this.data("hide-src"),
-            showsrc: this.data("show-src")
+            showsrc: this.data("show-src"),
+            keepDefault: this.data("keep-default") // keep default event without prevention
         };
 
         this.ShExpands($.extend(_options, options));
@@ -34,7 +35,8 @@
         src: '>.h',
         active: true,
         effect: "slide",
-        togglecss: "toggle"
+        togglecss: "toggle",
+        keepDefault: false
     };
     // constructor, not exposed
     var Expands = function(el, options) {
@@ -99,7 +101,7 @@
         },
         _click: function(e, verb) {
             var base = this;
-            e.preventDefault();
+            if (!base.options.keepDefault) e.preventDefault();
             if (!base.options.active) return;
 
             if (verb == "hide") {
