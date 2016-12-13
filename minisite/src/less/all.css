@@ -618,6 +618,7 @@ p {
 .autowindow .directionwrapper {
   position: static;
   /* is this right?*/
+  padding: 5px 5px;
 }
 h3.jqmTitle {
   -webkit-border-radius: 1px;
