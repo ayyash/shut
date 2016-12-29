@@ -335,7 +335,7 @@
             silent: this.data("silent"),
             onvalidate: $.getFunction(this, "onvalidate")
         };
-
+       
         this.ShValidateForm($.extend(_options, options));
         return this.data("sh.validateform");
     };
@@ -358,8 +358,9 @@
         if (!this.options.fields)
             this.options.fields = $(this.options.selector, this.options.context || $.props.$body); // fixed this.context!
 
-        this.context = $(this.options.context) || window;
-
+        this.context = this.options.context || window;
+        
+        
 
         this.init(this.options);
     };
@@ -389,7 +390,8 @@
                 el = this.element,
                 isValid = true,
                 fTop = 0,
-                bTop = false;
+                bTop = false,
+                context = base.context == window ? window : $(base.context);
 
             // go through fields and validate
             $.each(this.options.fields, function(i, o) {
@@ -423,8 +425,8 @@
                             // scrollup first time only
                             var $e = $t.is(":visible") ? $t : $t.parent(); // keep an eye on parent
                             if (base.context == window) fTop = $e.offset().top - base.options.offset;
-                            else if (base.context && base.context.length) fTop = $e.ShPosition(base.context).top - base.options.offset;
-
+                            else if (context && context.length) fTop = $e.ShPosition(context).top - base.options.offset;
+                         
                             bTop = true;
                         }
 
@@ -439,10 +441,9 @@
                 // scroll to top of page, // only if ftop is not within view
                 if (base.context == window) {
                     if ($.props.$window.scrollTop() > fTop) $('html, body').animate({ scrollTop: fTop }, 'fast', 'swing');
-                } else if (base.context && base.context.length) {
+                } else if (context && context.length) {
                     // try scrolling context
-
-                    if (base.context.scrollTop() > fTop) base.context.animate({ scrollTop: fTop }, 'fast', 'swing');
+                    if (context.scrollTop() > fTop) context.animate({ scrollTop: fTop }, 'fast', 'swing');
                 }
 
                 // maybe i should fire an event here
