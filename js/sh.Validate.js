@@ -447,12 +447,12 @@
                 }
 
                 // maybe i should fire an event here
-                base.options.onvalidate ? base.optionns.onvalidate.call(base, false) : null;
+                base.options.onvalidate ? base.options.onvalidate.call(base, false) : null;
 
                 return false;
             }
             // i should fire an event here
-            return base.options.onvalidate ? base.optionns.onvalidate.call(base, true) : true;
+            return base.options.onvalidate ? base.options.onvalidate.call(base, true) : true;
         },
         addField: function(field) {
             this.options.fields.add(field);
@@ -471,7 +471,7 @@
     };
 
 
-    $.UiSh.Size = function(val, label) {
+    $.UiSh.Size = function(label) {
         // test if FileReader is supported first
 
         var size = parseInt(this.element.data("size") || 500);
@@ -500,17 +500,18 @@
     }
 
     // this sounds like a site behavior not a framework
-    $.UiSh.Options = function(val, label) {
+    $.UiSh.Options = function(label) {
         // if one option is selected at least
 
         var options = this.element.find(":selected");
         var min = this.element.data("options-min");
         var max = this.element.data("options-max");
+        var val = this.element.val();
 
         this.code = "options";
         _debug({ min: min, max: max, options: options });
 
-        if ((min != null && min > options.length) || (max != null && max < options.length)) {
+        if (val == "" || (min != null && min > options.length) || (max != null && max < options.length)) {
 
             label.show({ text: this.options.errmsg || $.Res.Tiny.INVALID_OPTIONS });
             return false;
