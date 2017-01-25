@@ -158,6 +158,14 @@
 }
 
 
+/* coloring forground */
+.fcolor (@c) when (lightness(@c) >= 50%) {
+  color: @color;
+}
+.fcolor (@c) when (lightness(@c) < 50%) {
+  color: @inversecolor;
+}
+
 .gradient (@startColor, @startStop, @endColor, @endStop: 100%)  {
 
 	background: -webkit-linear-gradient(@startColor @startStop, @endColor @endStop); /* For Safari 5.1 to 6.0 */

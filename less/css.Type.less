@@ -41,94 +41,110 @@ body, textarea, select, option, input
 	color: @textlighter;
 }
 
-.labeltext() {
-	
+
+
+.labeltext {
 	padding: 1px 3px 2px;
 	.border-radius(@radius);
 	display: inline-block;
 }
-.yellowtext {
-	background-color: @yellow;
+
+.label (@c) {
+	background-color: @c;
 	.labeltext;
-}
-.lightyellowtext {
-	background-color: @lightyellow;
-	.labeltext;
-}
-.redtext {
-	background-color: @red;
-	color: @inversecolor;
-	.labeltext;
-}
-.lightredtext {
-	background-color: @lightred;
-	color: @color;
-	.labeltext;
+	.fcolor(@c);
 }
 
-.greentext {
-	background-color: @green;
-	color: @textdark;
-	.labeltext;
-}
-.lightgreentext {
-	background-color: @lightgreen;
-	color: @textdark;
-	.labeltext;
-}
-.bluetext {
-	.labeltext;
-	background-color: @blue;
-	color: @inversecolor;
-}
-.lightbluetext {
-	.labeltext;
-	background-color: @lightblue;
-}
-.greytext {
-	background-color: @grey;
-	.labeltext;
-}
-.greydarktext {
-	background-color: @greydark;
-	color: #fff;
-	.labeltext;
-}
-.whitetext {
-	border: @boxborder solid @greynormal;
-	.labeltext;
-}
-.greynormaltext {
-	background-color: @greynormal;
-	.labeltext;
-}
 .box {
 	padding: @boxpadding;
 	.border-radius(@radius);
 	position: relative;
 	.box-sizing(border-box);
 }
+.colorbox(@c) {
+	.box;
+	background-color:@c;
+	.fcolor(@c);
+}
+
+
+.yellowtext {
+	//background-color: @yellow;
+	.label(@yellow);
+}
+.lightyellowtext {
+	//background-color: @lightyellow;
+	.label(@lightyellow);
+}
+.redtext {
+	// background-color: @red;
+	// color: @inversecolor;
+	.label(@red);
+}
+.lightredtext {
+	//background-color: @lightred;
+	//color: @color;
+	.label(@lightred);
+}
+
+.greentext {
+	// background-color: @green;
+	// color: @textdark;
+	.label(@green);
+}
+.lightgreentext {
+	// background-color: @lightgreen;
+	// color: @textdark;
+	.label(@lightgreen);
+}
+.bluetext {
+	.label(@blue);
+	// background-color: @blue;
+	// color: @inversecolor;
+}
+.lightbluetext {
+	.label(@lightblue);
+	//background-color: @lightblue;
+}
+.greytext {
+	//background-color: @grey;
+	.label(@grey);
+}
+.greydarktext {
+	// background-color: @greydark;
+	// color: #fff;
+	.label(@greydark);
+}
+.whitetext {
+	border: @boxborder solid @greynormal;
+	.labeltext;
+}
+.greynormaltext {
+	//background-color: @greynormal;
+	.label(@greynormal);
+}
+
 .yellowbox {
 	
-	color: @textdark;
-	background-color: @yellow;
-	.box;
+	// color: @textdark;
+	// background-color: @yellow;
+	.colorbox(@yellow);
 }
 .lightyellowbox {
-	color: @textdark;
-	background-color: @lightyellow;
-	.box;
+	// color: @textdark;
+	// background-color: @lightyellow;
+	.colorbox(@lightyellow);
 }
 
 .redbox {
-	background-color: @red;
-	color: @inversecolor;
-	.box;
+	// background-color: @red;
+	// color: @inversecolor;
+	.colorbox(@red);
 }
 .lightredbox {
-	background-color: @lightred;
-	color: @textdark;
-	.box;
+	// background-color: @lightred;
+	// color: @textdark;
+	.colorbox(@lightred);
 }
 .whitebox {
 	border: @boxborder solid @grey;
@@ -136,18 +152,18 @@ body, textarea, select, option, input
 	.box;
 }
 .greenbox {
-	background-color: @green;
-	color: @textdark;
-	.box;
+	// background-color: @green;
+	// color: @textdark;
+	.colorbox(@green);
 }
 .lightgreenbox {
-	background-color: @lightgreen;
-	color: @textdark;
-	.box;
+	// background-color: @lightgreen;
+	// color: @textdark;
+	.colorbox(@lightgreen);
 }
 .greybox {
-	background-color:@grey;
-	.box;
+	//background-color:@grey;
+	.colorbox(@grey);
 }
 .whitedarkbox {
 	border: @boxborder solid @greydark;
@@ -155,14 +171,14 @@ body, textarea, select, option, input
 	.box;
 }
 .greydarkbox {
-	background-color:@greydark;
-	color: @inversecolor;
-	.box;
+	// background-color:@greydark;
+	// color: @inversecolor;
+	.colorbox(@greydark);
 	
 }
 .greynormalbox {
-	background-color:@greynormal;
-	.box;
+	// background-color:@greynormal;
+	.colorbox(@greynormal);
 }
 .whitenormalbox {
 	border: @boxborder solid @greynormal;
@@ -170,14 +186,14 @@ body, textarea, select, option, input
 	.box;
 }
 .bluebox {
-	.box;
-	background-color: @blue;
-	color: @inversecolor;
+	.colorbox(@blue);
+	// background-color: @blue;
+	// color: @inversecolor;
 
 }
 .lightbluebox {
-	.box;
-	background-color: @lightblue;
+	.colorbox(@lightblue);
+	// background-color: @lightblue;
 }
 
 
