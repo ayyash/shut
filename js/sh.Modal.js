@@ -583,7 +583,7 @@
 
 			// TODO unify height and top for all, seems like i never need more than an adequate position automatic
 			// change top and left
-			hash.w.css("left", ($.props.width - hash.w.width()) / 2);
+			hash.w.css("left", ($.props.width - hash.w.outerWidth()) / 2);
 			if (dialogSpan == "fill") {
 				hash.w.css("top", $.props.height * 0.05)
 						.height($.props.height * 0.90);
@@ -696,7 +696,7 @@
 			$.each($.Sh.Modals.windows, function (i, o) {
 				// o = hash
 				
-				o.w.css("left", ($.props.width - o.w.width()) / 2);
+				o.w.css("left", ($.props.width - o.w.outerWidth()) / 2);
 				if ($(o.t).data("span") == "fill") {
 					o.w.css("top", $.props.height * 0.05)
 						.height($.props.height * 0.90);

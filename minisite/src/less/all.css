@@ -543,12 +543,6 @@ nav > ul > li > a {
   margin-bottom: 1px;
   display: block;
 }
-section {
-  margin-bottom: 20px;
-}
-p {
-  margin-bottom: 10px;
-}
 /* lightboxes */
 .dialog,
 .dialogcontent {
@@ -653,6 +647,12 @@ input {
   font-size: 14px;
   font-size: 1.4rem;
   color: #202020;
+}
+section {
+  margin-bottom: 20px;
+}
+p {
+  margin-bottom: 10px;
 }
 .lightfont {
   font-weight: 300;
