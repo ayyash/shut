@@ -235,8 +235,10 @@
 
     $.Sh.PopList = function(options) {
         // click element to show hide a well position absolute layer
+        // Feb 23, make this optional
+
         var _options = {
-            onShow: function() {
+            onShow: this.data('do-position') && function() {
                 // position
                 this.gutsElement.position({
                     of: this.srcElement,
