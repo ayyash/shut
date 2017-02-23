@@ -1,6 +1,6 @@
 {
   "name": "shut",
-  "version": "2.1.9",
+  "version": "2.1.10",
   "description": "Shut UI Framework",
   "main": "index.js",
   "scripts": {
