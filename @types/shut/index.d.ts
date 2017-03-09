@@ -3,7 +3,7 @@
 interface JQueryStatic {
 
     Sh: any;
-    ShUi: any;
+    UiSh: any;
     Res: any;
     BodyLabel(key: string, options: any, fallback?: string): any;
 }
