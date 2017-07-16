@@ -19,6 +19,13 @@
 
 @arfontface: Traditional Arabic, tahoma, sans-serif;
 
+// default responsive breakpoints, use with sh.media.**.less in sh.imports
+@screen-xs: 480px; // special cases
+@screen-sm: 600px; // mobile interface
+@screen-md: 720px; // tablet portrait
+@screen-lg: 960px; // the usual desktop and landscape tablets
+@screen-xl: 1280px; // unusually large with special treatment, else always fall back to normal 960
+@screen-ds: 1600px; // up above desktop
 
 // colors
 @color: #202020;
@@ -64,6 +71,8 @@
 @dialogdimleft: 5px;
 @dialogdimright: 5px;
 @siteWidth: (@gridColumns * @gridColumnWidth) + (@gridGutterWidth * (@gridColumns - 1))+ 2 * @mainpad;
+
+
 
 
 

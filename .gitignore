@@ -6,3 +6,8 @@ local/
 gulptasks/fw.js
 npm-debug.log
 debug.log
+
+_*/**
+
+.suo
+*.sqlite
