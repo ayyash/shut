@@ -57,11 +57,10 @@
 	}
 }
 
-.b_balloon() {
+.b_balloon(@diameter: 10px, @borderwidth: 2px) {
 	position: relative;
 	background-color: #fff;
-	@diameter: 10px;
-	@borderwidth: 2px;
+
 	border-width: @borderwidth;
 	
 	&:before {
