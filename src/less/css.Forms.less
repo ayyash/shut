@@ -181,8 +181,9 @@ input.error, textarea.error, select.error, label.error, span.error, div.error {
 		display: inline-block;
 		&:before {
 			border: 1px solid @grey;
+			.box-sizing(border-box);
 			content: " ";
-			height: 20px;
+			height: 20px; 
 			width: 20px;
 			left: 0;
 			position: absolute;
