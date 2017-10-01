@@ -477,14 +477,14 @@ section {
   margin-bottom: 1.5rem;
 }
 p {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 h1,
 h2,
 h3,
 h4,
 h5 {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 h1 {
   font-size: 49px;
@@ -899,26 +899,31 @@ del {
 .breath,
 ul.breathout > li,
 ol.breathout > li {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 .spaced,
 ul.spacedout > li,
 ol.spacedout > li {
+  margin-bottom: 0.5rem;
+}
+.doublespaced,
+ul.doubledspacedout > li,
+ol.doublespacedout > li {
   margin-bottom: 1rem;
 }
 .rbreath {
-  padding-right: 1rem;
+  padding-right: 0.5rem;
 }
 .lbreath {
-  padding-left: 1rem;
+  padding-left: 0.5rem;
 }
 .padtop {
-  padding-top: 1rem;
+  padding-top: 0.5rem;
   /* to be used only in extreme cases */
 }
 .margintop {
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   /* to be used only in extreme cases */
 }
 .center {
@@ -957,11 +962,11 @@ ol.spacedout > li {
 /*********** borders */
 .bthin {
   border-bottom: 1px solid;
-  padding-bottom: 1rem;
+  padding-bottom: 0.5rem;
 }
 .bthick {
   border-bottom: 3px solid;
-  padding-bottom: 1rem;
+  padding-bottom: 0.5rem;
 }
 /* Expand behavior styles */
 /* Forms */
@@ -1230,13 +1235,13 @@ ol.nestedlist > li > ol {
 .overview fieldset {
   display: block;
   position: relative;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 .overview legend {
   display: block;
   font-weight: 700;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
 }
 .detailed fieldset {
   display: block;
