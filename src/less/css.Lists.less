@@ -1,0 +1,47 @@
+
+ul.normal>li, .normal>ul>li {
+	margin-left: @extraSpace;
+	list-style-type: disc;
+}
+
+ol.normal {
+	> li {
+		list-style-position: inside;
+		list-style-type: decimal;
+	}
+}
+
+
+/**** nested lists for multiple uls */
+
+ul.nestedlist>li>ul, div.nestedlist>ul, ol.nestedlist>li>ol {
+	padding-left: @extraSpace*2;
+}
+
+
+/*Basic list*/
+.thelist() {
+	> li {
+		padding-bottom: @listSpacing;
+		margin-bottom: @listSpacing;
+	}
+}
+/* listings */
+
+.alist {
+	.thelist();
+}
+
+.blist {
+	> li {
+		border-bottom: 1px solid @grey;
+	}
+}
+
+.rowlist {
+	> li {
+		border-bottom: 1px solid @grey;
+		padding-bottom: @listSpacing;
+		margin-bottom: @listSpacing;
+	}
+}

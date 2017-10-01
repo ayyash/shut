@@ -1,61 +1,100 @@
-﻿
-/* font setting */
+﻿/* font setting */
 
-body, textarea, select, option, input 
-{
+body, textarea, select, option, input {
 	font-family: @fontface;
 	#rem > .font-size(@baseFontSize);
 	color: @color;
 }
 
 section {
-	margin-bottom:  @extraSpace * 2;
-}
-
-
-p {
 	margin-bottom: @extraSpace;
 }
 
+p {
+	margin-bottom: @space;
+}
 
-.lightfont
-{
+h1, h2, h3, h4, h5 {
+	margin-bottom: @hMargin;
+}
 
+h1 {
+	#rem > .font-size(3.5 * @baseFontSize);
+}
+
+h2 {
+	#rem > .font-size(3 * @baseFontSize);
+}
+
+h3 {
+	#rem > .font-size(2.5 * @baseFontSize);
+}
+
+h4 {
+	#rem > .font-size(2 * @baseFontSize);
+}
+
+h5 {
+	#rem > .font-size(1.5 * @baseFontSize);
+}
+
+h6 {
+	#rem > .font-size(@baseFontSize);
+}
+
+.lightfont {
 	font-weight: @lightweight;
 }
+
 .boldface {
 	font-weight: @boldweight;
 }
+
 .italicface {
 	font-style: italic;
 }
-.large {	#rem > .font-size(1.3 * @baseFontSize);}
-.larger {	#rem > .font-size(1.8 * @baseFontSize); }
-.small {	#rem > .font-size(0.9 * @baseFontSize);}
-.smaller {	#rem > .font-size(0.8 * @baseFontSize);}
+
+.large {
+	#rem > .font-size(1.3 * @baseFontSize);
+}
+
+.larger {
+	#rem > .font-size(1.8 * @baseFontSize);
+}
+
+.small {
+	#rem > .font-size(0.9 * @baseFontSize);
+}
+
+.smaller {
+	#rem > .font-size(0.8 * @baseFontSize);
+}
 
 
 /* labels and boxes */
+
 .red {
 	color: @red;
 }
+
 .green {
 	color: @green;
 }
+
 .blue {
 	color: @blue;
 }
+
 .light {
 	color: @textlight;
 }
+
 .lighter {
 	color: @textlighter;
 }
 
-
-
 .labeltext {
-	padding: 1px 3px 2px;
+	padding: @labelPadding;
 	.border-radius(@radius);
 	display: inline-block;
 }
@@ -70,146 +109,129 @@ p {
 	padding: @boxpadding;
 	.border-radius(@radius);
 	position: relative;
-	.box-sizing(border-box);
 }
+
 .colorbox(@c) {
 	.box;
-	background-color:@c;
+	background-color: @c;
 	.fcolor(@c);
 }
 
-
 .yellowtext {
-	//background-color: @yellow;
 	.label(@yellow);
 }
+
 .lightyellowtext {
-	//background-color: @lightyellow;
 	.label(@lightyellow);
 }
+
 .redtext {
-	// background-color: @red;
-	// color: @inversecolor;
 	.label(@red);
 }
+
 .lightredtext {
-	//background-color: @lightred;
-	//color: @color;
 	.label(@lightred);
 }
 
 .greentext {
-	// background-color: @green;
-	// color: @textdark;
 	.label(@green);
 }
+
 .lightgreentext {
-	// background-color: @lightgreen;
-	// color: @textdark;
 	.label(@lightgreen);
 }
+
 .bluetext {
 	.label(@blue);
-	// background-color: @blue;
-	// color: @inversecolor;
 }
+
 .lightbluetext {
 	.label(@lightblue);
-	//background-color: @lightblue;
 }
+
 .greytext {
-	//background-color: @grey;
 	.label(@grey);
 }
+
 .greydarktext {
-	// background-color: @greydark;
-	// color: #fff;
 	.label(@greydark);
 }
+
 .whitetext {
 	border: @boxborder solid @greynormal;
 	.labeltext;
 }
+
 .greynormaltext {
-	//background-color: @greynormal;
 	.label(@greynormal);
 }
 
 .yellowbox {
-	
-	// color: @textdark;
-	// background-color: @yellow;
 	.colorbox(@yellow);
 }
+
 .lightyellowbox {
-	// color: @textdark;
-	// background-color: @lightyellow;
 	.colorbox(@lightyellow);
 }
 
 .redbox {
-	// background-color: @red;
-	// color: @inversecolor;
 	.colorbox(@red);
 }
+
 .lightredbox {
-	// background-color: @lightred;
-	// color: @textdark;
 	.colorbox(@lightred);
 }
+
 .whitebox {
-	border: @boxborder solid @grey;
-	background-color: @inversecolor;
-	.box;
+	.colorbox(@inversecolor);
 }
+
+.whiteborderbox {
+	.whitebox;
+	border: @boxborder solid @grey;
+}
+
 .greenbox {
-	// background-color: @green;
-	// color: @textdark;
 	.colorbox(@green);
 }
+
 .lightgreenbox {
-	// background-color: @lightgreen;
-	// color: @textdark;
 	.colorbox(@lightgreen);
 }
+
 .greybox {
-	//background-color:@grey;
 	.colorbox(@grey);
 }
+
 .whitedarkbox {
 	border: @boxborder solid @greydark;
-	background-color: @inversecolor;
-	.box;
+	.colorbox(@inversecolor);
 }
+
 .greydarkbox {
-	// background-color:@greydark;
-	// color: @inversecolor;
 	.colorbox(@greydark);
-	
 }
+
 .greynormalbox {
-	// background-color:@greynormal;
 	.colorbox(@greynormal);
 }
+
 .whitenormalbox {
 	border: @boxborder solid @greynormal;
-	background-color: @inversecolor;
-	.box;
+	.colorbox(@inversecolor);
 }
+
 .bluebox {
 	.colorbox(@blue);
-	// background-color: @blue;
-	// color: @inversecolor;
-
 }
+
 .lightbluebox {
 	.colorbox(@lightblue);
-	// background-color: @lightblue;
 }
-
 
 
 /* mixed content*/
+
 .ltr {
 	font-family: @fontface;
 	direction: ltr;
@@ -218,88 +240,58 @@ p {
 
 /* HTML tags redefined */
 
-a, .a { /* mimic a href */
+a, .a {
+	/* mimic a href */
 	color: @linkcolor;
 	text-decoration: none;
 	cursor: pointer;
 }
+
+
 /*camoflage a*/
+
 a.cam, .a.cam, .cam {
 	color: @color;
-	&:hover {color: @linkcolor;}
+	&:hover {
+		color: @linkcolor;
+	}
 	cursor: pointer;
 }
+
 a[rel="track"]:visited {
-	color:@visitedlinkcolor;
+	color: @visitedlinkcolor;
 }
+
 a:hover, a[rel="track"]:hover {
 	color: @altlinkcolor;
 }
+
 h1 a:visited {
 	/* only titles of items are tracked for visiting, other a hrefs are not tracked */
-	color:@visitedlinkcolor;
+	color: @visitedlinkcolor;
 }
 
-h1 {
-	#rem > .font-size(3.5 * @baseFontSize);
-	margin: 10px 0;
-}
-h2 {
-	#rem > .font-size(3 * @baseFontSize);
-}
-h3 {
-	#rem > .font-size(2.5 * @baseFontSize);
-}
-h4 {
-	#rem > .font-size(2 * @baseFontSize);
-}
-h5 {
-	#rem > .font-size(1.5 * @baseFontSize);
-	
-}
-h6 {
-	#rem > .font-size(@baseFontSize);
-}
 .hsub {
 	font-size: 70%;
+	.light;
 }
 
 p.normalsize, .normalsize p, .normalsize {
 	#rem > .font-size(@baseFontSize)!important;
 	font-family: @fontface;
 }
-ul.normal>li, .normal>ul>li{
-	margin-left: 15px;
-	list-style-type: disc;
-}
-
-ol.normal {
-	> li {
-		list-style-position: inside;
-		list-style-type: decimal;
-	}
-}
-/**** nested lists for multiple uls */
-ul.nestedlist>li>ul, div.nestedlist>ul, ol.nestedlist>li>ol {
-	padding-left: 15px;
-}
-
 
 sup {
 	font-size: 70%;
 	vertical-align: 4px;
 }
 
-
 del {
 	color: @textlight;
 	text-decoration: line-through;
 }
-mark {
-	background-color: @hilite;
-}
 
-.ellipsis(){
+.ellipsis() {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;

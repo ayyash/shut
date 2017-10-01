@@ -14,50 +14,669 @@
 <body>
 
     <div class="contentwrapper">
-        here is the main site
-    </div>
-    <!--lightboxes: todo: rewrite for angular-->
+        <h1>Build your src folder</h1>
+        <p>Create a src folder with the following folder structure (this is optional to make use of the gulp tasks included
+            to build LESS files)</p>
+        <div class="page contentwrapper">
 
-    <div id="frameDialog" class="dialog">
-        <a class="jqmClose" href="javascript://"></a>
-        <h3 class="jqmTitle"></h3>
-        <div class="loading">
-            loading...
-        </div>
-        <iframe id="jqmContent" src="" frameborder="0"></iframe>
-    </div>
-    <div id="ajaxDialog" class="dialog">
-        <a class="jqmClose" href="javascript://"></a>
-        <h3 class="jqmTitle"></h3>
-        <div class="directionwrapper">
-            <div id="jqmContent">
+            <section>
+                <h2>General layout</h2>
+                <ul class="tablelist">
+                    <li>
+                        <h6>.breath</h6>Breathing (padded from top and bottom)</li>
+                    <li>
+                        <h6>.rbreath</h6>Right breath (left breath in RTL)</li>
+                    <li>
+                        <h6>.lbreath</h6>Left breath (right breath in RTL)</li>
+                    <li>
+                        <h6>.r</h6>float right (left float in RTL)</li>
+                    <li>
+                        <h6>.l</h6>float left (right float in RTL)</li>
+                    <li>
+                        <h6>.spaced</h6>bottom spaced</li>
+                    <li>
+                        <h6>.margintop</h6>Margin top</li>
+                    <li>
+                        <h6>.padtop</h6>Padding top</li>
+                    <li>
+                        <h6>.txtr</h6>Right aligned (left alignted in RTL)</li>
+                    <li>
+                        <h6>.txtc</h6>Center aligned</li>
+                    <li>
+                        <h6>.bthin</h6>Bottom bordered, thin</li>
+                    <li>
+                        <h6>.bthick</h6>Bottom bordered, thick</li>
+                    <li>
+                        <h6>.clear</h6>Clear both</li>
+                </ul>
+                <div class="whitebox">
+                    <div class="bthin spaced">.bthin.spaced</div>
+                    <div class="bthick spaced">.bthick.spaced</div>
+                </div>
+            </section>
+            <section>
+                <h6 class="spaced bthin">Formatting</h6>
+                <ul class="rowlist">
+                    <li class="boldface">.boldface: Bold</li>
+                    <li class="italicface">.italicface: italic</li>
+                    <li class="large">.large: Large</li>
+                    <li class="larger">.larger: Larger</li>
+                    <li class="small">.small: Small</li>
+                    <li class="smaller">.smaller: Smaller</li>
+                    <li class="lightfont">.lightfont: Light face font</li>
+                    <li class="red">.red: Red</li>
+                    <li class="green">.green: Greed</li>
+                    <li class="blue">.blue: Blue</li>
+                    <li class="light">.light Light text</li>
+                    <li class="lighter">.lighter Even lighter text</li>
+                </ul>
+            </section>
+
+
+
+            <section>
+                <h6 class="spaced bthin">label</h6>
+                <ul class="alist incols">
+                    <li>
+                        <span class="labeltext">.labeltext: Plain</span>
+                    </li>
+                    <li>
+                        <span class="yellowtext">.yellowtext</span>
+                    </li>
+                    <li>
+                        <span class="lightyellowtext">.lightyellowtext</span>
+                    </li>
+                    <li>
+                        <span class="redtext">.redtext</span>
+                    </li>
+                    <li>
+                        <span class="lightredtext">.lightredtext</span>
+                    </li>
+                    <li>
+                        <span class="greentext">.greentext</span>
+                    </li>
+                    <li>
+                        <span class="lightgreentext">.lightgreentext</span>
+                    </li>
+                    <li>
+                        <span class="greytext">.greytext</span>
+                    </li>
+                    <li>
+                        <span class="greydarktext">.greydarktext</span>
+                    </li>
+                    <li>
+                        <span class="greynormaltext">.greynormaltext</span>
+                    </li>
+                    <li>
+                        <span class="whitetext">.whitetext</span>
+                    </li>
+                    <li>
+                        <span class="bluetext">.bluetext</span>
+                    </li>
+                    <li>
+                        <span class="lightbluetext">.lightbluetext</span>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h6 class="bthin">Boxes by style</h6>
+                <ul class="incols u2 uh2">
+                    <li class="yellowbox">.yellowbox</li>
+                    <li class="lightyellowbox">.lightyellowbox</li>
+                    <li class="redbox">.redbox</li>
+                    <li class="lightredbox">.lightredbox</li>
+                    <li class="whitebox">.whitebox</li>
+                    <li class="greenbox">.greenbox</li>
+                    <li class="lightgreenbox">.lightgreenbox</li>
+                    <li class="greybox">.greybox</li>
+                    <li class="whitedarkbox">.whitedarkbox</li>
+                    <li class="greydarkbox">.greydarkbox</li>
+                    <li class="greynormalbox">.greynormalbox</li>
+                    <li class="whitenormalbox">.whitenormalbox</li>
+                    <li class="bluebox">.bluebox</li>
+                    <li class="lightbluebox">.lightbluebox</li>
+                </ul>
+            </section>
+            <section>
+                <ul class="alist c12">
+                    <li>
+                        <h1>h1: Header 1
+                            <span class="hsub">Subtext (.hsub)</span>
+                        </h1>
+                    </li>
+                    <li>
+                        <h2>h2: Header 2
+                            <span class="hsub">Subtext (.hsub)</span>
+                        </h2>
+                    </li>
+                    <li>
+                        <h3>h3: Header 3
+                            <span class="hsub">Subtext (.hsub)</span>
+                        </h3>
+                    </li>
+                    <li>
+                        <h4>h4: Header 4
+                            <span class="hsub">Subtext (.hsub)</span>
+                        </h4>
+                    </li>
+                    <li>
+                        <h5>h5: Header 5
+                            <span class="hsub">Subtext (.hsub)</span>
+                        </h5>
+                    </li>
+                    <li>
+                        <h6>h6: Header 6</h6>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h6 class="bthin">More boxes by type</h6>
+                <ul class="tablelist">
+                    <li>
+                        <h6>.infobox</h6>
+                        <div class="infobox icon">
+                            <span class="header">title</span> Info box
+                        </div>
+                    </li>
+                    <li>
+                        <h6>.alertbox</h6>
+                        <div class="alertbox icon">
+                            <span class="header">title</span> alertbox
+                    </li>
+                    <li>
+                        <h6>.errorbox</h6>
+                        <div class="errorbox icon">
+                            <span class="header">title</span> errorbox
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Lists</h2>
+                <ul class="alist spaced">
+                    <li>
+                        An ".alist"
+                    </li>
+                    <li>
+                        Item
+                    </li>
+                    <li>
+                        Item
+                    </li>
+                </ul>
+                <ul class="blist spaced">
+                    <li>
+                        A border list (.blist)
+                    </li>
+                    <li>
+                        Item
+                    </li>
+                    <li>
+                        Item
+                    </li>
+                </ul>
+                <ul class="rowlist spaced">
+                    <li>
+                        .rowlist (padded and borded)
+                    </li>
+                    <li>
+                        Item
+                    </li>
+                    <li>
+                        Item
+                    </li>
+                </ul>
+                <ul class="spacedout">
+                    <li>Spaced out items</li>
+                    <li>.spacedout</li>
+                    <li>Item</li>
+                </ul>
+
+            </section>
+            <section>
+                <ul class="normal spaced">
+                    <li>Normal list (.normal)</li>
+                    <li>Item</li>
+                    <li>Item</li>
+                </ul>
+                <ol class="normal spaced">
+                    <li>Normal ordered list (.normal)</li>
+                    <li>Item</li>
+                    <li>Item</li>
+                </ol>
+                <div class="spaced">
+                    <ul class="nestedlist">
+                        <li>Nested list (.nestedlist)</li>
+                        <li>Item</li>
+                        <li>
+                            <ul class="nestedlist">
+                                <li>Another nested list</li>
+                                <li>Item</li>
+                                <li>
+                                    <ul>
+                                        <li>Item</li>
+                                        <li>Item</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section>
+                <h2>Tables</h2>
+                <h6 class="bthin spaced">Striped and Tabulated (.striped .tabulated)</h6>
+                <table class="tabulated striped">
+                    <colgroup>
+                        <col class="gcl1">
+                        <col class="gcl2">
+                        <col class="gcl3">
+                        <col class="gcl4">
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>gcl1</th>
+                            <th>gcl2</th>
+                            <th>gcl3</th>
+                            <th>gcl4</th>
+                            <th>*</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>cl1</td>
+                            <td>cell</td>
+                            <td>cell</td>
+                            <td>cell</td>
+                            <td>cell</td>
+                        </tr>
+                        <tr>
+                            <td>cl1</td>
+                            <td>cell</td>
+                            <td>cell</td>
+                            <td>cell</td>
+                            <td>cell</td>
+                        </tr>
+                        <tr>
+                            <td>cl1</td>
+                            <td>cell</td>
+                            <td>cell</td>
+                            <td>cell</td>
+                            <td>cell</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>footer</td>
+                            <td>footer</td>
+                            <td>footer</td>
+                            <td>footer</td>
+                            <td>footer</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </section>
+
+            <section>
+                <h6 class="bthin spaced">.cl1 - .cl12 (per col in colgroup, or per td)</h6>
+                <table class="tabulated">
+                    <colgroup>
+                        <col class="cl1">
+                        <col class="cl2">
+                        <col class="cl3">
+                        <col class="cl4">
+                        <col class="cl5">
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>cl1</th>
+                            <th>cl2</th>
+                            <th>cl3</th>
+                            <th>cl4</th>
+                            <th>cl5</th>
+                            <th>*</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>cl1</td>
+                            <td>cell</td>
+                            <td>cell</td>
+                            <td>cell</td>
+                            <td>cell</td>
+                            <td>cell</td>
+                        </tr>
+                        <tr>
+                            <td>cl1</td>
+                            <td>cell</td>
+                            <td>cell</td>
+                            <td>cell</td>
+                            <td>cell</td>
+                            <td>cell</td>
+                        </tr>
+                        <tr>
+                            <td>cl1</td>
+                            <td>cell</td>
+                            <td>cell</td>
+                            <td>cell</td>
+                            <td>cell</td>
+                            <td>cell</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>footer</td>
+                            <td>footer</td>
+                            <td>footer</td>
+                            <td>footer</td>
+                            <td>footer</td>
+                            <td>footer</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </section>
+
+            <section>
+                <h6 class="bthin spaced">Spacedout and Bordered (.spacedout .bordered)</h6>
+                <table class="bordered spacedout">
+                    <colgroup>
+                        <col class="gcl1">
+                        <col class="gcl2">
+                        <col class="gcl3">
+                        <col class="gcl4">
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>gcl1</th>
+                            <th>gcl2</th>
+                            <th>gcl3</th>
+                            <th>gcl4</th>
+                            <th>*</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>cl1</td>
+                            <td>cell</td>
+                            <td>cell</td>
+                            <td>cell</td>
+                            <td>cell</td>
+                        </tr>
+                        <tr>
+                            <td>cl1</td>
+                            <td>cell</td>
+                            <td>cell</td>
+                            <td>cell</td>
+                            <td>cell</td>
+                        </tr>
+                        <tr>
+                            <td>cl1</td>
+                            <td>cell</td>
+                            <td>cell</td>
+                            <td>cell</td>
+                            <td>cell</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>footer</td>
+                            <td>footer</td>
+                            <td>footer</td>
+                            <td>footer</td>
+                            <td>footer</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </section>
+
+            <section>
+                <table class="rich">
+                    <colgroup>
+                        <col class="gcl1">
+                        <col class="gcl2">
+                        <col class="gcl3">
+                        <col class="gcl4">
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>gcl1</th>
+                            <th>gcl2</th>
+                            <th>gcl3</th>
+                            <th>gcl4</th>
+                            <th>*</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>cl1</td>
+                            <td>cell</td>
+                            <td>cell</td>
+                            <td>cell</td>
+                            <td>cell</td>
+                        </tr>
+                        <tr>
+                            <td>cl1</td>
+                            <td>cell</td>
+                            <td>cell</td>
+                            <td>cell</td>
+                            <td>cell</td>
+                        </tr>
+                        <tr>
+                            <td>cl1</td>
+                            <td>cell</td>
+                            <td>cell</td>
+                            <td>cell</td>
+                            <td>cell</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>footer</td>
+                            <td>footer</td>
+                            <td>footer</td>
+                            <td>footer</td>
+                            <td>footer</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </section>
+
+
+            <section>
+                <h6 class="spaced bthin">Buttons</h6>
+                <button class="btn">.btn</button>
+                <button class="btnrev">.btnrev</button>
+                <button class="btndiff">.btndiff</button>
+            </section>
+            <section>
+                <div class="detailed">
+                    <fieldset>
+                        <legend>Text</legend>
+                        <ol class="stack stacklist">
+                            <li>
+                                <label>Label</label>
+                                <input class="t4 materialinput" placeholder="class .t1-.t12" type="text">
+                            </li>
+                            <li>
+                                <label>Error field</label>
+                                <input class="t4 error" placeholder=".error" type="text">
+                            </li>
+                            <li>
+                                <label>Required field</label>
+                                <div class="wrapvld">
+                                    <input class="t4" placeholder=".wrapvld container" type="text">
+                                    <span class="req"></span>
+                                </div>
+                            </li>
+                            <li>
+                                <label>Required field validation error</label>
+                                <div class="wrapvld">
+                                    <input class="t4" placeholder=".wrapvld container" type="text">
+                                    <span class="req"></span>
+                                    <span class="errlabel">Required .errlabel</span>
+                                </div>
+                            </li>
+                            <li>
+                                <label>Required field validation error</label>
+                                <div class="wrapvld">
+                                    <input class="t4" placeholder=".wrapvld container" type="text">
+                                    <span class="req"></span>
+                                    <span class="herrlabel">Required .herrlabel</span>
+                                </div>
+                            </li>
+                        </ol>
+                    </fieldset>
+                </div>
+            </section>
+            <section>
+                <div class="detailed ingredients">
+                    <dl>
+                        <dt>Name</dt>
+                        <dd>Ayyash</dd>
+                        <dt>Location</dt>
+                        <dd>Amman</dd>
+                    </dl>
+                </div>
+            </section>
+            <section>
+                <div class="detailed tight ingredients c3">
+                    <dl>
+                        <dt>Name</dt>
+                        <dd>Ayyash</dd>
+                        <dt>Location</dt>
+                        <dd>Amman</dd>
+                    </dl>
+                </div>
+            </section>
+            <section>
+                <div class="detailed xlarge ingredients">
+                    <dl>
+                        <dt>Name</dt>
+                        <dd>
+                            Ayyash
+                        </dd>
+                        <dt>Location</dt>
+                        <dd>
+                            Amman
+                        </dd>
+                    </dl>
+                </div>
+            </section>
+            <section>
+                <div class="indblock">
+                    <label>
+                        <input type="radio" name="e1" class="indelem" /> Yes
+                    </label>
+                    <p>Explanation here</p>
+                    <label>
+                        <input type="radio" name="e1" class="indelem " /> No
+                    </label>
+                    <span class="hmark">Help with question mark here</span>
+                    <label>
+                        <input type="checkbox" name="e3" class="indelem" /> Checkbox here
+                    </label>
+                    <span class="indelem red larger">*</span>
+                    <p>anything goes</p>
+                </div>
+            </section>
+            <section>
+                <div class="incols c8">
+                    <dl class="invstack xlarge col c4">
+                        <dd>Vinepaper</dd>
+                        <dt>Website</dt>
+                    </dl>
+                    <dl class="invstack xxlarge col c4">
+                        <dd>Shut</dd>
+                        <dt>Framework name</dt>
+                    </dl>
+                    <dl class="invstack xlarge col c4">
+                        <dd>Developer</dd>
+                        <dt>Ayyash</dt>
+                    </dl>
+                    <dl class="invstack xlarge col c4">
+                        <dd>Location</dd>
+                        <dt>Amman</dt>
+                    </dl>
+                </div>
+            </section>
+
+            <section>
+                <ul class="tablelist">
+                    <li>
+                        <h6>Label</h6>
+                        Content
+                    </li>
+                    <li>
+                        <h6>Label</h6>
+                        Content
+                    </li>
+                    </ol>
+                    <ol class="fox [rowlist]">
+                        <li>
+                            <label>Fox</label> Layout
+                        </li>
+                        <li>
+                            <label>Label</label> Content here
+                        </li>
+                    </ol>
+            </section>
+
+
 
             </div>
-        </div>
-    </div>
-    <div id="contentDialog" class="dialog">
-        <a class="jqmClose " href="javascript://"></a>
-        <h3 class="jqmTitle"></h3>
-    </div>
-    <!--end lightboxes-->
-
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-    <!--include jquery ui for: AutoComplete AjaxTip Date PopList (in Expand) ShApplyHiLight Tip (in Web) -->
-    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
-
-    <!-- development:js -->
-    <script src="js/dev.js"></script>
-    <!-- endinject -->
+            </div>
 
 
-    <!-- data:js -->
-    <script src="js/sh.data.js"></script>
-    <!-- endinject -->
+            <header>
+                Header of page
+            </header>
 
-    <!-- inject:js -->
-    <script src="js/sh.js"></script>
-    <script src="js/ui.web.js"></script>
-    <!-- endinject -->
+            <!--lightboxes: include the dialogs if sh.Modal is used-->
+
+            <div id="frameDialog" class="dialog">
+                <a class="jqmClose" href="javascript://"></a>
+                <h3 class="jqmTitle"></h3>
+                <div class="loading">
+                    loading...
+                </div>
+                <iframe id="jqmContent" src="" frameborder="0"></iframe>
+            </div>
+            <div id="ajaxDialog" class="dialog">
+                <a class="jqmClose" href="javascript://"></a>
+                <h3 class="jqmTitle"></h3>
+                <div class="directionwrapper">
+                    <div id="jqmContent">
+
+                    </div>
+                </div>
+            </div>
+            <div id="contentDialog" class="dialog">
+                <a class="jqmClose " href="javascript://"></a>
+                <h3 class="jqmTitle"></h3>
+            </div>
+            <!--end lightboxes-->
+
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+            <!--include jquery ui for: AutoComplete AjaxTip Date PopList (in Expand) ShApplyHiLight Tip (in Web) -->
+            <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
+
+            <!-- development:js -->
+            <script src="js/dev.js"></script>
+            <!-- endinject -->
+
+
+            <!-- data:js -->
+            <script src="js/sh.data.js"></script>
+            <!-- endinject -->
+
+            <!-- inject:js -->
+            <script src="js/sh.js"></script>
+            <script src="js/ui.web.js"></script>
+            <!-- endinject -->
 </body>
 
 </html>

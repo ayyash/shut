@@ -5,16 +5,19 @@
 @image-url: '../images/';
 
 // framework less file location
-@shut-url: "./less/";
+@shut-url: "./src/less/";
 
 @iconfont: 'vpicons';
 @rem-enabled: true;
+
+// TODO: to reduce size: if border-radius = 0 skil classes
+
 /* framework vars */
 
-@fontface:  Roboto, Segoe UI, Lucida Grande, Sans-serif;
-@baseFontSize: 1.4;
+@fontface: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Roboto", "Fira Sans", "Helvetica Neue", Arial, sans-serif;
+@baseFontSize: 1.4; // in rem
 @lightweight: 300;
-@normalweight: normal;
+@normalweight: 400;
 @boldweight: 700;
 
 @arfontface: Traditional Arabic, tahoma, sans-serif;
@@ -28,42 +31,54 @@
 @screen-ds: 1600px; // up above desktop
 
 // colors
-@color: #202020;
-@inversecolor: #fff;
-@linkcolor: #c6002d;
+@color: #202020; // basic text color
+@inversecolor: #fff; // the inverse of basic text
+
+@linkcolor: #0c00b4;
 @visitedlinkcolor: #800080;
-@altlinkcolor: #71c5ef;
-@red: #ffa400;
-@lightred: #feefdf;
-@yellow: #f8e8ce;
-@lightyellow: #FBF6CB;
+@altlinkcolor: #048bca;
+
+@red: #f31109;
+@lightred: #ffaa90;
+
+@yellow: #ffc400;
+@lightyellow: #ffed75;
+
 @lightgreen: #dcffae;
 @green: #57b347;
+
 @blue: #0097A7;
 @lightblue: #d7fffc;
-@grey: #f0f0f0;
-@greynormal: #cccccc;
-@greydark: #263238;
-@textlight: #959595;
-@textlighter: #ccc;
-@textdark: #333;
-@hilite: #ffdb2a;
-@selectedcolor: #f5f700;
-@radius: 1px;
 
+@grey: #f3f3f3;
+@greynormal: #999999;
+@greydark: #263238;
+
+@textlight: #959595;
+@textlighter: #cccccc;
+
+
+@radius: 5px;
+
+
+/* spacing and layout */
+@space: 1rem; /* margin bottoms */
+@extraSpace: 1.5rem; /* pads around boxed content */
+@labelPadding: 1px 3px 2px;
+@hMargin: @space; // margins of h1-h5
+
+@boxborder: 1px; // for white boxes
+@boxpadding: 0.7rem;
+@listSpacing: 0.7rem; // lists spacing (multiplied by two for padding and margin)
 
 /* grid layout */
 @gridColumns: 20; /* does not affect wrapper, it makes space around it */
 @gridColumnWidth: 60px; /* affects the wrapper width thus the content natural width, 60 => 1024 sizes */
 @gridGutterWidth:25px; /* affects wrapper and site width */
-@extraSpace: 10px; /* pads around boxed content */
-@wrapper: 12;
-@leftheader: 2;
-@logocolumns: 2;
-@footerlogocolumns: 1;
+@wrapper: 12; // columns
 
-@boxborder: 1px;
-@boxpadding: 5px;
+
+
 @mainpad: 10px;
 // dimentions of the directionalwrapper of pop dialogs
 @dialogdimtop: 60px;

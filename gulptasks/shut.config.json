@@ -1,10 +1,10 @@
 {
-    "shutUrl": "./",
+    "shutUrl": "./src/",
     "srcUrl": "./minisite/src/",
     "distUrl": "./minisite/public/",
+    "fwDistUrl": "./dist/",
     "projectName": "sh",
     "scripts": [
-        
         "Ajax",
         "AutoComplete",
         "Chosen",
@@ -16,15 +16,5 @@
         "Modal", 
         "Validate",
         "Web" 
-    ],
-    "minSupportedSize": "480px",
-    "maxSupportedSize": "1600px",
-    "shutMediaStyles": [
-        "sh.media.1.480.less",
-        "sh.media.2.640.less",
-        "sh.media.3.768.less",
-        "sh.media.4.1024.less",
-        "sh.media.5.1280.less",
-        "sh.media.6.1600.less"
     ]
 }

@@ -34,6 +34,7 @@
 
 	textarea {
 		overflow: auto;
+		resize: vertical;
 	}
 
 	em {
@@ -46,15 +47,15 @@
 		-khtml-user-select: none;
 	}
 
-	abbr, article, aside, audio, canvas, datalist, details,
-	figure, footer, header, hgroup, menu, meter, nav, output,
-	progress, section, summary, time, video {
-		display: block;
-	}
+	// abbr, article, aside, audio, canvas, datalist, details,
+	// figure, footer, header, hgroup, menu, meter, nav, output,
+	// progress, section, summary, time, video {
+	// 	display: block;
+	// }
 
-	time, mark {
-		display: inline;
-	}
+	// time, mark {
+	// 	display: inline;
+	// }
 
 	form {
 		display: inline;
@@ -67,43 +68,37 @@
 }
 
 #border-radius {
-	.all (@radius: 2px) {
+	.all (@radius: 2px) when (@radius > 0) {
 		-webkit-border-radius: @radius;
 		-moz-border-radius: @radius;
 		border-radius: @radius;
 	}
 
-	.topright(@radius: 2px) {
+	.topright(@radius: 2px) when (@radius > 0){
 		-webkit-border-top-right-radius: @radius;
 		-moz-border-radius-topright: @radius;
 		border-top-right-radius: @radius;
 	}
 
-	.topleft(@radius: 2px) {
+	.topleft(@radius: 2px)  when (@radius > 0){
 		-webkit-border-top-left-radius: @radius;
 		-moz-border-radius-topleft: @radius;
 		border-top-left-radius: @radius;
 	}
 
-	.bottomright(@radius: 2px) {
+	.bottomright(@radius: 2px)  when (@radius > 0){
 		-webkit-border-bottom-right-radius: @radius;
 		-moz-border-radius-bottomright: @radius;
 		border-bottom-right-radius: @radius;
 	}
 
-	.bottomleft(@radius: 2px) {
+	.bottomleft(@radius: 2px)  when (@radius > 0){
 		-webkit-border-bottom-left-radius: @radius;
 		-moz-border-radius-bottomleft: @radius;
 		border-bottom-left-radius: @radius;
 	}
 }
 /* Drop shadows*/
-.box-shadow-2(@shadow: 0 1px 3px rgba(0,0,0,.25), @shadow2) {
-	-webkit-box-shadow: @shadow, @shadow2;
-	-moz-box-shadow: @shadow, @shadow2;
-	box-shadow: @shadow, @shadow2;
-}
-
 .box-shadow(@shadow) {
 	-webkit-box-shadow: @shadow;
 	-moz-box-shadow: @shadow;

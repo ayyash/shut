@@ -99,7 +99,7 @@ i {
 
 h1.sitelogo {
 	margin: 0;
-	.columns(@logocolumns);
+	// .columns(@logocolumns);
 	height: 5vh;
 	a {
 		background: transparent url("@{image-url}ilogo.png") no-repeat left center;
@@ -218,11 +218,11 @@ ul.activelist li a:hover {
 		z-index: 1000;
 		border: 3px solid @greynormal;
 		padding: 3px;
-		.basicballoon;
+		// .basicballoon;
 		position: absolute;
 		&:after {
 			border-color: @greydark;
-			#arrow > .above(6px);
+		//	#arrow > .above(6px);
 		}
 	}
 	.guts li {
@@ -386,88 +386,6 @@ header nav.tools {
 }
 
 
-/* typography */
-
-.hsub {
-	color: @greynormal;
-}
-
-
-/*Basic Badge */
-
-.abadge {
-	position: relative;
-	/*overflow: hidden;*/
-	.box-sizing(border-box);
-	.tail {
-		position: absolute;
-		right: 0;
-		top: 0;
-	}
-}
-
-.pbadge {
-	position: relative;
-	.box-sizing(border-box);
-	padding: @boxpadding;
-	.tail {
-		position: absolute;
-		top: @boxpadding;
-		right: @boxpadding;
-	}
-}
-
-
-/*Basic list*/
-
-.thelist() {
-	> li {
-		padding-bottom: @boxpadding;
-		margin-bottom: @boxpadding;
-	}
-}
-
-
-/* the infamous rowlist, keep in project */
-
-.alist {
-	.thelist();
-}
-
-.blist {
-	> li {
-		border-bottom: 1px solid @grey;
-	}
-}
-
-.rowlist {
-	> li {
-		border-bottom: 1px solid @grey;
-		padding-bottom: @boxpadding;
-		margin-bottom: @boxpadding;
-	}
-}
-
-
-/* poplist */
-
-.poplist {
-	.guts {
-		background-color: @inversecolor;
-		border: 3px solid @greydark;
-		.basicballoon;
-		position: absolute;
-		&:after {
-			border-color: @inversecolor;
-			#arrow > .above(8px);
-		}
-	}
-	li {
-		&:hover {
-			background-color: @lightyellow;
-		}
-	}
-}
 
 
 /* keep these last */

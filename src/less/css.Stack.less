@@ -24,20 +24,6 @@
 }
 
 
-/*** default fieldset and legends */
-
-fieldset, legend {
-	display: block;
-}
-
-fieldset {
-	margin-bottom: 20px;
-}
-
-legend {
-	font-weight: @boldweight;
-	padding-bottom: 10px;
-}
 
 
 /**** definition lists coupled with forms fieldset and legends */
@@ -55,12 +41,14 @@ legend {
 .overview fieldset {
 	display: block;
 	position: relative;
+	margin-bottom: @space * 2;
 }
 
 .overview legend {
 	display: block;
 	font-weight: @boldweight;
-	padding-top: 10px;
+	padding-top: @space/2;
+	padding-bottom: @space/2;
 }
 
 .detailed fieldset {
@@ -150,10 +138,10 @@ ul.commasep li:last-child:after {
 		padding-left: (@gridColumnWidth + @gridGutterWidth) * @factor;
 	}
 	@{headerElement} {
-		float: left;
+		float: left; 
 		.columns(@factor);
 		margin-left: (@gridColumnWidth + @gridGutterWidth) * -@factor; 
-	}
+	} 
 } 
 .tablelist {
 	.stlist(2, h6);

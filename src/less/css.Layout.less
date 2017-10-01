@@ -6,7 +6,6 @@
 	position: relative;
 }
 .singlepage {
-   .box-sizing(border-box);
 	margin: 0 auto;
 	position: relative;
 }
@@ -23,7 +22,6 @@ header {
 div.poppage {
 	margin: 0 auto;
 	position: relative;
-	.box-sizing(border-box);
 }	
 
 h1.sitelogo {
@@ -153,3 +151,24 @@ h3.jqmTitle {
 }
 
 
+
+/*Basic Badge */
+
+.abadge {
+	position: relative;
+	.tail {
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+}
+
+.pbadge {
+	position: relative;
+	padding: @boxpadding;
+	.tail {
+		position: absolute;
+		top: @boxpadding;
+		right: @boxpadding;
+	}
+}

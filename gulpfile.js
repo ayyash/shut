@@ -5,7 +5,7 @@ var requireDir = require('require-dir')('./gulptasks');
 
 
 // watching minisite
-gulp.task('default', ['rawless', 'rawscripts', 'insertcss'], function () {
+gulp.task('init', ['rawless', 'rawscripts', 'insertcss'], function () {
     // Watch .less files
     gulp.watch('**/less/*.less', ['rawless']);
 

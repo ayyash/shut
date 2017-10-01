@@ -20,12 +20,12 @@
 .expandlist {
 	.h {
 		
-		.pddr;
-		&:before {  #pointer > .right(); }
+	//	.pddr;
+	//	&:before {  #pointer > .right(); }
 	}
 	&.toggle {
 		.h {
-			&:before {#pointer > .diagonaldownright(); }
+			// &:before {#pointer > .diagonaldownright(); }
 		}
 	}
 	.guts {
@@ -89,4 +89,25 @@
 /* hide tab titles */
 .subclienttabs .tabtitle {
 	display: none;
+}
+
+
+/* poplist */
+
+.poplist {
+	.guts {
+		background-color: @inversecolor;
+		border: 3px solid @greydark;
+	//	.basicballoon;
+		position: absolute;
+		&:after {
+			border-color: @inversecolor;
+		//	#arrow > .above(8px);
+		}
+	}
+	li {
+		&:hover {
+			background-color: @lightyellow;
+		}
+	}
 }
