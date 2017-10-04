@@ -68,31 +68,31 @@
 }
 
 #border-radius {
-	.all (@radius: 2px) when (@radius > 0) {
+	.all (@radius: 2px) when (@radius > -1) {
 		-webkit-border-radius: @radius;
 		-moz-border-radius: @radius;
 		border-radius: @radius;
 	}
 
-	.topright(@radius: 2px) when (@radius > 0){
+	.topright(@radius: 2px) when (@radius > -1){
 		-webkit-border-top-right-radius: @radius;
 		-moz-border-radius-topright: @radius;
 		border-top-right-radius: @radius;
 	}
 
-	.topleft(@radius: 2px)  when (@radius > 0){
+	.topleft(@radius: 2px)  when (@radius > -1){
 		-webkit-border-top-left-radius: @radius;
 		-moz-border-radius-topleft: @radius;
 		border-top-left-radius: @radius;
 	}
 
-	.bottomright(@radius: 2px)  when (@radius > 0){
+	.bottomright(@radius: 2px)  when (@radius > -1){
 		-webkit-border-bottom-right-radius: @radius;
 		-moz-border-radius-bottomright: @radius;
 		border-bottom-right-radius: @radius;
 	}
 
-	.bottomleft(@radius: 2px)  when (@radius > 0){
+	.bottomleft(@radius: 2px)  when (@radius > -1){
 		-webkit-border-bottom-left-radius: @radius;
 		-moz-border-radius-bottomleft: @radius;
 		border-bottom-left-radius: @radius;

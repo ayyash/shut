@@ -2109,6 +2109,18 @@ http://vinepaper.com/shutv2/elements/validation
 .gtick:before {
   content: "";
 }
+.closelabel {
+  display: inline-block;
+  position: absolute;
+  right: 10px;
+  top: 30%;
+  font-size: 11.2px;
+  font-size: 1.12rem;
+  /* mimic a href */
+  color: #0c00b4;
+  text-decoration: none;
+  cursor: pointer;
+}
 .gerrorbox {
   padding: 15px 10px;
   padding-right: 30px;

@@ -109,6 +109,7 @@
 
 
                 if (!s.sticky) {
+                    // TODO: make delay configurable
                     base.$label.delay(3000).animate({ opacity: 0 }, "slow", function() {
                         base.$label.remove();
                         base.options.locked = false;
