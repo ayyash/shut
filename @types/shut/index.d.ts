@@ -15,13 +15,13 @@ interface Array<T> {
 
 
 interface String {
-    toSentenceCase(): String;
-    format(...items: string[]): String;
-    isNullOrEmpty(): Boolean;
-    toBoolean(): Boolean;
-    toPrettyPrice(): String;
-    toNormalNumber(): String;
-    toPrettyNumber(): String;
+    toSentenceCase(): string;
+    format(...items: string[]): string;
+    isNullOrEmpty(): boolean;
+    toBoolean(): boolean;
+    toPrettyPrice(): string;
+    toNormalNumber(): string;
+    toPrettyNumber(): string;
 
 }
 declare var _debug: any;
