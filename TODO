@@ -1,0 +1,8 @@
+
+Todo:
+  ☐ Change the grid system to match bootstrap
+  ☐ Rewrite readme to include creating the minisite, and keep minisite as an example
+  ☐ Consider merging the media queuries in respective less files
+  ☐ Place framework into framework, and variable-ize all properties
+  ☐ Create vars in framework, and work on an overwriter
+  ☐ Make icons optional

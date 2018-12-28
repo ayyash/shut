@@ -1,0 +1,85 @@
+/*******************/
+
+/* site defined vars */
+
+@font-url: '../fonts/';
+@image-url: '../images/';
+// framework less file location
+@shut-url: "./src/less/";
+@iconfont: 'vpicons';
+
+
+@rem-enabled: 		true;
+@radius-enabled: 	true;
+/* framework vars */
+
+@fontface: 		-apple-system, system-ui,BlinkMacSystemFont,"Segoe UI","Roboto","Fira Sans","Helvetica Neue"Arial,sans-serif;
+@arfontface: 	Traditional Arabic,tahoma,sans-serif;
+@baseFontSize: 	1.4; // in rem
+// font weight
+@lightweight: 	300;
+@normalweight: 	400;
+@boldweight: 	700;
+
+// default responsive breakpoints, use with sh.media.**.less in sh.imports
+@screen-xs: 480px; // special cases
+@screen-sm: 600px; // mobile interface
+@screen-md: 720px; // tablet portrait
+@screen-lg: 960px; // the usual desktop and landscape tablets
+@screen-xl: 1280px; // unusually large with special treatment, else always fall back to normal 960
+@screen-ds: 1600px; // up above desktop
+
+// colors
+// TODO: get rid of same color, depend on a mixin (or css)
+@color: 			#202020; // basic text color
+@inversecolor: 		#fff; // the inverse of basic text
+@linkcolor:			#0c00b4;
+@visitedlinkcolor:	#800080;
+@altlinkcolor: 		#048bca;
+@red: 				#f31109;
+@lightred: 			#ffaa90;
+@yellow: 			#ffc400;
+@lightyellow: 		#ffed75;
+@green: 			#57b347;
+@lightgreen: 		#dcffae;
+@blue: 				#0097A7;
+@lightblue: 		#d7fffc;
+@grey: 				#f3f3f3;
+@greynormal: 		#999999; // TODO: a better word
+@greydark: 			#263238;
+@textlight: 		#959595;
+@textlighter: 		#cccccc;
+
+@radius: 	5px;
+/* spacing and layout */
+
+@space: 	0.5rem;
+/* margin bottoms */
+@doubleSpace: 	1rem;
+@extraSpace: 	1.5rem;
+/* pads around boxed content */
+
+@labelPadding: 1px 3px 2px;
+@hMargin: 		@space; // margins of h1-h5
+@boxborder: 	1px; // for white boxes
+@boxpadding: 	0.7rem;
+@listSpacing: 	0.7rem; // lists spacing (multiplied by two for padding and margin)
+/* grid layout */
+
+@gridColumns: 	20;
+/* does not affect wrapper, it makes space around it */
+
+@gridColumnWidth: 60px;
+/* affects the wrapper width thus the content natural width, 60 => 1024 sizes */
+
+@gridGutterWidth: 25px;
+/* affects wrapper and site width */
+
+@wrapper: 	12; // columns
+@mainpad: 	10px;
+// dimentions of the directionalwrapper of pop dialogs
+@dialogdimtop: 		60px;
+@dialogdimbottom:	5px;
+@dialogdimleft: 	5px;
+@dialogdimright: 	5px;
+@siteWidth: (@gridColumns * @gridColumnWidth)+(@gridGutterWidth * (@gridColumns - 1))+2 * @mainpad;
