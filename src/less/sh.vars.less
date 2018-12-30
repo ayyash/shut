@@ -1,0 +1,112 @@
+/*******************/
+/* site defined vars */
+
+@font-url: '../fonts/';
+@image-url: '../images/';
+
+// framework less file location
+@shut-url: "./src/less/";
+
+@iconfont: 'vpicons';
+
+@rem-enabled: true;
+@enable-rounded: true;
+
+
+/* framework vars */
+
+
+// colors
+
+@text-color: #202020; // basic text color
+@text-light: #959595;
+@text-lighter: #cccccc;
+@text-dark: #202020;
+
+
+@white:		#fff; // the inverse of basic text
+@grey-light:#f3f3f3;
+@grey: 		#999999;
+@grey-dark: #263238;
+@black: 	#000;
+
+
+@linkcolor: 	#0c00b4;
+@visitedcolor:	#800080;
+@altcolor: 		#048bca; // alt link color
+
+// main colors only, the rest should be by user definition
+@red: 	#f31109;
+@yellow:#ffc400;
+@green: #57b347;
+@blue: 	#0097A7;
+
+
+@red-light: lighten(@red, 20%);
+@yellow-light: lighten(@yellow, 20%);
+@green-light: lighten(@green, 20%);
+@blue-light: lighten(@blue, 20%);
+
+@btn-diff-bg: @red;
+
+
+@fontface: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Roboto", "Fira Sans", "Helvetica Neue", Arial, sans-serif;
+@font-size: 1.4; // in rem
+@font-size-larger: @font-size * 1.8;
+@font-size-large: @font-size * 1.3;
+@font-size-small: @font-size * 0.9;
+@font-size-smaller: @font-size * 0.8;
+
+@font-weight-light: 300;
+@font-weight: 400;
+@font-weight-bold: 700;
+
+@fontface-ar: Traditional Arabic, tahoma, sans-serif;
+
+// default responsive breakpoints, use with sh.media.**.less in sh.imports
+@screen-xs: 480px; // special cases
+@screen-sm: 600px; // mobile interface
+@screen-md: 720px; // tablet portrait
+@screen-lg: 960px; // the usual desktop and landscape tablets
+@screen-xl: 1280px; // unusually large with special treatment, else always fall back to normal 960
+@screen-ds: 1600px; // up above desktop
+
+
+@radius: 5px;
+
+
+/* spacing and layout */
+
+@space: 		0.5rem;
+@halfspace: 	@space * 0.5;
+@extraspace: 	@space * 1.5;
+@doublespace: 	@space * 2;
+
+@box-border: 1px; // for white boxes
+@box-padding: 0.7rem;
+@list-spacing: 0.7rem; // lists spacing (multiplied by two for padding and margin)
+@label-padding: 1px 3px 2px;
+
+/* grid layout */
+@grid-columns: 		20; 	/* does not affect wrapper, it makes space around it */
+@grid-column-width: 60px; /* affects the wrapper width thus the content natural width, 60 => 1024 sizes */
+@grid-gutter-width:25px; /* affects wrapper and site width */
+@wrapper: 12; // columns
+
+
+
+@mainpad: 10px;
+// dimentions of the directionalwrapper of pop dialogs
+@dialog-top: 60px;
+@dialog-bottom: 5px;
+@dialog-left: 5px;
+@dialog-right: 5px;
+
+@sitewidth: (@grid-columns * @grid-column-width) + (@grid-gutter-width * (@grid-columns - 1))+ 2 * @mainpad;
+
+
+
+
+
+
+

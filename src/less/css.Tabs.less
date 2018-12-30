@@ -1,0 +1,43 @@
+
+/* client tabs*/
+
+.tabs {
+	position: relative;
+	border-bottom: 3px solid @grey;
+	padding-top: 5px;
+	margin-bottom: 20px;
+	clear: both;
+	.clearfix();
+	&.small {
+		height: 24px;
+	}
+	li {
+	
+		float: left;
+		background-color: @grey-light;
+		padding: 10px;
+		margin-right: 3px;
+		cursor: pointer;
+		&:hover {
+			margin-top: -2px;
+			padding-bottom: 12px;
+		}
+		&.selected {
+			background-color: @white;
+			a {
+				color: @text-color;
+			}
+		}
+	}
+}
+
+.tabguts {
+	display: none;
+}
+
+
+/* hide tab titles */
+
+.subclienttabs .tabtitle {
+	display: none;
+}

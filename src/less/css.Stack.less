@@ -6,7 +6,7 @@
 
 .indblock {
 	/* specially used when radiobuttons, checkboxes or small icons are to be placed on first line of a group, and pad everything else to the right */
-	padding-left: @gridGutterWidth;
+	padding-left: @grid-gutter-width;
 	position: relative;
 }
 
@@ -46,7 +46,7 @@
 
 .overview legend {
 	display: block;
-	font-weight: @boldweight;
+	font-weight: @font-weight-bold;
 	padding-top: @space/2;
 	padding-bottom: @space/2;
 }
@@ -64,11 +64,11 @@
 .detailed dt, .detailed fieldset legend {
 	float: left;
 	/*.columns(2);*/
-	font-weight: @normalweight;
+	font-weight: @font-weight;
 	/* unusual decision to pad top to make coding easier */
 	padding-top: 5px;
 	display: block;
-	.clearfix;
+	.clearfix();
 }
 
 .detailed dd, .detailed fieldset>.stack, .detailed>.stack {
@@ -83,17 +83,17 @@
 		padding-bottom: 0;
 	}
 	dt {
-		.small;
+		.small();
 		margin-bottom: 20px;
 	}
 	.stackitem {
 		margin-bottom: 20px;
 	}
 	&.xlarge dd {
-		.large;
+		.large();
 	}
 	&.xxlarge dd {
-		.larger;
+		.larger();
 	}
 }
 
@@ -108,7 +108,7 @@ ol.fox {
 	>li>label {
 		position: absolute;
 		left: 0;
-		.c2;
+		.c2();
 	}
 }
 
@@ -117,7 +117,7 @@ ol.fox {
 
 ul.commasep li {
 	display: inline-block;
-	border-bottom: 1px solid @inversecolor;
+	border-bottom: 1px solid @white;
 }
 
 ul.commasep li:after {
@@ -135,12 +135,12 @@ ul.commasep li:last-child:after {
 .stlist(@factor, @headerElement) {
 	>li {
 		margin-bottom: @mainpad;
-		padding-left: (@gridColumnWidth + @gridGutterWidth) * @factor;
+		padding-left: (@grid-column-width + @grid-gutter-width) * @factor;
 	}
 	@{headerElement} {
 		float: left; 
 		.columns(@factor);
-		margin-left: (@gridColumnWidth + @gridGutterWidth) * -@factor; 
+		margin-left: (@grid-column-width + @grid-gutter-width) * -@factor; 
 	} 
 } 
 .tablelist {

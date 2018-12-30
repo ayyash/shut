@@ -9,7 +9,7 @@
 	margin: 0 auto;
 	position: relative;
 }
-.contentwrapper {
+.container {
 	padding: @mainpad;
 }
 
@@ -19,28 +19,19 @@ header {
 	width: 100%;
 }
 
-div.poppage {
-	margin: 0 auto;
-	position: relative;
-}	
-
 h1.sitelogo {
 	display: block;
+	float: left;
 	a {
 		display: block;
-		text-indent: -4000px;
-		z-index:4999;
-		overflow: hidden;
 		height: 100%;
 	}
-	float: left;
 }
 
 
 
 /**** top area */
 header  nav.tools {
-	
 
 	>ul, >ul > li {
 		display: inline-block;
@@ -54,121 +45,8 @@ header nav.main {
 }
 /* navigation */
 nav>ul>li>a {
-	padding: @extraSpace/2;
+	padding: @extraspace/2;
 	margin-bottom: 1px;
 	display: block;
 }
 
-
-/* lightboxes */
-.dialog, .dialogcontent {
-	width: 90%;
-	min-height: 300px;
-	/* this needs a lot of work*/
-	display: none;
-	position: fixed;
-    top: 10%;
-	
-	z-index: 5000;
-	/*.box-shadow-2(inset 0 0 3px rgba(0,0,0, 0.9), 0 0 10px rgba(0,0,0, 0.9));*/
-	
-	.border-radius(@radius);
-	left: 50%;
-	background-color:@inversecolor;
-	padding: @boxpadding;
-	outline: none;
-	
-}
-.dialogcontent {
-	background-color:@inversecolor;
-	padding: @boxpadding;
-}
-#jqmContent {
-	 width:100%; min-height:90%; 
-	 display: block; clear:both; margin:auto; overflow-y: auto;
-	 overflow-x: hidden;
-}
-.directionwrapper {
-	overflow-y: auto;
-	-webkit-overflow-scrolling: touch;
-
-	overflow-x: hidden;
-	position: absolute;
-	top: @dialogdimtop;
-	bottom: @dialogdimbottom;
-	left: @dialogdimleft;
-	right: @dialogdimright;
-
-	#jqmContent {
-		overflow-y:  hidden;
-		overflow-x: hidden;
-		/*height: 100%;*/
-	}
-}
-
-.widewindow {
-	/*width: 95%; REDO */
-}
-.tallwindow {
-	bottom: 20px;
-}
-.respwindow {
-	width: 95%!important;
-}
-.tightwindow {
-	.columns(3);
-}
-.shortwindow {
-	height: 300px; 
-}
-.autowindow { /* use this with ajaxed content only */
-	min-height: 120px;
-	height: auto;
-	.directionwrapper {
-		position: static; /* is this right?*/
-		padding: 	@dialogdimbottom @dialogdimleft;
-	
-	}
-}
-h3.jqmTitle {
-	
-	.border-radius(@radius);
-}
-.jqmOverlay { background-color: rgba(0,0,0,0.8); }
-
-.shortwindow #jqmContent { 
-	height: 90%;
-}
-.dialog div.loading {
-	padding: 35px;
-	width: 30px;
-	margin: auto;
-	#rem > .font-size(1.8);
-	
-	background-color: @inversecolor;
-	background-position: center;
-	background-repeat: no-repeat;
-}
-
-
-
-/*Basic Badge */
-
-.abadge {
-	position: relative;
-	.tail {
-		position: absolute;
-		right: 0;
-		top: 0;
-	}
-}
-
-.pbadge {
-	position: relative;
-	padding: @boxpadding;
-	.tail {
-		position: absolute;
-		top: @boxpadding;
-		right: @boxpadding;
-	}
-}

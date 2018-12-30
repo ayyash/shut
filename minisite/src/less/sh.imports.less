@@ -1,27 +1,20 @@
 
 
-// you vars
-@import url("sh.vars.less");
-// your icons
-@import url("sh.icons.less");
+// you vars // TODO: allow sections only
+
 
 // shut framework
 
+// Import all of shut
 @import url("@{shut-url}sh.less");
-.importLayout();
-// .importExpands();
-// .importForms();
-.importLists();
-.importStack();
-.importTable();
 
-// your custom extension to shut framework
-@import url("sh.Framework.less"); 
+// or choose what to import
+
 
 // inject:uiless
 // endinject
 
-
+// TODO: v4: remove seperate media files, every less should have its own media container relevant... but that maybe  aproblem
 // media files: for minmum supported, remove "only screen and ...", for maximum supported, comment out the whole line
 @import url("@{shut-url}sh.media.1.xs.less") only screen and (min-width: @screen-xs);
 @import url("@{shut-url}sh.media.2.sm.less") only screen and (min-width: @screen-sm);

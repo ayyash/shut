@@ -1,0 +1,90 @@
+// RESET
+button {
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    &:focus {
+        outline: 1px dotted;
+        outline: 5px auto -webkit-focus-ring-color;
+    }
+}
+
+.btntemplate(){
+	padding: 13px 15px; // TODO: vars
+	position: relative;
+	display: inline-block;
+	transition: background-color .518s;
+	line-height: 1;
+	.border-radius(@radius);
+	text-transform: uppercase;
+	font-size: 90%;
+	cursor: pointer;
+	border: 0;
+	-webkit-appearance: none;
+
+	&.loading-small {
+		background-position: center top;
+	}
+	
+}
+
+.btn,
+.btn-rev,
+.btn-fake,
+.btn-diff {
+    .btntemplate();
+}
+
+.btn {
+    color: @linkcolor;
+    background-color: @grey-light;
+    &:hover {
+        background-color: fade(@grey-light, 50%);
+        box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.5);
+    }
+}
+
+.btn-rev {
+    color: @white;
+    background-color: @linkcolor;
+    .gradient(lighten(@linkcolor, 2%), @linkcolor);
+    &:hover {
+        background-color: lighten(@linkcolor, 5%);
+        .gradient(lighten(@linkcolor, 10%), lighten(@linkcolor, 5%));
+        color: @white;
+    }
+}
+
+.btn-fake {
+	.btntemplate();
+	font-weight: @font-weight-bold;
+	&:hover {
+		color: @linkcolor;
+	}
+}
+
+
+.btn-diff {
+    background-color: @btn-diff-bg;
+    .fcolor(@btn-diff-bg);
+    &:hover {
+        background-color: darken(@btn-diff-bg, 20%);
+        .fcolor(darken(@btn-diff-bg, 20%));
+    }
+}
+
+.btn-sm {
+    padding: 5px 10px; // TODO: vars ore remove
+}
+
+
+.btn-busy {
+	// busy buttons loading effect when disabled
+	&[disabled] {
+		color: @text-light;
+		background-color: @grey;
+		
+        background-position: center 82%;
+        // TODO: loading effect
+	}
+}

@@ -1,0 +1,96 @@
+.red {
+    color: @red;
+}
+
+.green {
+    color: @green;
+}
+
+.blue {
+    color: @blue;
+}
+
+.light {
+    color: @text-light;
+}
+
+.lighter {
+    color: @text-lighter;
+}
+
+// label
+.label {
+    padding: @label-padding;
+    .border-radius(@radius);
+    display: inline-block;
+}
+
+.colorlabel (@c) {
+    .label();
+    background-color: @c;
+    .fcolor(@c);
+}
+
+.label-yellow {
+    .colorlabel(@yellow);
+}
+
+.label-yellow-light {
+    .colorlabel(@yellow-light);
+}
+
+.label-red {
+    .colorlabel(@red);
+}
+
+.label-red-light {
+    .colorlabel(@red-light);
+}
+
+.label-green {
+    .colorlabel(@green);
+}
+
+.label-green-light {
+    .colorlabel(@green-light);
+}
+
+.label-blue {
+    .colorlabel(@blue);
+}
+
+.label-blue-light {
+    .colorlabel(@blue-light);
+}
+
+.label-grey {
+    .colorlabel(@grey);
+}
+
+.label-grey-dark {
+    .colorlabel(@grey-dark);
+}
+
+.label-white {
+    border: @box-border solid @grey;
+    .label();
+}
+
+.label-grey-light {
+    .colorlabel(@grey-light);
+}
+
+// use this when it stops making noise
+/****
+
+@set: {
+  one: blue;
+  two: green;
+  three: red;
+}
+.set {
+  each(@set, {
+    @{key}-@{index}: @value;
+  });
+}
+*/

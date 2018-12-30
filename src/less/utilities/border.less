@@ -1,0 +1,32 @@
+
+/* Border Radius*/
+.border-radius(@radius: 2px) {
+	#border-radius > .all(@radius);
+}
+
+#border-radius() {
+	.all (@radius: 2px) when (@radius > -1) {
+	
+		border-radius: @radius;
+	}
+
+	.topright(@radius: 2px) when (@radius > -1){
+		
+		border-top-right-radius: @radius;
+	}
+
+	.topleft(@radius: 2px)  when (@radius > -1){
+		
+		border-top-left-radius: @radius;
+	}
+
+	.bottomright(@radius: 2px)  when (@radius > -1){
+		
+		border-bottom-right-radius: @radius;
+	}
+
+	.bottomleft(@radius: 2px)  when (@radius > -1){
+		
+		border-bottom-left-radius: @radius;
+	}
+}

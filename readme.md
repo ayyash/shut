@@ -21,6 +21,8 @@ In order to use styles as included from the framework, use dist/css/sh.min.css. 
 ```
 
 The first step to get started is to setup your own seed, which contains at least the following files:
+okay read https://getbootstrap.com/docs/4.1/getting-started/theming/ to learn how to write this section
+
 
 1. js/sh.data.js
 2. less/sh.vars.less

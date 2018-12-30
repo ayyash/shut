@@ -1,10 +1,9 @@
 ﻿
-/****************TODO: remove project specific **************/
-
+/****************TODO: remove project specific and match mdinput **************/
 
 .input() {
 	/* used to mimic the text input for regular text */
-	border: 1px solid @greynormal;
+	border: 1px solid @grey;
 	padding: 5px 0 5px 3px;
 	.border-radius(@radius);
 	background-repeat: no-repeat;
@@ -15,7 +14,16 @@
 
 /* form fields */
 
-input[type="text"], input[type="tel"], input[type="email"], input[type="time"], input[type*="date"], input[type="number"], input[type="password"], textarea, select, .mimictextinput {
+input[type="text"], 
+input[type="tel"], 
+input[type="email"], 
+input[type="time"], 
+input[type*="date"], 
+input[type="number"], 
+input[type="password"], 
+textarea,
+option, 
+select, .mimictextinput {
 	.input();
 	&:focus + span.req {
 		display: none;
@@ -29,19 +37,16 @@ input[type="file"] {
 }
 
 input:-ms-input-placeholder {
-	color: @textlight;
+	color: @text-light;
 }
 
 input::-webkit-input-placeholder {
-	color: @textlight;
+	color: @text-light;
 }
 
-input:-moz-placeholder {
-	color: @textlight;
-}
 
 input::-moz-placeholder {
-	color: @textlight;
+	color: @text-light;
 }
 
 .mimictextinput {
@@ -78,7 +83,7 @@ span.req {
 		display: block;
 		content: "*";
 		#rem > .font-size(1.8);
-		font-weight: @boldweight;
+		font-weight: @font-weight-bold;
 		line-height: 1.5;
 		color: @red;
 	}
@@ -96,7 +101,7 @@ span.req {
 
 input.error, textarea.error, select.error, label.error, span.error, div.error {
 	border-color: @red;
-	background-color: @lightred;
+	background-color: @red-light;
 }
 
 
@@ -105,7 +110,7 @@ input.error, textarea.error, select.error, label.error, span.error, div.error {
 .errlabel {
 	background-color: @red;
 	color: #fff;
-	.smaller;
+	.smaller();
 	position: absolute;
 	bottom: -18px;
 	left: 5px;
@@ -130,7 +135,7 @@ input.error, textarea.error, select.error, label.error, span.error, div.error {
 .herrlabel {
 	background-color: @red;
 	color: #fff;
-	.smaller;
+	.smaller();
 	position: absolute;
 	top: 0;
 	right: -54px;
@@ -151,9 +156,9 @@ input.error, textarea.error, select.error, label.error, span.error, div.error {
 
 .cerrlabel {
 	/* custome error label used with ValudCustom*/
-	.redtext;
-	.smaller;
-	.block;
+	.label-red();
+	.smaller();
+	display: block;
 }
 
 
@@ -165,8 +170,8 @@ input.error, textarea.error, select.error, label.error, span.error, div.error {
 /* display badge for general errors */
 
 .vsticker {
-	.yellowtext;
-	.smaller;
+	.label-yellow();
+	.smaller();
 }
 
 .checkbox, .radio {
@@ -182,7 +187,6 @@ input.error, textarea.error, select.error, label.error, span.error, div.error {
 		display: inline-block;
 		&:before {
 			border: 1px solid @grey;
-			.box-sizing(border-box);
 			content: " ";
 			height: 20px; 
 			width: 20px;

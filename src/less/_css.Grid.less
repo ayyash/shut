@@ -1,34 +1,30 @@
 ﻿
-// using grid system or display flex... also being responsive without choice, css designer should know better
+// TODO: to do new grid sytem alike bootstrap grid
 
-
-
-
-
-.columns(@column-span: 1, @shift: 0) {
-	width: (@grid-column-width + @grid-gutter-width) * @column-span - @shift;
+.columns(@columnSpan: 1, @shift: 0) {
+	width: (@grid-column-width + @grid-gutter-width) * @columnSpan - @shift;
 }
 
-.rcolumns(@column-span: 1, @shift: 0) {
-	width: percentage((@column-span/@wrapper)) - @shift;
+.rcolumns(@columnSpan: 1, @shift: 0) {
+	width: percentage((@columnSpan/@wrapper)) - @shift;
 }
 
 .rows(@rowSpan: 1, @shift: 0) {
 	height: (@grid-column-width + @grid-gutter-width ) * @rowSpan - @shift;
 }
 /* changed */
-.padshift(@column-span: 1, @shift: 0) {
+.padshift(@columnSpan: 1, @shift: 0) {
 	
-	padding-left: (@grid-column-width + @grid-gutter-width) * @column-span + @shift;
+	padding-left: (@grid-column-width + @grid-gutter-width) * @columnSpan + @shift;
 }
 	/* changed, make marginshift whole columns along with gutters so that the beginning starts at anew column */
-.marginshift(@column-span: 1, @shift: 0) {
+.marginshift(@columnSpan: 1, @shift: 0) {
 
-	margin-left: (@grid-column-width + @grid-gutter-width) * @column-span + @shift;
+	margin-left: (@grid-column-width + @grid-gutter-width) * @columnSpan + @shift;
 }
 
-.rmarginshift(@column-span: 1, @shift: 0) {
-	margin-left: percentage((@column-span/@wrapper)) + @shift;
+.rmarginshift(@columnSpan: 1, @shift: 0) {
+	margin-left: percentage((@columnSpan/@wrapper)) + @shift;
 }
 
 .minheight(@rowSpan: 1, @shift: 0) {
@@ -39,21 +35,21 @@
 	max-height: ( @grid-column-width + @grid-gutter-width)* @rowSpan - @shift;
 }
 	/* table cells dont have gutters, and they dont follow the same grid rules, but having general templates is helpful */
-.cell(@column-span: 1, @shift: 0) {
+.cell(@columnSpan: 1, @shift: 0) {
 
-	width: (@grid-column-width * @column-span - @shift);
+	width: (@grid-column-width * @columnSpan - @shift);
 }
 
-.gridcell(@column-span: 1, @shift: 0) {
-	width: ((@grid-column-width + @grid-gutter-width) * @column-span - @shift);
+.gridcell(@columnSpan: 1, @shift: 0) {
+	width: ((@grid-column-width + @grid-gutter-width) * @columnSpan - @shift);
 }
 
 .sitewidth(@grid-columns) {
 	width: (@grid-columns * @grid-column-width) + (@grid-gutter-width * (@grid-columns - 1));
 }
 
-.colsize(@column-span: 1, @shift: 0) {
-	@colsize: ((@grid-column-width * @column-span) + (@grid-gutter-width * (@column-span - 1)) - @shift);
+.colsize(@columnSpan: 1, @shift: 0) {
+	@colsize: ((@grid-column-width * @columnSpan) + (@grid-gutter-width * (@columnSpan - 1)) - @shift);
 }
 
 .col() {
@@ -113,7 +109,7 @@
 }
 
 .p100 {
-	padding: @extraspace;
+	padding: @extraSpace;
 }
 /* grids with paddinggs */
 .up > li {

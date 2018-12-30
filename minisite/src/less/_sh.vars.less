@@ -73,9 +73,9 @@
 @listSpacing: 0.7rem; // lists spacing (multiplied by two for padding and margin)
 
 /* grid layout */
-@gridColumns: 20; /* does not affect wrapper, it makes space around it */
-@gridColumnWidth: 60px; /* affects the wrapper width thus the content natural width, 60 => 1024 sizes */
-@gridGutterWidth:25px; /* affects wrapper and site width */
+@grid-columns: 20; /* does not affect wrapper, it makes space around it */
+@grid-column-width: 60px; /* affects the wrapper width thus the content natural width, 60 => 1024 sizes */
+@grid-gutter-width:25px; /* affects wrapper and site width */
 @wrapper: 12; // columns
 
 
@@ -86,7 +86,7 @@
 @dialogdimbottom: 5px;
 @dialogdimleft: 5px;
 @dialogdimright: 5px;
-@siteWidth: (@gridColumns * @gridColumnWidth) + (@gridGutterWidth * (@gridColumns - 1))+ 2 * @mainpad;
+@siteWidth: (@grid-columns * @grid-column-width) + (@grid-gutter-width * (@grid-columns - 1))+ 2 * @mainpad;
 
 
 

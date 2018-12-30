@@ -1,0 +1,90 @@
+
+/* icons*/
+
+.symbolDef() {
+	font-family: @iconfont;
+	text-transform: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	display: inline-block;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+    speak: none;
+	font-smooth: always;
+	/* Enable Ligatures ================ */
+	letter-spacing: 0;
+	-webkit-font-feature-settings: "liga";
+	-moz-font-feature-settings: "liga=1";
+	-moz-font-feature-settings: "liga";
+	-ms-font-feature-settings: "liga" 1;
+	-o-font-feature-settings: "liga";
+	font-feature-settings: "liga";
+    -webkit-font-variant-ligatures: discretionary-ligatures;
+    font-variant-ligatures: discretionary-ligatures;
+	/* ligatures? */
+	content: attr(data-icon);
+
+}
+
+// override in sh.framework
+.symbol {
+	&:before {
+		.symbolDef();
+	}
+}
+
+.symbolAfter {
+	&:after {
+		.symbolDef();
+	}
+}
+
+/* using ligature */
+i.liga {
+	.symbolDef();
+}
+
+// generating .icon-name classes from sh.icons.less
+.icon(@name, @value) {
+	.@{name} {
+		&:before {
+			content: @value;
+		}
+	}
+}
+
+.displayIcon(@value) {
+	/*this is for plain icons content */
+	content: @value;
+	font-family: @iconfont;
+}
+
+.getIcon(@value) {
+	.symbol();
+
+	&:before {
+		content: @value;
+	}
+}
+
+.getIcon(@value, @dir) when(@dir = "after") {
+	.symbolAfter();
+	
+	&:after {
+		content: @value;
+	}
+}
+
+.changeIcon(@value) {
+	&:before {
+		content: @value;
+	}
+}
+
+.changeIcon(@value,@dir) when(@dir = "after") {
+	&:after {
+		content: @value;
+	}
+}

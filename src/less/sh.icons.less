@@ -1,29 +1,26 @@
 ﻿
+// copy the file to project to override and create new icons
+// PS. none of these icon vars are used inside the framework directly
 
 @font-face {
-	font-family: '@{iconfont}';
+	font-family: "@{iconfont}";
 	
-	src:url('@{font-url}@{iconfont}.ttf') format('truetype'),
-		url('@{font-url}@{iconfont}.woff') format('woff'),
-		url('@{font-url}@{iconfont}.svg#icons') format('svg');
+	src:url("@{font-url}@{iconfont}.ttf") format("truetype"),
+		url("@{font-url}@{iconfont}.woff") format("woff"),
+		url("@{font-url}@{iconfont}.svg#icons") format("svg");
 	
 	font-weight: normal;
 	font-style: normal;
 }
 @media screen and (-webkit-min-device-pixel-ratio:0) {
     @font-face {
-        font-family: '@{iconfont}';
-        src: url('@{font-url}@{iconfont}.svg#icons') format('svg');
+        font-family: "@{iconfont}";
+        src: url("@{font-url}@{iconfont}.svg#icons") format("svg");
     }
 }
 
-.base {
-	.symbolAfter;
-}
 
-.basedark {
-	.symbolAfter;
-}
+// basic icons, regenerate by icon tools in gulp with the help of icomoon generated variables
 @icon-pencil: "";    .icon(icon-pencil, @icon-pencil);
 @icon-plus: "";    .icon(icon-plus, @icon-plus);
 @icon-flag: "";    .icon(icon-flag, @icon-flag);

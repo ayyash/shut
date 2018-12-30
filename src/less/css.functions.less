@@ -1,0 +1,36 @@
+﻿
+
+/* coloring forground */
+.fcolor (@c) when (lightness(@c) >= 50%) {
+  color: @text-color;
+}
+.fcolor (@c) when (lightness(@c) < 50%) {
+  color: @white;
+}
+
+
+/* rem */
+
+#rem() {
+
+	.font-size(@value) {
+		font-size: @value * 10px;
+	}
+
+	.font-size(@value) when (@rem-enabled) {
+		font-size: @value * 1rem;
+	}
+}
+
+
+// TODO: might remove
+.clearfix() {
+    zoom: 1;
+    &:before,
+    &:after {
+        content: '';
+        display: block;
+        clear: both;
+        zoom: 1;
+    }
+}

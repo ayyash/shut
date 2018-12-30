@@ -1,6 +1,9 @@
 ﻿
+// those are framework specific classes, that can be customized in each client
+// copy the file along with vars file, into project folder, and customize
+
 .shadow() {
-	border: 1px solid @greynormal;
+	border: 1px solid @grey;
 	border-radius: @radius;
 	box-shadow: 0 0 4px -2px rgba(0, 0, 0, 0.9);
 }
@@ -16,20 +19,20 @@
 		background-color: transparent;
 	}
 	&::-webkit-scrollbar-track-piece {
-		background-color: @grey;
-		-webkit-border-radius: 0;
-		-webkit-border-bottom-right-radius: 8px;
-		-webkit-border-bottom-left-radius: 8px;
+		background-color: @grey-light;
+		border-radius: 0;
+		border-bottom-right-radius: 8px;
+		border-bottom-left-radius: 8px;
 	}
 	&::-webkit-scrollbar-thumb:vertical {
 		height: 50px;
-		background-color: @greydark;
-		-webkit-border-radius: 8px;
+		background-color: @grey-dark;
+		border-radius: 8px;
 	}
 	&::-webkit-scrollbar-thumb:horizontal {
 		width: 50px;
-		background-color: @greynormal;
-		-webkit-border-radius: 8px;
+		background-color: @grey;
+		border-radius: 8px;
 	}
 }
 
@@ -38,10 +41,9 @@
 
 .symbol {
 	&:before {
-		.symbolDef();
 		vertical-align: middle;
-		/*-1px*/
 		font-size: 200%;
+		// line-height
 		/* this is because im padding the icon file with 50% of its width */
 	}
 	&.loadings:before {
@@ -51,25 +53,28 @@
 
 .symbolAfter {
 	&:after {
-		.symbolDef();
 		font-size: 200%;
 		vertical-align: middle;
-		/*-1px*/
 	}
 	&.loadings:before {
 		visibility: hidden;
 	}
 }
 
-i {
+i.liga {
 	font-size: 200%;
 }
-
+// for icons with text to the right side
+.icon-inline {
+	&:before {
+        margin-right: 5px;
+    }
+}
 
 /*modal close button */
 
 .jqmClose {
-	.getSymbol(@icon-x);
+	.getIcon(@icon-x);
 	position: absolute;
 	top: 5px;
 	right: 5px;
@@ -89,7 +94,7 @@ i {
  }
 .dialog,
 .dialogcontent {
-	.box-shadow(0 0 50px 1px #000);
+	box-shadow: 0 0 50px 1px #000;
 	padding: 24px;
 }
 .jqmOverlay {
@@ -123,7 +128,7 @@ h1.sitelogo {
 }
 
 .invstack dt {
-	color: @color;
+	color: @text-color;
 }
 
 .detailed fieldset {
@@ -163,18 +168,18 @@ h1.sitelogo {
 
 .ingredients {
 	dt {
-		color: @greynormal;
+		color: @grey;
 	}
 	dd {
-		border-top: 1px solid @grey;
+		border-top: 1px solid @grey-light;
 		min-height: 15px;
 	}
 	&.tight dd {
-		.txtr;
+		.txt-r();
 	}
 	&.xlarge dd {
-		.large;
-		.lightfont;
+		.large();
+		.lightface();
 	}
 }
 
@@ -189,14 +194,14 @@ ul.activelist > li {
 
 ul.activelist > li a {
 	display: block;
-	background-color: @grey;
+	background-color: @grey-light;
 	padding: 2px 5px;
-	color: @color;
+	color: @text-color;
 }
 
 ul.activelist li a:hover {
 	background-color: @linkcolor;
-	color: @inversecolor;
+	color: @white;
 }
 
 
@@ -205,23 +210,23 @@ ul.activelist li a:hover {
 .filterlist {
 	position: relative;
 	.h {
-		.a;
+		.a();
 	}
-	&.toggle {
-		.h {}
-	}
+	// &.toggle {
+	// 	.h {}
+	// }
 	.guts {
 		display: none;
-		background-color: @inversecolor;
+		background-color: @white;
 		left: 0;
 		top: 30px;
 		z-index: 1000;
-		border: 3px solid @greynormal;
+		border: 3px solid @grey;
 		padding: 3px;
 		// .basicballoon;
 		position: absolute;
 		&:after {
-			border-color: @greydark;
+			border-color: @grey-dark;
 		//	#arrow > .above(6px);
 		}
 	}
@@ -232,13 +237,13 @@ ul.activelist li a:hover {
 			padding: 3px;
 		}
 		&:hover {
-			background-color: @lightyellow;
+			background-color: @yellow-light;
 		}
 		&.selected {
-			background-color: @grey;
+			background-color: @grey-light;
 		}
 		&.selected a {
-			color: @color;
+			color: @text-color;
 		}
 	}
 }
@@ -247,32 +252,32 @@ ul.activelist li a:hover {
 /* bordred */
 
 .bthin, .bthick {
-	border-color: @greynormal;
+	border-color: @grey;
 }
 
 
 /* TABULATED */
 
 table.tabulated th {
-	font-weight: @boldweight;
+	font-weight: @font-weight-bold;
 }
 
 table.striped {
 	tbody tr:nth-child(odd) {
-		background-color: @grey;
+		background-color: @grey-light;
 	}
 }
 
 table.rich {
 	th, td {
-		border: 1px solid @grey;
+		border: 1px solid @grey-light;
 		padding: 5px;
 	}
 	th {
-		font-weight: @boldweight;
-		background-color: @grey;
-		border: 1px solid @greynormal;
-		border-bottom: 2px solid @greydark;
+		font-weight: @font-weight-bold;
+		background-color: @grey-light;
+		border: 1px solid @grey;
+		border-bottom: 2px solid @grey-dark;
 	}
 }
 
@@ -280,7 +285,7 @@ table.rich {
 /* boxes */
 
 .feedbackbox() {
-	.box;
+	.box();
 	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
 	padding: 15px;
 	margin: 10px auto;
@@ -288,11 +293,11 @@ table.rich {
 
 .infobox {
 	.feedbackbox();
-	background-color: @lightblue;
-	.txtc;
+	background-color: @blue-light;
+	.txt-center();
 	.header {
 		color: @blue;
-		.getSymbol(@icon-info);
+		.getIcon(@icon-info);
 		&:before {
 			margin-bottom: 10px;
 			display: block;
@@ -303,20 +308,20 @@ table.rich {
 
 .alertbox {
 	.feedbackbox();
-	background-color: @lightyellow;
+	background-color: @yellow-light;
 	.header {
-		.getSymbol(@icon-exclamation);
+		.getIcon(@icon-exclamation);
 	}
 }
 
 .errorbox {
 	.feedbackbox();
-	background-color: @lightred;
+	background-color: @red-light;
 	border: 1px solid lighten(@red, 45);
 	.header {
 		display: block;
-		.red;
-		.getSymbol(@icon-exclamation);
+		.red();
+		.getIcon(@icon-exclamation);
 		text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
 	}
 }
@@ -324,16 +329,16 @@ table.rich {
 
 .greybox {
 	// added defnitiion
-	border:1px solid @greynormal;
+	border:1px solid @grey;
 }
 /* close lable */
 
 .closelabel {
-	/*.getSymbol(@icon-x);*/
+	/*.getIcon(@icon-x);*/
 	overflow: hidden;
 	width: 20px;
 	height: 20px;
-	.cam;
+	.cam();
 }
 
 
@@ -355,18 +360,18 @@ table.rich {
 } 
 
 input[readonly], input[disabled] {
-	border: 1px solid @grey;
-	color: @textlight;
+	border: 1px solid @grey-light;
+	color: @text-light;
 }
 
 .mimictextinput[data-readonly="readonly"] {
-	border: 1px solid @grey;
-	color: @textlight;
+	border: 1px solid @grey-light;
+	color: @text-light;
 }
 
 .mimictext[data-readonly="readonly"] {
-	border: 1px solid @grey;
-	color: @textlight;
+	border: 1px solid @grey-light;
+	color: @text-light;
 }
 
 
@@ -381,7 +386,7 @@ header nav.tools {
 	right: 0;
 	top: 5px;
 	a {
-		color: @inversecolor;
+		color: @white;
 	}
 }
 
@@ -390,15 +395,10 @@ header nav.tools {
 
 /* keep these last */
 
-.loading, .loadings {
-	background-position: left top;
-	background-repeat: no-repeat;
+.loading {
+
 	background-image: url("@{image-url}iloading.gif");
 	/*min-height: 20px;*/
-}
-
-.loading {
-	min-height: 52px;
 }
 
 .loadings {
@@ -411,7 +411,7 @@ header nav.tools {
 .radio {
 
 	& + label:before {
-		border: 1px solid @grey;
+		border: 1px solid @grey-light;
 	}
 	&:checked + label:before {
 		border:4px solid @green;
@@ -419,13 +419,13 @@ header nav.tools {
 }
 .checkbox {
 	& + label:before {
-		border: 3px solid @greynormal;
+		border: 3px solid @grey;
 	}
 	&:checked + label:before {
 		border: 3px solid @green;
 		background-color: @green;
-		.displaySymbol(@icon-tick);
-		color:@inversecolor;
+		.displayIcon(@icon-tick);
+		color:@white;
 	}
 }
 

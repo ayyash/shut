@@ -1,103 +1,81 @@
-﻿@import url('sh.functions.less');
-html {
-	font-size: 62.5%;
-}
+﻿
 
+
+// you vars
+@import "sh.vars.less";
 
 /* resetting */
+@import "css.Reset";
 
-.reset();
+// include if used
+@import "utilities/arrow";
+@import "utilities/border";
+@import "utilities/gradient";
+@import "utilities/icon";
+
+// your icons
+@import "sh.icons.less";
+
+// functions, required
+@import "css.functions.less";
+
+/* Buttons */
+@import "css.Button.less";
 
 /* GRID */
-@import url('css.Grid.less');
+// TODO: redo
+@import "css.Grid.less";
 
 
 /* Layout  */
-.importLayout() {
-	@import url('css.Layout.less');
-}
+@import "css.Layout.less";
+
+/* Modal */
+@import "css.Modal.less";
+
+/* Badge */
+@import "css.Badge.less";
 
 /*Typography */
-@import url('css.Type.less');
+@import "css.Type.less";
+
+@import "css.Box.less";
+@import "css.Label.less";
 
 /*General */
-@import url('css.General.less');
+@import "css.General.less";
 
 
-/* Expand behavior styles */
-.importExpands() {
-	@import (reference) url('css.Expands.less');
-}
-
+/* Expand behavior styles, make optional */
+// @import "css.Expands";
+@import "css.Tabs.less";
 /* Forms */
-.importForms() {
-	@import url('css.Forms.less');
-}
+@import "css.Forms.less";
 
 /* Lists */
-.importLists(){
-	@import url('css.Lists.less');
-}
+@import "css.Lists.less";
+
 
 /* stacks, overview, and detailed layouts */
-.importStack() {
-	@import  url('css.Stack.less');
-}
+@import  "css.Stack.less";
 
 /* tables and reports general  */
-.importTable() {
-	@import url('css.Table.less');
-}
+@import "css.Table.less";
 
 
-/******* screen vs print **********/
+// your framework overrides
+@import "sh.Framework.less";
 
-@media screen {
-	.forprint {
-		display: none!important;
-	}
-	.forscreen {}
-}
+// inject:uiless
+// endinject
 
+// media
+@import url("sh.media.1.xs.less") only screen and (min-width: @screen-xs);
+@import url("sh.media.2.sm.less") only screen and (min-width: @screen-sm);
+@import url("sh.media.3.md.less") only screen and (min-width: @screen-md);
+@import url("sh.media.4.lg.less") only screen and (min-width: @screen-lg);
+@import url("sh.media.5.xl.less") only screen and (min-width: @screen-xl);
+@import url("sh.media.6.ds.less") only screen and (min-width: @screen-ds); 
 
-/*********************Important****************************/
-
-.inline {
-	display: inline!important;
-}
-
-.block {
-	display: block!important;
-}
-
-.nobold {
-	font-weight: normal!important;
-}
-
-.fhidden {
-	display: none!important;
-	/* this will never be shown not even by js */
-}
-
-
-/* developer notes */
-
-.dev {
-	font: 10px Tahoma!important;
-	color: red!important;
-	background-color: Yellow!important;
-	display: inline!important;
-}
-
-.devgreygb .incols, .devgreygb .rcols {
-	margin-bottom: 20px;
-}
-
-.devgreygb .col, .devgreygb .rcol {
-	background-color: #eee;
-	border-right: 1px solid #ccc;
-}
-
-.www1, .www2, .www3, .www4, .www5, .www6 {
-	display: none;
-}
+// inject:medialess
+// endinject
