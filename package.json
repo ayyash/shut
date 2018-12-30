@@ -4,8 +4,7 @@
   "description": "Shut UI Framework",
   "main": "index.js",
   "scripts": {
-    "start": "gulp init",
-    "install": "npm install --save-dev gulp gulp-autoprefixer gulp-concat gulp-cssmin gulp-htmlmin gulp-inject gulp-less gulp-rename gulp-replace gulp-transform gulp-uglify"
+    "start": "gulp init"
   },
   "repository": {
     "type": "git",
