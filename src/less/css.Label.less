@@ -1,13 +1,28 @@
 .red {
     color: @red;
 }
+.red-light {
+    color: @red-light;
+}
 
 .green {
     color: @green;
 }
+.green-light {
+    color: @green-light;
+}
 
 .blue {
     color: @blue;
+}
+.blue-light {
+    color: @blue-light;
+}
+.yellow {
+    color: @yellow;
+}
+.yellow-light {
+    color: @yellow-light;
 }
 
 .light {
@@ -26,7 +41,7 @@
 }
 
 .colorlabel (@c) {
-    .label();
+   
     background-color: @c;
     .fcolor(@c);
 }
@@ -81,16 +96,15 @@
 }
 
 // use this when it stops making noise
-/****
 
-@set: {
-  one: blue;
-  two: green;
-  three: red;
-}
-.set {
-  each(@set, {
-    @{key}-@{index}: @value;
-  });
-}
-*/
+
+// @set: {
+//   one: blue;
+//   two: green;
+//   three: red;
+// };
+// .set {
+//   each(@set, {
+//     @{key}-@{index}: @value;
+//   });
+// }

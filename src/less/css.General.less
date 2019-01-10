@@ -6,17 +6,13 @@
 	float: right;
 }
  
-// .cf {
-// 	.clearfix();
-// }
-
 .clear{
 	clear: both;
 }
 .txt-r {
 	text-align: right;
 }
-.txt-center {
+.txt-c {
 	text-align: center;
 }
 .txt-l {
@@ -35,6 +31,7 @@
 .spaced, ul.spacedout>li, ol.spacedout>li  {
 	margin-bottom: @space;
 }
+
 .doublespaced, ul.doubledspacedout>li, ol.doublespacedout>li{
 	margin-bottom: @doublespace;
 }
@@ -45,11 +42,25 @@
 .lbreath {
 	padding-left: @space;
 }
+.hbreath {
+	.rbreath;
+	.lbreath;
+}
+.lspace {
+	margin-left: @space;
+}
+.rspace {
+	margin-right: @space;
+}
+.hspace {
+	.lspace;
+	.rspace;
+}
 
 .padtop {
 	padding-top: @space; /* to be used only in extreme cases */
 }
-.margintop {
+.spacetop {
 	margin-top: @space;  /* to be used only in extreme cases */
 }
 
@@ -60,7 +71,6 @@
 
 .center-content {
 	display: flex;
-	height: 300px;
 	justify-content: center;
 	align-items: center;
 }
@@ -69,6 +79,9 @@
 	display: none;
 }
 
+.dinline {
+	display: inline-block;
+}
 
 // added oct 28, close label class for shError
 // TODO: move elsewhere

@@ -1,4 +1,4 @@
-// var gulp = require('gulp');
+var gulp = require('gulp');
 const {rawless} = require('./shut');
 const {shutcss} = require('./fw');
 // exports.aa = function(cb) {
@@ -13,13 +13,13 @@ const {shutcss} = require('./fw');
 //     gulp.watch(['**/js/ui.*.js', '**/js/sh.*.js'], ['rawscripts']);
 // });
 
-function defaultTask(cb) {
+function defaultTask() {
     // place code for your default task here
-    gulp.watch('**/less/*.less', ['rawless']);
+    gulp.watch('**/less/**/*.less', shutcss);
 
     // Watch .js files
-    gulp.watch(['**/js/ui.*.js', '**/js/sh.*.js'], ['rawscripts']);
-    cb();
+    // gulp.watch(['**/js/ui.*.js', '**/js/sh.*.js'], ['rawscripts']);
+    
 }
 
 exports.shutcss = shutcss;

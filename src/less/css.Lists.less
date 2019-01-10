@@ -42,3 +42,18 @@ ul.nestedlist>li>ul, div.nestedlist>ul, ol.nestedlist>li>ol {
 	.thelist();
 	.blist();
 }
+
+
+/**** comma seperated items */
+
+ul.commalist li {
+	display: inline-block;
+}
+
+ul.commalist li:after {
+	content: ", ";
+}
+
+ul.commalist li:last-child:after {
+	content: "";
+}

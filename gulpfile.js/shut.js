@@ -11,7 +11,7 @@ var replace = require('gulp-replace');
 var htmlmin = require('gulp-htmlmin');
 // var del = require('del');
 var shutConfig = require(__dirname + '/shut.config.json');
-
+// change to have srcUrl for minisite only
 exports.rawless = function() {
     return gulp
         .src(shutConfig.srcUrl + 'less/sh.imports.less')

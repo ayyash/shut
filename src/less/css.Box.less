@@ -6,9 +6,9 @@
 }
 
 .colorbox(@c) {
-    .box();
+    
     background-color: @c;
-    .fcolor(@c);
+    .fcolor(@c); 
 }
 
 
@@ -64,6 +64,10 @@
 
 .box-white-normal {
     border: @box-border solid @grey;
+    .colorbox(@white);
+}
+.box-white {
+    border: @box-border solid @grey-light;
     .colorbox(@white);
 }
 

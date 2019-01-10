@@ -1,5 +1,7 @@
 ﻿/* font setting */
-
+html {
+    font-size: @htmlFontBase;
+}
 body,
 textarea,
 select,
@@ -8,6 +10,7 @@ input {
     font-family: @fontface;
     #rem>.font-size(@font-size);
     color: @text-color;
+    line-height: 1;
 }
 
 section {
@@ -18,35 +21,27 @@ p {
     margin-bottom: @space;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5 {
-    margin-bottom: @space;
-}
-
-h1 {
+.f1 {
     #rem>.font-size(3.5 * @font-size);
 }
 
-h2 {
+.f2 {
     #rem>.font-size(3 * @font-size);
 }
 
-h3 {
+.f3 {
     #rem>.font-size(2.5 * @font-size);
 }
 
-h4 {
+.f4 {
     #rem>.font-size(2 * @font-size);
 }
 
-h5 {
+.f5 {
     #rem>.font-size(1.5 * @font-size);
 }
 
-h6 {
+.f6 {
     #rem>.font-size(@font-size);
 }
 
@@ -123,10 +118,6 @@ h1 a:visited {
     color: @visitedcolor;
 }
 
-.hsub {
-    font-size: 70%;
-    .light;
-}
 
 p.normalsize,
 .normalsize p,
