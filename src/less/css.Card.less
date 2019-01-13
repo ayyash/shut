@@ -4,7 +4,7 @@
 .card {
 	position: relative;
 	display: flex;
-	flex-wrap: wrap;
+	// this is killing me in small screens flex-wrap: wrap;
 	border-radius: @radius;
 	overflow: hidden;
 	.tail {
@@ -13,6 +13,11 @@
 	.corner {
 		position: absolute;
 		top: 0;
+		right: 0; 
+	}
+	.corner-bottom {
+		position: absolute;
+		bottom: 0;
 		right: 0;
 	}
 
