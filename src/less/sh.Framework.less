@@ -102,86 +102,7 @@ i.liga {
 }
 /* sitelogo */
 
-h1.sitelogo {
-	margin: 0;
-	// .columns(@logocolumns);
-	height: 5vh;
-	a {
-		// background: transparent url("@{image-url}ilogo.png") no-repeat left center;
-		background-size: contain;
-	}
-}
 
-
-/* stacks */
-
-.overview fieldset {
-	margin-bottom: 20px;
-}
-
-.overview legend {
-	padding-bottom: 20px;
-}
-
-.overview dt {
-	color: @blue;
-}
-
-.invstack dt {
-	color: @text-color;
-}
-
-.detailed fieldset {
-	margin-bottom: 20px;
-}
-
-.detailed dl {
-	margin-bottom: 20px;
-}
-
-.detailed dd, .detailed fieldset > .stack, .detailed > .stack {
-	padding-left: 30%;
-	margin-bottom: 10px;
-}
-
-
-/* STACKS: could be listings or div items, define how multiple field-name-value elements appear together */
-
-.stack {
-	margin-bottom: 10px;
-}
-
-.stack .stackitem, ol.stacklist > li {
-	margin-bottom: 30px;
-	.tight & {
-		margin-bottom: 10px;
-	}
-}
-
-.stack label, ol.stacklist > li label, .stack .label, ol.stacklist > li .label {
-	display: block;
-	padding-bottom: 5px;
-}
-
-
-/* detailed extension: ingredients */
-
-.ingredients {
-	dt {
-		color: @grey;
-	}
-	dd {
-		border-top: 1px solid @grey-light;
-		min-height: 15px;
-	}
-	&.tight dd {
-		.txt-r();
-	}
-	&.xlarge dd {
-		.large();
-		.lightface();
-	}
-}
 
 
 /***** active list */
@@ -249,37 +170,7 @@ ul.activelist li a:hover {
 }
 
 
-/* bordred */
 
-.bthin, .bthick {
-	border-color: @grey;
-}
-
-
-/* TABULATED */
-
-table.tabulated th {
-	font-weight: @font-weight-bold;
-}
-
-table.striped {
-	tbody tr:nth-child(odd) {
-		background-color: @grey-light;
-	}
-}
-
-table.rich {
-	th, td {
-		border: 1px solid @grey-light;
-		padding: 5px;
-	}
-	th {
-		font-weight: @font-weight-bold;
-		background-color: @grey-light;
-		border: 1px solid @grey;
-		border-bottom: 2px solid @grey-dark;
-	}
-}
 
 
 /* boxes */
@@ -327,10 +218,6 @@ table.rich {
 }
 
 
-.greybox {
-	// added defnitiion
-	border:1px solid @grey;
-}
 /* close lable */
 
 .closelabel {

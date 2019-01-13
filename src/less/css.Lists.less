@@ -27,17 +27,16 @@ ul.nestedlist>li>ul, div.nestedlist>ul, ol.nestedlist>li>ol {
 	}
 }
 /* listings */
-
 .alist {
 	.thelist();
 }
 
 .blist {
 	> li {
-		border-bottom: 1px solid @grey-light;
+		border-bottom: 1px solid @rowlist-border;
 	}
 }
-
+// easy quick shortcut
 .rowlist {
 	.thelist();
 	.blist();
@@ -52,6 +51,7 @@ ul.commalist li {
 
 ul.commalist li:after {
 	content: ", ";
+	white-space: pre;
 }
 
 ul.commalist li:last-child:after {

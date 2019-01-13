@@ -4,12 +4,25 @@
 .card {
 	position: relative;
 	display: flex;
+	flex-wrap: wrap;
+	border-radius: @radius;
+	overflow: hidden;
 	.tail {
 		margin-left: auto;
 	}
+	.corner {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+
+}
+.card-v {
+	flex-direction: column; 
 }
 
-.align-center {
+
+.valign-center {
 	align-items: center;
 }
 // TODO: different flex requirents add here

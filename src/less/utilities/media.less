@@ -1,12 +1,7 @@
 .media(@media, @rules) {
-	@media only screen and (min-width: @media) {
+	@media only screen and (min-width: @screen[$@media]) {
 		@rules();
 	}
 	
 }
  
-// .somerule {
-// 	.media(@screen[xs], {
-// 		color: blue;
-// 	})
-// }

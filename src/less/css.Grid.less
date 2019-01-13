@@ -1,197 +1,12 @@
-﻿// using grid system or display flex... also being responsive without choice, css designer should know better
+﻿
 
-// exact width should not be used!
-.columns(@column-span: 1, @shift: 0) {
-    width: (@grid-column-width + @grid-gutter-width) * @column-span - @shift;
-}
-// TODO: use this instaed
-.rcolumns(@column-span: 1, @shift: 0) {
-    width: percentage((@column-span / @wrapper)) - @shift;
-}
 
-.rows(@rowSpan: 1, @shift: 0) {
-    height: (@grid-column-width + @grid-gutter-width) * @rowSpan - @shift;
-}
-
-/* changed */
-
-.padshift(@column-span: 1, @shift: 0) {
-    padding-left: (@grid-column-width + @grid-gutter-width) * @column-span + @shift;
-}
-
-/* changed, make marginshift whole columns along with gutters so that the beginning starts at anew column */
-
-// .marginshift(@column-span: 1, @shift: 0) {
-//     margin-left: (@grid-column-width + @grid-gutter-width) * @column-span + @shift;
-// }
-
-// .rmarginshift(@column-span: 1, @shift: 0) {
-//     margin-left: percentage((@column-span / @wrapper)) + @shift;
-// }
-
-.minheight(@rowSpan: 1, @shift: 0) {
-    min-height: (@grid-column-width + @grid-gutter-width) * @rowSpan - @shift;
-}
-
-.maxheight(@rowSpan: 1, @shift: 0) {
-    max-height: (@grid-column-width + @grid-gutter-width) * @rowSpan - @shift;
-}
-
-/* table cells dont have gutters, and they dont follow the same grid rules, but having general templates is helpful */
-
-.cell(@column-span: 1, @shift: 0) {
-    width: (@grid-column-width * @column-span - @shift);
-}
-
-.gridcell(@column-span: 1, @shift: 0) {
-    width: ((@grid-column-width + @grid-gutter-width) * @column-span - @shift);
-}
-
-.sitewidth(@grid-columns) {
-    width: (@grid-columns * @grid-column-width) + (@grid-gutter-width * (@grid-columns - 1));
-}
-
-.colsize(@column-span: 1, @shift: 0) {
-    @colsize: ((@grid-column-width * @column-span) + (@grid-gutter-width * (@column-span - 1)) - @shift);
-}
-
-/* 12 gird base */
+@wrapper: 12; // columns
+/* affects wrapper and site width */
 
 .w100 {
     width: 100%!important;
 }
-
-.p100 {
-    padding: @extraspace;
-}
-// TODO: remove
-/* min heights */
-
-.h1,
-.uh1 > li {
-    .minheight(1);
-}
-
-.h2,
-.uh2 > li {
-    .minheight(2);
-}
-
-.h3,
-.uh3 > li {
-    .minheight(3);
-}
-
-.h4,
-.uh4 > li {
-    .minheight(4);
-}
-
-.h5,
-.uh5 > li {
-    .minheight(5);
-}
-
-.h6,
-.uh6 > li {
-    .minheight(6);
-}
-
-.h7,
-.uh7 > li {
-    .minheight(7);
-}
-
-.h8,
-.uh8 > li {
-    .minheight(8);
-}
-
-.h9,
-.uh9 > li {
-    .minheight(9);
-}
-
-.h10,
-.uh10 > li {
-    .minheight(10);
-}
-
-.h11,
-.uh11 > li {
-    .minheight(11);
-}
-
-.h12,
-.uh12 > li {
-    .minheight(12);
-}
-
-/* fixed maximum height */
-
-.hm1,
-.uhm1 > li {
-    .maxheight(1);
-}
-
-.hm2,
-.uhm2 > li {
-    .maxheight(2);
-}
-
-.hm3,
-.uhm3 > li {
-    .maxheight(3);
-}
-
-.hm4,
-.uhm4 > li {
-    .maxheight(4);
-}
-
-.hm5,
-.uhm5 > li {
-    .maxheight(5);
-}
-
-.hm6,
-.uhm6 > li {
-    .maxheight(6);
-}
-
-.hm7,
-.uhm7 > li {
-    .maxheight(7);
-}
-
-.hm8,
-.uhm8 > li {
-    .maxheight(8);
-}
-
-.hm9,
-.uhm9 > li {
-    .maxheight(9);
-}
-
-.hm10,
-.uhm10 > li {
-    .maxheight(10);
-}
-
-.hm11,
-.uhm11 > li {
-    .maxheight(11);
-}
-
-.hm12,
-.uhm12 > li {
-    .maxheight(12);
-}
-
-/********* new grid starts here **************/
-@wrapper: 12; // columns
-/* affects wrapper and site width */
 
 .generate-column(@column, @key: c) when (@column > 0) {
     .generate-column((@column - 1), @key);
@@ -217,7 +32,19 @@
         width: calc(percentage(@column / @wrapper) - @halfspace);
     }
 }
+.generate-heights(@column) when (@column > 0){
+    .generate-heights((@column - 1));
+    .h-@{column},
+    .uh-@{column} > li {
+        min-height: (@grid-column-width + @grid-gutter-width) * @column;
+    }
 
+}
+.generate-heights(6);
+
+// default for small screens all percentages apply only for xs
+// then col.md apply 100% for small screens
+// then col.lg apply 100% for small screens
 .row, .row-spaced {
     display: flex;
     flex-wrap: wrap;
@@ -226,42 +53,76 @@
 	justify-content: space-between;
 }
 
-// default for small screens all percentages apply only for xs
-// then col.md apply 100% for small screens
-// then col.lg apply 100% for small screens
 .col,
 .ucol > li {
     width: 100%;
 }
 
 .generate-offset(12);
+.generate-column(12);
 
-.row {
-    .generate-column(12);
-}
 .row-spaced {
     .generate-spaced-column(12);
 }
 
-.media(@screen[md], {
+// grid
+.generate-grid(@column, @key: g) when (@column > 0) {
+    .generate-grid((@column - 1), @key);
+    .@{key}-@{column} {
+        grid-template-columns: percentage(@column / @wrapper) auto;
+       
+    }
+}
+.grid {
+	display: grid;
+	
+}
+.grid.spacedout {
+    grid-gap: @space;
+}
+.generate-grid(11);
+
+// special grid for dl
+dl.grid {
+	dt {
+		grid-column: 1;
+	}
+	dd {
+		grid-column: 2;
+	}
+}
+
+// bthin for grid
+.g-bthin > * {
+	.bthin();
+}
+.g-bthin-dark > * {
+	.bthin-dark();
+}
+
+
+.media(md, {
     
     .generate-offset(12, md);
-    
-    .row {
-        .generate-column(12, md);
-    }
+    .generate-grid(11, gmd);
+    .generate-column(12, md);
+   
     .row-spaced {
         .generate-spaced-column(12, md);
     }
     
 });
 
-.media(@screen[lg], {
-    .row {
-        .generate-column(12, lg); 
-    }
+.media(lg, {
+
+    .generate-offset(12, lg);
+    .generate-grid(11, glg);
+
+    .generate-column(12, lg); 
+    
     .row-spaced {
         .generate-spaced-column(12, lg);
     }
 });
+
 

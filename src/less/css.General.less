@@ -6,7 +6,7 @@
 	float: right;
 }
  
-.clear{
+.clear {
 	clear: both;
 }
 .txt-r {
@@ -24,8 +24,8 @@
 }
 
 .breath, ul.breathout>li, ol.breathout>li {
-	padding-top: @space;
-	padding-bottom:@space;
+	padding-top: @halfspace;
+	padding-bottom:@halfspace;
 }
 
 .spaced, ul.spacedout>li, ol.spacedout>li  {
@@ -43,8 +43,8 @@
 	padding-left: @space;
 }
 .hbreath {
-	.rbreath;
-	.lbreath;
+	.rbreath();
+	.lbreath();
 }
 .lspace {
 	margin-left: @space;
@@ -53,8 +53,8 @@
 	margin-right: @space;
 }
 .hspace {
-	.lspace;
-	.rspace;
+	.lspace();
+	.rspace();
 }
 
 .padtop {
@@ -68,7 +68,12 @@
 	margin-left: auto;
 	margin-right: auto;
 }
-
+.lauto {
+	margin-left: auto;
+}
+.rauto {
+	margin-right: auto;
+}
 .center-content {
 	display: flex;
 	justify-content: center;
@@ -96,12 +101,21 @@
 
 /*** border bottom, thin and thick ***/
 .bthin {
-	border-bottom: 1px solid;
+	border-bottom: 1px solid @b-color;
 	padding-bottom: @space;
 }
-.bthick {
-	border-bottom: 3px solid;
+.bthin-dark {
+	border-bottom: 1px solid @b-dark-color;
 	padding-bottom: @space;
 }
 
+.bthick {
+	border-bottom: 3px solid @b-color;
+	padding-bottom: @space;
+}
+
+.bthick-dark {
+	border-bottom: 3px solid @b-dark-color;
+	padding-bottom: @space;
+}
 

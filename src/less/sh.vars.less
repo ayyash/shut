@@ -39,14 +39,15 @@
 @green: #57b347;
 @blue: 	#0097A7;
 
-
 @red-light: lighten(@red, 20%);
 @yellow-light: lighten(@yellow, 20%);
 @green-light: lighten(@green, 20%);
 @blue-light: lighten(@blue, 20%);
 
 @btn-diff-bg: @red;
-
+@rowlist-border: @grey-light;
+@b-color: @grey; // bthin and bthick
+@b-dark-color: @grey-dark; // bthin-dark and bthick-dark
 
 @fontface: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Roboto", "Fira Sans", "Helvetica Neue", Arial, sans-serif;
 @htmlFontBase: 62.5%;
@@ -86,16 +87,17 @@
 
 /* spacing and layout */
 
-@space: 		1rem;
+@space: 		1.5rem;
 @halfspace: 	@space * 0.5;
 @extraspace: 	@space * 1.5;
 @doublespace: 	@space * 2;
 
 @box-border: 1px; // for white boxes
-@box-padding: 0.7rem;
+@box-padding: 1rem;
 @list-spacing: 0.7rem; // lists spacing (multiplied by two for padding and margin)
-@label-padding: 1px 3px 2px;
-
+@label-padding: 0.25rem 0.5rem;
+@button-padding: 1.2rem 1.5rem;
+@button-sm-padding: 0.75rem;
 /* grid layout */
 @grid-columns: 		20; 	/* does not affect wrapper, it makes space around it */
 @grid-column-width: 60px; /* affects the wrapper width thus the content natural width, 60 => 1024 sizes */

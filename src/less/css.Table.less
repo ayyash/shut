@@ -1,18 +1,4 @@
 ﻿
-/* table cells*/
-.cl1 { .cell(1); }
-.cl2  { .cell(2); }
-.cl3  { .cell(3); }
-.cl4  { .cell(4); }
-.cl5,.cl6,.cl7,.cl8,.cl9, .cl10 ,.cl11, .cl12 {.cell(1)};
-/* cells with gutters */
-.gcl1  { .gridcell(1); }
-.gcl2  { .gridcell(2); }
-.gcl3  { .gridcell(3); }
-.gcl4  { .gridcell(4); }
-.gcl5, .gcl6, .gcl7, .gcl8, .gcl9, .gcl10, .gcl11, .gcl12  { .gridcell(1); }
-
-
 
 table {
 	border-collapse: collapse;
@@ -29,7 +15,8 @@ table {
 	caption {text-align: left;}
 }
 
-.tabulated(){
+
+table.tabulated {
 	th {
 		padding-bottom: 2px;
 		border-bottom: 1px solid @grey-dark;
@@ -38,23 +25,50 @@ table {
 		padding: 2px 0;
 		border-bottom: 1px solid @grey-light;
 	}
+	tfoot {
+		td {
+			border-top: 2px solid @grey-dark;
+		}
+	}
 }
 
-table.tabulated {
-.tabulated();
-}
-/* dont have tables within tables*/
-.spacedout() {
-	td, th {padding: @extraspace;}
-}
+
 table.spacedout {
-	.spacedout();
+	td, th {padding: @space;}
 }
-.bordered {
-	td, th {border:1px solid @grey-light;}
-}
+
 table.bordered {
-	.bordered();
+	td, th {border:1px solid @grey-light;}
+	tfoot {
+		td {
+			border-top: 2px solid @grey;
+		}
+	}
+}
+
+
+table.tabulated th {
+	font-weight: @font-weight-bold;
+}
+
+table.striped {
+	tbody tr:nth-child(odd) {
+		background-color: @grey-light;
+	}
+}
+
+
+table.rich {
+	th, td {
+		border: 1px solid @grey-light;
+		padding: @halfspace;
+	}
+	th {
+		font-weight: @font-weight-bold;
+		background-color: @grey-light;
+		border: 1px solid @grey;
+		border-bottom: 2px solid @grey-dark;
+	}
 }
 
 .tresp {

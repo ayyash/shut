@@ -34,3 +34,9 @@
         zoom: 1;
     }
 }
+
+// exact width should not be used!
+.columns(@column: 1, @shift: 0) {
+  width: percentage((@column / @wrapper)) - @shift;
+}
+

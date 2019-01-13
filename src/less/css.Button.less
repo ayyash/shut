@@ -10,7 +10,7 @@ button {
 }
 
 .btntemplate(){
-	padding: 13px 15px; // TODO: vars
+	padding: @button-padding;
 	position: relative;
 	display: inline-block;
 	transition: background-color .518s;
@@ -74,7 +74,7 @@ button {
 }
 
 .btn-sm {
-    padding: 5px 10px; // TODO: vars ore remove
+    padding: @button-sm-padding; // TODO: vars ore remove
 }
 
 
@@ -82,7 +82,7 @@ button {
 	// busy buttons loading effect when disabled
 	&[disabled] {
 		color: @text-light;
-		background-color: @grey;
+		background-color: @grey-light;
 		
         background-position: center 82%;
         // TODO: loading effect
