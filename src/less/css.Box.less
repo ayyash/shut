@@ -81,3 +81,22 @@ ul.boxed > li {
 .box-blue-light {
     .colorbox(@blue-light);
 }
+
+// add shadows
+.box-shadow {
+    // default shadow level 2
+    box-shadow: @shadows[level2];
+    &-none {
+        // this should never be used, if ever, it means u wrote ur css or html wrong
+        box-shadow: none;
+    }
+    &-shallow {
+        box-shadow: @shadows[level1];
+    }
+    &-deep {
+        box-shadow: @shadows[level3];
+    }
+    &-deeper {
+        box-shadow: @shadows[level4];
+    }
+}

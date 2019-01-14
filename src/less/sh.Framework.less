@@ -2,12 +2,7 @@
 // those are framework specific classes, that can be customized in each client
 // copy the file along with vars file, into project folder, and customize
 
-.shadow() {
-	border: 1px solid @grey;
-	border-radius: @radius;
-	box-shadow: 0 0 4px -2px rgba(0, 0, 0, 0.9);
-}
-
+ 
 .scroll() {
 	&::-webkit-scrollbar {
 		width: 9px;
@@ -38,7 +33,6 @@
 
 
 /* symbol definition */
-
 .symbol {
 	&:before {
 		vertical-align: middle;
@@ -234,33 +228,6 @@ ul.activelist li a:hover {
 
 /*redefine input */
 
-.input() {
-	padding: 9px 0 9px 5px;
-	//background-color: @grey;
-	&:focus {
-		outline: none;
-		
-	}
-	// &:placeholder-shown {
-	// 	background-color: @inversecolor;
-	// }
-} 
-
-input[readonly], input[disabled] {
-	border: 1px solid @grey-light;
-	color: @text-light;
-}
-
-.mimictextinput[data-readonly="readonly"] {
-	border: 1px solid @grey-light;
-	color: @text-light;
-}
-
-.mimictext[data-readonly="readonly"] {
-	border: 1px solid @grey-light;
-	color: @text-light;
-}
-
 
 /* header navigation */
 
@@ -293,26 +260,4 @@ header nav.tools {
 }
 
 
-/* controls */
-
-.radio {
-
-	& + label:before {
-		border: 1px solid @grey-light;
-	}
-	&:checked + label:before {
-		border:4px solid @green;
-	}
-}
-.checkbox {
-	& + label:before {
-		border: 3px solid @grey;
-	}
-	&:checked + label:before {
-		border: 3px solid @green;
-		background-color: @green;
-		.displayIcon(@icon-tick);
-		color:@white;
-	}
-}
 

@@ -13,7 +13,7 @@
 
 #rem() {
 
-	.font-size(@value) {
+	.font-size(@value) when not(@rem-enabled) {
 		font-size: @value * 10px;
 	}
 
