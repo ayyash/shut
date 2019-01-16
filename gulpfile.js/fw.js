@@ -102,26 +102,6 @@ if (shutConfig.isRtl){
 
 
 
-// gulp.task('shutdistcss', function() {
-//     // grab minisite seed to create (TODO)
-//     return gulp
-//         .src(shutConfig.shutUrl + 'less/all.less')
-//         .pipe(less())
-//         .pipe(cssmin())
-//         .pipe(rename({ basename: 'sh', suffix: '.min' }))
-//         .pipe(gulp.dest(shutConfig.fwDistUrl + 'css'));
-// });
-
-// gulp.task('shutresources', function() {
-//     // clean images and fonts first, and copy over env
-
-//     gulp.src(shutConfig.shutUrl + 'env/*').pipe(gulp.dest(shutConfig.fwDistUrl + 'js'));
-
-//     return gulp
-//         .src([shutConfig.shutUrl + 'fonts/*', shutConfig.shutUrl + 'images/*'], { base: shutConfig.shutUrl })
-//         .pipe(gulp.dest(shutConfig.fwDistUrl));
-// });
-
 // function getShutScripts() {
 //     var arr = [];
 //     // add two major files: 0init and behaviors

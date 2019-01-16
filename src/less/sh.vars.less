@@ -4,18 +4,14 @@
 @font-url: '../fonts/';
 @image-url: '../images/';
 
-// framework less file location
-@shut-url: "./src/less/";
-
 @rem-enabled: true;
 @enable-rounded: true;
 @enable-icon-font: true;
+
 @icon-font: 'vpicons';
 @icon-vertical-align: middle;
 @icon-font-size: 200%;
 @icon-inline-margin: @space;
-
-/* framework vars */
 
 // colors
 @text-color: #202020; // basic text color
@@ -23,13 +19,11 @@
 @text-lighter: #cccccc;
 @text-dark: #202020;
 
-
 @white:		#fff; // the inverse of basic text
 @grey-light:#f3f3f3;
 @grey: 		#999999;
 @grey-dark: #263238;
 @black: 	#000;
-
 
 @linkcolor: 	#0c00b4;
 @visitedcolor:	#800080;
@@ -46,11 +40,13 @@
 @green-light: lighten(@green, 20%);
 @blue-light: lighten(@blue, 20%);
 
+// buttons
 @btn-diff-bg: @red;
 @rowlist-border: @grey-light;
 @b-color: @grey; // bthin and bthick
 @b-dark-color: @grey-dark; // bthin-dark and bthick-dark
 
+// fonts
 @fontface: -apple-system, system-ui, BlinkMacSystemFont,  "Roboto", "Segoe UI", "Fira Sans", "Helvetica Neue", Arial, sans-serif;
 @htmlFontBase: 62.5%;
 @font-size: 1.4; // in rem
@@ -66,6 +62,7 @@
 
 @fontface-ar: Traditional Arabic, tahoma, sans-serif;
 
+// shadows
 @shadows: {
     zero: none;
     level1: 0 0 5px 0 rgba(0,0,0,.1); 
@@ -74,7 +71,7 @@
     level4: 0 16px 24px 2px rgba(@black,0.14), 0 6px 30px 5px rgba(@black,0.12), 0 8px 10px -5px rgba(@black,0.3);
 };
 
-
+// breakpoints
 @screen: {
 	xs: 480px; // special cases
 	sm: 600px; // mobile interface
@@ -82,15 +79,16 @@
 	lg: 960px; // the usual desktop and landscape tablets
 	xl: 1280px; // unusually large with special treatment, else always fall back to normal 960
 	ds: 1600px; // up above desktop
-  };
+	};
+
+// content padding
 @mainpad: @space;
 
-
+// rounded corder radius
 @radius: 3px;
-@radius-input: 0;
+// for forms @radius-input: 0;
 
 /* spacing and layout */
-
 @space: 		1.5rem;
 @halfspace: 	@space * 0.5;
 @extraspace: 	@space * 1.5;
@@ -102,30 +100,12 @@
 @label-padding: 0.25rem 0.5rem;
 @button-padding: 1.2rem 1.5rem;
 @button-sm-padding: 0.75rem;
-/* grid layout */
-@grid-columns: 		20; 	/* does not affect wrapper, it makes space around it */
-@grid-column-width: 60px; /* affects the wrapper width thus the content natural width, 60 => 1024 sizes */
-@grid-gutter-width: 1rem; /* affects wrapper and site width */
 
+@grid-column-height: 60px; 
 
-
-// dimentions of the directionalwrapper of pop dialogs
+// modals
 @modal-bg: fade(@black, 60);
-@modal-zindex: 1040; // over lay is -10
+@modal-zindex: 1040; // overlay is -10
 @modal-margin: @space;
 @modal-padding: @halfspace;
 @modal-md-width: 700px;
-
-@dialog-top: 60px;
-@dialog-bottom: 5px;
-@dialog-left: 5px;
-@dialog-right: 5px;
-
-// @sitewidth: (@grid-columns * @grid-column-width) + (@grid-gutter-width * (@grid-columns - 1))+ 2 * @mainpad;
-
-
-
-
-
-
-

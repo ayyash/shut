@@ -1,11 +1,6 @@
 /*******************/
 /* site defined vars */
-/* framework vars */
 /* spacing and layout */
-/* grid layout */
-/* does not affect wrapper, it makes space around it */
-/* affects the wrapper width thus the content natural width, 60 => 1024 sizes */
-/* affects wrapper and site width */
 /* resetting */
 * {
   margin: 0;
@@ -343,27 +338,27 @@ button:focus {
 }
 .h-1,
 .uh-1 > li {
-  min-height: 61px;
+  min-height: 60px;
 }
 .h-2,
 .uh-2 > li {
-  min-height: 122px;
+  min-height: 120px;
 }
 .h-3,
 .uh-3 > li {
-  min-height: 183px;
+  min-height: 180px;
 }
 .h-4,
 .uh-4 > li {
-  min-height: 244px;
+  min-height: 240px;
 }
 .h-5,
 .uh-5 > li {
-  min-height: 305px;
+  min-height: 300px;
 }
 .h-6,
 .uh-6 > li {
-  min-height: 366px;
+  min-height: 360px;
 }
 .row,
 .row-spaced {
