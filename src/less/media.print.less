@@ -4,8 +4,8 @@
     select,
     option,
     input {
-        font-family: @fontface;
-        font-size: 80%;
+        
+        font-size: @font-size-print;
         /* assuming default browser to medium 16px */
         color: #000;
     }
@@ -21,11 +21,11 @@
     .pagebreak {
         page-break-before: always;
     }
-    .head,
+    header,
     footer {
         display: none !important;
     }
-    div.wrapper {
+    div.container {
         padding-left: 0 !important;
         width: auto;
     }

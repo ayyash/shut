@@ -30,7 +30,7 @@ const rawless = function() {
                 endtag: '// endinject'
             })
         )
-        // .pipe(rename({ basename: 'all' }))
+        .pipe(rename({ basename: 'all' }))
         .pipe(gulp.dest(shutConfig.srcUrl + 'less/'))
         .pipe(
             less({
@@ -53,7 +53,7 @@ const rawless = function() {
 
 // use sh.rtl.imports.less, concat to sh.imports.less, the inject rtl.*.less to generate src/css/sh.rtl.css
 const rawlessRtl = function(){
-    return gulp.src([shutConfig.srcUrl + 'less/sh.imports.less', shutConfig.srcUrl + 'less/sh.rtl.imports.less'])
+    return gulp.src([shutConfig.srcUrl + 'less/all.less', shutConfig.srcUrl + 'less/sh.rtl.imports.less'])
         .pipe(concat('all.rtl.less', { newLine: '' }))
         .pipe(
             inject(gulp.src(shutConfig.srcUrl + 'less/rtl.*.less', { read: false }), {

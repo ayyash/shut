@@ -157,6 +157,9 @@ i.liga {
   margin: 0 auto;
   position: relative;
 }
+.forprint {
+  display: none;
+}
 @media only screen and (min-width: 720px) {
   .page {
     width: 720px;
@@ -834,7 +837,114 @@ dl.grid dd {
   }
 }
 /* Modal */
-/* lightboxes */
+.dr-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1030;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1040;
+  overflow: hidden;
+  outline: 0;
+}
+.modal-dialog {
+  position: relative;
+  width: auto;
+  margin: 1.5rem;
+  pointer-events: none;
+}
+.modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-height: calc(100vh - 1.5rem * 2);
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.3);
+  outline: 0;
+}
+.modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 0.75rem;
+}
+.modal-close {
+  padding: 0.75rem;
+}
+.modal-close:before {
+  content: "x";
+}
+.modal-body {
+  position: relative;
+  flex: 1 1 auto;
+  padding: 0.75rem;
+  overflow: auto;
+}
+.modal-body::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+.modal-body::-webkit-scrollbar-button:start:decrement,
+.modal-body::-webkit-scrollbar-button:end:increment {
+  display: block;
+  height: 0;
+  background-color: transparent;
+}
+.modal-body::-webkit-scrollbar-track-piece {
+  background-color: #f3f3f3;
+  border-radius: 0;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.modal-body::-webkit-scrollbar-thumb:vertical {
+  height: 50px;
+  background-color: #263238;
+  border-radius: 8px;
+}
+.modal-body::-webkit-scrollbar-thumb:horizontal {
+  width: 50px;
+  background-color: #999999;
+  border-radius: 8px;
+}
+.modal-footer {
+  padding: 0.75rem;
+}
+@media only screen and (min-width: 720px) {
+  .modal-dialog {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 700px;
+  }
+}
+.modal-center .modal-dialog {
+  display: flex;
+  align-items: center;
+  height: calc(100vh - 1.5rem * 2);
+}
+.modal-full-window .modal-content {
+  height: calc(100vh - 1.5rem * 2);
+}
+.modal-full-screen .modal-dialog {
+  margin: 0;
+  max-width: 100vw;
+}
+.modal-full-screen .modal-content {
+  max-height: 100vh;
+  min-height: 100vh;
+}
+/* TODO: make use of this for rtl lightboxes */
 .dialog,
 .dialogcontent {
   width: 90%;
@@ -866,7 +976,7 @@ dl.grid dd {
 }
 .directionwrapper {
   overflow-y: auto;
-  -webkit-overflow-scrolling:  touch;
+  -webkit-overflow-scrolling: touch;
   overflow-x: hidden;
   position: absolute;
   top: 60px;
@@ -879,18 +989,6 @@ dl.grid dd {
   overflow-x: hidden;
   /*height: 100%;*/
 }
-.widewindow {
-  /*width: 95%; REDO */
-}
-.tallwindow {
-  bottom: 20px;
-}
-.respwindow {
-  width: 95%!important;
-}
-.shortwindow {
-  height: 300px;
-}
 .autowindow {
   /* use this with ajaxed content only */
   min-height: 120px;
@@ -900,24 +998,6 @@ dl.grid dd {
   position: static;
   /* is this right?*/
   padding: 5px 5px;
-}
-h3.jqmTitle {
-  border-radius: 3px;
-}
-.jqmOverlay {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-.shortwindow #jqmContent {
-  height: 90%;
-}
-.dialog div.loading {
-  padding: 35px;
-  width: 30px;
-  margin: auto;
-  font-size: 1.8rem;
-  background-color: #fff;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 /* Card */
 /*Basic Card */
@@ -1343,49 +1423,6 @@ ol.doublespacedout > li {
   padding-bottom: 1.5rem;
 }
 /* Expand behavior remove from shut */
-/* client tabs*/
-.tabs {
-  position: relative;
-  border-bottom: 3px solid #999999;
-  padding-top: 5px;
-  margin-bottom: 20px;
-  clear: both;
-  zoom: 1;
-}
-.tabs:before,
-.tabs:after {
-  content: '';
-  display: block;
-  clear: both;
-  zoom: 1;
-}
-.tabs.small {
-  height: 24px;
-}
-.tabs li {
-  float: right;
-  background-color: #f3f3f3;
-  padding: 10px;
-  margin-left: 3px;
-  cursor: pointer;
-}
-.tabs li:hover {
-  margin-top: -2px;
-  padding-bottom: 12px;
-}
-.tabs li.selected {
-  background-color: #fff;
-}
-.tabs li.selected a {
-  color: #202020;
-}
-.tabguts {
-  display: none;
-}
-/* hide tab titles */
-.subclienttabs .tabtitle {
-  display: none;
-}
 /* Lists */
 ul.normal > li,
 .normal > ul > li {
@@ -1494,6 +1531,43 @@ table.rich th {
 }
 .tresp > table > tbody > tr > td {
   white-space: nowrap;
+}
+/* Print */
+@media print {
+  body,
+  textarea,
+  select,
+  option,
+  input {
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Roboto", "Segoe UI", "Fira Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 80%;
+    /* assuming default browser to medium 16px */
+    color: #000;
+  }
+  .forprint {
+    display: inline-block !important;
+  }
+  .forscreen {
+    display: none !important;
+  }
+  @page {
+    margin: 0.3cm;
+  }
+  .pagebreak {
+    page-break-before: always;
+  }
+  .head,
+  footer {
+    display: none !important;
+  }
+  div.wrapper {
+    padding-right: 0 !important;
+    width: auto;
+  }
+  a,
+  .a {
+    color: #333;
+  }
 }
 /* symbol definition */
 .symbol:before {
@@ -1668,6 +1742,9 @@ header nav.tools a {
 .loading {
   /*min-height: 20px;*/
 }
+body {
+  line-height: 1;
+}
 .closelabel {
   display: inline-block;
   position: absolute;
@@ -1810,3 +1887,6 @@ textarea {
   overflow-x: hidden;
 }
 /* RTL END */
+body {
+  line-height: 0.8;
+}
