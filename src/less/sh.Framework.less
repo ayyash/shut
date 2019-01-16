@@ -3,33 +3,33 @@
 // copy the file along with vars file, into project folder, and customize
 
  
-.scroll() {
-	&::-webkit-scrollbar {
-		width: 9px;
-		height: 9px;
-	}
-	&::-webkit-scrollbar-button:start:decrement, &::-webkit-scrollbar-button:end:increment {
-		display: block;
-		height: 0;
-		background-color: transparent;
-	}
-	&::-webkit-scrollbar-track-piece {
-		background-color: @grey-light;
-		border-radius: 0;
-		border-bottom-right-radius: 8px;
-		border-bottom-left-radius: 8px;
-	}
-	&::-webkit-scrollbar-thumb:vertical {
-		height: 50px;
-		background-color: @grey-dark;
-		border-radius: 8px;
-	}
-	&::-webkit-scrollbar-thumb:horizontal {
-		width: 50px;
-		background-color: @grey;
-		border-radius: 8px;
-	}
-}
+// .scroll() {
+// 	&::-webkit-scrollbar {
+// 		width: 9px;
+// 		height: 9px;
+// 	}
+// 	&::-webkit-scrollbar-button:start:decrement, &::-webkit-scrollbar-button:end:increment {
+// 		display: block;
+// 		height: 0;
+// 		background-color: transparent;
+// 	}
+// 	&::-webkit-scrollbar-track-piece {
+// 		background-color: @grey-light;
+// 		border-radius: 0;
+// 		border-bottom-right-radius: 8px;
+// 		border-bottom-left-radius: 8px;
+// 	}
+// 	&::-webkit-scrollbar-thumb:vertical {
+// 		height: 50px;
+// 		background-color: @grey-dark;
+// 		border-radius: 8px;
+// 	}
+// 	&::-webkit-scrollbar-thumb:horizontal {
+// 		width: 50px;
+// 		background-color: @grey;
+// 		border-radius: 8px;
+// 	}
+// }
 
 
 /* symbol definition */
@@ -68,7 +68,7 @@ i.liga {
 /*modal close button */
 
 .jqmClose {
-	.getIcon(@icon-x);
+	// .getIcon(@icon-x);
 	position: absolute;
 	top: 5px;
 	right: 5px;
@@ -182,7 +182,7 @@ ul.activelist li a:hover {
 	.txt-c();
 	.header {
 		color: @blue;
-		.getIcon(@icon-info);
+		// .getIcon(@icon-info);
 		&:before {
 			margin-bottom: 10px;
 			display: block;
@@ -195,7 +195,7 @@ ul.activelist li a:hover {
 	.feedbackbox();
 	background-color: @yellow-light;
 	.header {
-		.getIcon(@icon-exclamation);
+		// .getIcon(@icon-exclamation);
 	}
 }
 
@@ -206,7 +206,7 @@ ul.activelist li a:hover {
 	.header {
 		display: block;
 		.red();
-		.getIcon(@icon-exclamation);
+		// .getIcon(@icon-exclamation);
 		text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
 	}
 }

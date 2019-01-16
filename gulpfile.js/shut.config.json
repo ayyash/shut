@@ -1,9 +1,11 @@
 {
     "shutUrl": "./src/",
-    "minisite": "./minisite/src/",
-    "minisiteDist": "./minisite/public/",
+	"srcUrl": "./minisite/src/",
+	"distUrl": "./minisite/src/",
+	"minisiteDistUrl": "./minisite/public/",
     "shutDistUrl": "./dist/",
     "projectName": "sh",
+    "isRtl": true,
     "scripts": [
         "Ajax",
         "AutoComplete",

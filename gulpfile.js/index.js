@@ -1,27 +1,13 @@
-var gulp = require('gulp');
-const {rawless} = require('./shut');
-const {shutcss} = require('./fw');
-// exports.aa = function(cb) {
-//     cb();
-// }
-// watching minisite
-// gulp.task('init', ['rawless', 'rawscripts', 'insertcss'], function() {
-//     // Watch .less files
-//     gulp.watch('**/less/*.less', ['rawless']);
+const fw = require('./fw');
+const assets = require('./assets');
 
-//     // Watch .js files
-//     gulp.watch(['**/js/ui.*.js', '**/js/sh.*.js'], ['rawscripts']);
-// });
 
-function defaultTask() {
-    // place code for your default task here
-    gulp.watch('**/less/**/*.less', shutcss);
+// exports.default = watch;
 
-    // Watch .js files
-    // gulp.watch(['**/js/ui.*.js', '**/js/sh.*.js'], ['rawscripts']);
-    
-}
+exports.default = fw.watch; // watch to create src/css/sh.css
+exports.rawshut = fw.rawshut; // create src/css/sh.css
+exports.buildshut = fw.buildshut; // build dist/ 
 
-exports.shutcss = shutcss;
-
-exports.default = defaultTask;
+exports.rawless = assets.rawless; // create minisite src/css/sh.css 
+exports.buildcss = assets.buildcss; // build minisite public/css/sh.min.css 
+exports.assets = assets.watch; // watch minisite to create src/css/sh.css

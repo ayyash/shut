@@ -1,13 +1,15 @@
-﻿
+﻿// import sh first
+@import "sh.less";
+
 .ar {
-	font-family: @arfontface;
+	font-family: @fontface-ar;
 	direction: rtl;
 }
 
 /* RTL BEGIN */
 	body, textarea, select, option, input 
 	{
-		font-family: @arfontface;
+		font-family: @fontface-ar;
 	}
 	
 
@@ -27,6 +29,6 @@
 		height: auto;
 	}
 	textarea {
-		overflow-x: hidden; /*watch*/
+		overflow-x: hidden; 
 	}
 /* RTL END */
