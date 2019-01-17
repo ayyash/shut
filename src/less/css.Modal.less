@@ -17,7 +17,7 @@
     z-index: @modal-zindex;
     overflow: hidden;
     outline: 0;
-    // TODO: return display: none;
+    display: none;
 }
 
 .modal-dialog {
@@ -67,7 +67,6 @@
     position: relative;
     flex: 1 1 auto;
     padding: @modal-padding;
-    // FIXME: for rtl
    
     overflow: auto;
     .scroll();
@@ -96,7 +95,6 @@
     }
 }
 
-// TODO: redo these
 .modal-full-window {
     .modal-content {
         height: calc(100vh - @modal-margin * 2);

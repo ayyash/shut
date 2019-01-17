@@ -909,6 +909,7 @@ dl.grid dd {
   z-index: 1040;
   overflow: hidden;
   outline: 0;
+  display: none;
 }
 .modal-dialog {
   position: relative;

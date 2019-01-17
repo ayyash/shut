@@ -10,8 +10,8 @@ const _getLigas = function(){
 	// require selection.json here, find ligature by icon var
 	var icons = require('../' + shutConfig.srcUrl + 'dummy/selection.json').icons; 
     let array = {};
-    for (var i = 0; i < icons.length; i++) {
-		array[icons[i].properties.name] = icons[i].properties.ligatures;
+    for (var a of icons) {
+		array[a.properties.name] = a.properties.ligatures;
 	
 	}
 	return array;
