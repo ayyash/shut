@@ -74,7 +74,9 @@ textarea {
 }
 i.liga,
 .symbol:before,
-.symbolAfter:after {
+.symbolAfter:after,
+.testicon:before,
+.testAfter:after {
   font-family: 'vpicons';
   text-transform: none;
   font-style: normal;
@@ -909,6 +911,7 @@ dl.grid dd {
   z-index: 1040;
   overflow: hidden;
   outline: 0;
+  display: none;
 }
 .modal-dialog {
   position: relative;
@@ -1460,6 +1463,12 @@ table.rich th {
 }
 body {
   line-height: 1;
+}
+.testicon:before {
+  content: "\e5c4";
+}
+.testAfter:after {
+  content: "\e226";
 }
 .icon-search:before {
   content: "\e912";

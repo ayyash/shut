@@ -70,17 +70,19 @@
 }
 
 .getIcon(@value) {
-    .symbol();
-
+    
     &:before {
+        
+        &:extend(.symbol:before);
         content: @value;
     }
 }
 
 .getIcon(@value, @dir) when(@dir = "after") {
-    .symbolAfter();
-
+    // .symbolAfter();
+    
     &:after {
+        &:extend(.symbol:before);
         content: @value;
     }
 }
