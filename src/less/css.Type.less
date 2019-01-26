@@ -24,11 +24,50 @@ p {
 
 /* font size */
 
-each(@font-multiplier, {
-    .@{key} {
-        #rem>.font-size(@value * @font-size);
-    }
-});
+// Note to self: this prevents reuse mixins in css, keep open
+// each(@font-multiplier, {
+//     .@{key} {
+//         #rem>.font-size(@value * @font-size);
+//     }
+// });
+.larger {
+    #rem>.font-size(@font-multiplier(larger) * @font-size);
+}
+.large {
+     #rem>.font-size(@font-multiplier(large) * @font-size);
+}
+
+.f1 {
+     #rem>.font-size(@font-multiplier(f1) * @font-size);
+}
+
+.f2 {
+     #rem>.font-size(@font-multiplier(f2) * @font-size);
+}
+
+.f3 {
+     #rem>.font-size(@font-multiplier(f3) * @font-size);
+}
+
+.f4 {
+     #rem>.font-size(@font-multiplier(f4) * @font-size);
+}
+
+.f5 {
+     #rem>.font-size(@font-multiplier(f5) * @font-size);
+}
+
+.f6 {
+     #rem>.font-size(@font-multiplier(f6) * @font-size);
+}
+
+.small {
+     #rem>.font-size(@font-multiplier(small) * @font-size);
+}
+
+.smaller {
+     #rem>.font-size(@font-multiplier(smaller) * @font-size);
+}
 
 .weight-light {
     font-weight: @font-weight-light;
