@@ -1,7 +1,7 @@
 
 .box {
     padding: @box-padding;
-    .border-radius(@radius);
+    border-radius: @radius;
     position: relative;
 }
 ul.boxed > li {
@@ -99,4 +99,8 @@ ul.boxed > li {
     &-deeper {
         box-shadow: @shadows[level4];
     }
+}
+
+.box-radius {
+    border-radius: @radius;
 }

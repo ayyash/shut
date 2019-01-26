@@ -11,7 +11,6 @@ button {
 
 .btntemplate(){
 	padding: @button-padding;
-	position: relative;
 	display: inline-block;
 	transition: background-color .518s;
 	line-height: 1;
@@ -47,17 +46,21 @@ button {
 .btn-rev {
     color: @white;
     background-color: @linkcolor;
-    .gradient(lighten(@linkcolor, 2%), @linkcolor);
+    // .gradient(lighten(@linkcolor, 10%), @linkcolor);
     &:hover {
-        background-color: lighten(@linkcolor, 5%);
-        .gradient(lighten(@linkcolor, 10%), lighten(@linkcolor, 5%));
+        background-color: lighten(@linkcolor, 10%);
+        // .gradient(lighten(@linkcolor, 10%), lighten(@linkcolor, 5%));
         color: @white;
     }
 }
 
+// a text button with no paddings
 .btn-fake {
 	.btntemplate();
-	font-weight: @font-weight-bold;
+    font-weight: @font-weight-bold;
+
+    padding-left: @button-sm-padding;
+    padding-right: @button-sm-padding;
 	&:hover {
 		color: @linkcolor;
 	}

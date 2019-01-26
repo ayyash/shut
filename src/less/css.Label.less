@@ -1,43 +1,21 @@
-.red {
-    color: @red;
-}
-.red-light {
-    color: @red-light;
-}
 
-.green {
-    color: @green;
-}
-.green-light {
-    color: @green-light;
-}
 
-.blue {
-    color: @blue;
-}
-.blue-light {
-    color: @blue-light;
-}
-.yellow {
-    color: @yellow;
-}
-.yellow-light {
-    color: @yellow-light;
-}
+each(@colors, {
+    .@{key} {
+        color: @value;
+    }
 
-.light {
-    color: @text-light;
-}
+});
 
-.lighter {
-    color: @text-lighter;
-}
 
 // label
 .label {
     padding: @label-padding;
-    .border-radius(@radius);
+    .border-radius(@label-radius); 
     display: inline-block;
+}
+a.label {
+    transition: background-color 0.15s;
 }
 
 .colorlabel (@c) {
@@ -46,65 +24,19 @@
     .fcolor(@c);
 }
 
-.label-yellow {
-    .colorlabel(@yellow);
-}
+each(@colors, {
 
-.label-yellow-light {
-    .colorlabel(@yellow-light);
-}
-
-.label-red {
-    .colorlabel(@red);
-}
-
-.label-red-light {
-    .colorlabel(@red-light);
-}
-
-.label-green {
-    .colorlabel(@green);
-}
-
-.label-green-light {
-    .colorlabel(@green-light);
-}
-
-.label-blue {
-    .colorlabel(@blue);
-}
-
-.label-blue-light {
-    .colorlabel(@blue-light);
-}
-
-.label-grey {
-    .colorlabel(@grey);
-}
-
-.label-grey-dark {
-    .colorlabel(@grey-dark);
-}
+    .label-@{key} {
+        .colorlabel(@value);
+    }
+    a.label-@{key}:hover {
+        .colorlabel(lighten(@value, 15));
+        
+    }
+});
 
 .label-white {
     border: @box-border solid @grey;
     .label();
 }
 
-.label-grey-light {
-    .colorlabel(@grey-light);
-}
-
-// use this when it stops making noise
-
-
-// @set: {
-//   one: blue;
-//   two: green;
-//   three: red;
-// };
-// .set {
-//   each(@set, {
-//     @{key}-@{index}: @value;
-//   });
-// }

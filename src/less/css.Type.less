@@ -1,7 +1,9 @@
 ﻿/* font setting */
+
 html {
     font-size: @htmlFontBase;
 }
+
 body,
 textarea,
 select,
@@ -10,7 +12,6 @@ input {
     font-family: @fontface;
     #rem>.font-size(@font-size);
     color: @text-color;
-    
 }
 
 section {
@@ -21,33 +22,18 @@ p {
     margin-bottom: @space;
 }
 
-.f1 {
-    #rem>.font-size(3.5 * @font-size);
-}
+/* font size */
 
-.f2 {
-    #rem>.font-size(3 * @font-size);
-}
-
-.f3 {
-    #rem>.font-size(2.5 * @font-size);
-}
-
-.f4 {
-    #rem>.font-size(2 * @font-size);
-}
-
-.f5 {
-    #rem>.font-size(1.5 * @font-size);
-}
-
-.f6 {
-    #rem>.font-size(@font-size);
-}
+each(@font-multiplier, {
+    .@{key} {
+        #rem>.font-size(@value * @font-size);
+    }
+});
 
 .weight-light {
     font-weight: @font-weight-light;
 }
+
 .weight-normal {
     font-weight: @font-weight;
 }
@@ -59,26 +45,6 @@ p {
 .face-italice {
     font-style: italic;
 }
-
-.large {
-    #rem>.font-size(@font-size-large);
-    line-height: 1.1;
-}
-
-.larger {
-    #rem>.font-size(@font-size-larger);
-    line-height: 1.3;
-}
-
-.small {
-    #rem>.font-size(@font-size-small);
-}
-
-.smaller {
-    #rem>.font-size(@font-size-smaller);
-}
-
-
 
 /* mixed content*/
 
@@ -103,10 +69,10 @@ a.cam,
 .a.cam,
 .cam {
     color: @text-color;
+    cursor: pointer;
     &:hover {
         color: @linkcolor;
     }
-    cursor: pointer;
 }
 
 a[rel='track']:visited {
@@ -117,12 +83,6 @@ a:hover,
 a[rel='track']:hover {
     color: @altcolor;
 }
-
-h1 a:visited {
-    /* only titles of items are tracked for visiting, other a hrefs are not tracked */
-    color: @visitedcolor;
-}
-
 
 p.normalsize,
 .normalsize p,

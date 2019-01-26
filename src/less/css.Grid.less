@@ -27,7 +27,7 @@
 // spaced out begins at md only
 .generate-spaced-column(@column, @key: c) when (@column > 0) {
     .generate-spaced-column((@column - 1), @key);
-    .@{key}-@{column},
+    > .@{key}-@{column},
     &.u@{key}-@{column} > li {
         width: calc(percentage(@column / @wrapper) - @halfspace);
     }

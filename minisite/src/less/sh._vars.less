@@ -57,10 +57,19 @@
 @fontface: -apple-system, system-ui, BlinkMacSystemFont,  "Roboto", "Segoe UI", "Fira Sans", "Helvetica Neue", Arial, sans-serif;
 @htmlFontBase: 62.5%;
 @font-size: 1.4; // in rem
-@font-size-larger: @font-size * 1.8;
-@font-size-large: @font-size * 1.3;
-@font-size-small: @font-size * 0.9;
-@font-size-smaller: @font-size * 0.8;
+@font-size-print: 80%;
+@font-multiplier: {
+	larger: 3.5;
+	large: 3;
+	f1: 2.5;
+	f2:  2;
+	f3: 1.8;
+	f4: 1.5;
+	f5: 1.2;
+	f6: 1;
+	small: 0.9;
+	smaller: 0.8;
+}
 
 @font-weight-light: 300;
 @font-weight: 400;
@@ -82,9 +91,11 @@
 	sm: 600px; // mobile interface
 	md: 720px; // tablet portrait
 	lg: 960px; // the usual desktop and landscape tablets
-	xl: 1280px; // unusually large with special treatment, else always fall back to normal 960
-	ds: 1600px; // up above desktop
-  };
+	xl: 1200px; // unusually large with special treatment, else always fall back to normal 960
+	ds: 1400px; // up above desktop
+	};
+	
+
 @mainpad: @space;
 
 
