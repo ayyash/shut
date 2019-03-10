@@ -8,6 +8,10 @@
     width: 100%!important;
 }
 
+.h100 {
+    height: 100vh;
+}
+
 .generate-column(@column, @key: c) when (@column > 0) {
     .generate-column((@column - 1), @key);
     .@{key}-@{column},
@@ -100,6 +104,13 @@ dl.grid {
 	.bthin-dark();
 }
 
+// only
+.md-only {
+    display: none;
+}
+.lg-only {
+    display: none;
+}
 
 .media(md, {
     
@@ -109,6 +120,9 @@ dl.grid {
    
     .row-spaced {
         .generate-spaced-column(12, md);
+    }
+    .md-only {
+        display: block;
     }
     
 });
@@ -123,6 +137,10 @@ dl.grid {
     .row-spaced {
         .generate-spaced-column(12, lg);
     }
+    .lg-only {
+        display: block;
+    }
 });
+
 
 

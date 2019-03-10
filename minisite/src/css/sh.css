@@ -124,6 +124,11 @@ i.liga,
 .txt-l {
   text-align: left;
 }
+.text-nowrap {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 .wrap-break {
   word-wrap: break-word;
 }
@@ -208,6 +213,12 @@ ol.doublespacedout > li {
 .bthick-dark {
   border-bottom: 3px solid #263238;
   padding-bottom: 1.5rem;
+}
+.dev {
+  display: inline-block !important;
+  font-size: 11px!important;
+  color: red!important;
+  background-color: yellow!important;
 }
 /* layout */
 .page {
@@ -334,6 +345,9 @@ button:focus {
 /* affects wrapper and site width */
 .w100 {
   width: 100%!important;
+}
+.h100 {
+  height: 100vh;
 }
 .h-1,
 .uh-1 > li {
@@ -556,6 +570,12 @@ dl.grid dd {
   border-bottom: 1px solid #263238;
   padding-bottom: 1.5rem;
 }
+.md-only {
+  display: none;
+}
+.lg-only {
+  display: none;
+}
 @media only screen and (min-width: 720px) {
   .offset-md-1 {
     margin-left: 8.33333333%;
@@ -721,6 +741,9 @@ dl.grid dd {
   .row-spaced > .md-12,
   .row-spaced.umd-12 > li {
     width: calc(100% - 0.75rem);
+  }
+  .md-only {
+    display: block;
   }
 }
 @media only screen and (min-width: 960px) {
@@ -889,6 +912,9 @@ dl.grid dd {
   .row-spaced.ulg-12 > li {
     width: calc(100% - 0.75rem);
   }
+  .lg-only {
+    display: block;
+  }
 }
 .dr-modal-overlay {
   position: fixed;
@@ -1013,7 +1039,6 @@ dl.grid dd {
 .card {
   position: relative;
   display: flex;
-  border-radius: 3px;
   overflow: hidden;
 }
 .card .tail {
@@ -1031,6 +1056,9 @@ dl.grid dd {
 }
 .card-v {
   flex-direction: column;
+}
+.card-v .tail-v {
+  margin-top: auto;
 }
 .valign-center {
   align-items: center;
@@ -1169,15 +1197,6 @@ ul.boxed > li {
   background-color: #f96e69;
   color: #202020;
 }
-.box-white {
-  background-color: #fff;
-  color: #202020;
-}
-.box-white-light {
-  background-color: #fff;
-  color: #202020;
-  border: 1px solid #f3f3f3;
-}
 .box-green {
   background-color: #57b347;
   color: #fff;
@@ -1202,6 +1221,11 @@ ul.boxed > li {
 .box-grey {
   background-color: #999999;
   color: #202020;
+}
+.box-white-light {
+  background-color: #fff;
+  color: #202020;
+  border: 1px solid #f3f3f3;
 }
 .box-white-normal {
   border: 1px solid #999999;

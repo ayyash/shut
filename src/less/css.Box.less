@@ -31,14 +31,10 @@ ul.boxed > li {
     .colorbox(@red-light);
 }
 
-.box-white {
-    .colorbox(@white);
-}
+// .box-white {
+//     .colorbox(@white);
+// }
 
-.box-white-light {
-    .box-white();
-    border: @box-border solid @grey-light;
-}
 
 .box-green {
     .colorbox(@green);
@@ -65,6 +61,10 @@ ul.boxed > li {
     .colorbox(@grey);
 }
 
+.box-white-light {
+    .box-white();
+    border: @box-border solid @grey-light;
+}
 .box-white-normal {
     border: @box-border solid @grey;
     .colorbox(@white);

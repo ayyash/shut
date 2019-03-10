@@ -4,7 +4,9 @@
   "description": "Shut UI Framework",
   "main": "index.js",
   "scripts": {
-    "start": "gulp init"
+    "start": "gulp rawshut && gulp default",
+    "build": "gulp buildshut",
+    "minisite": "gulp rawless && gulp buildcss"
   },
   "repository": {
     "type": "git",
