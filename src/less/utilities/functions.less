@@ -19,7 +19,11 @@
 
 	.font-size(@value) when (@rem-enabled) {
 		font-size: @value * 1rem;
-	}
+  }
+  .padding(@value) {
+    // don't use rem for padding unless rem is enabled, else leave
+    padding: @value * 1rem;
+  }
 }
 
 

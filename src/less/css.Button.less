@@ -9,7 +9,7 @@ button {
 }
 
 .btntemplate(){
-	padding: @button-padding;
+	padding: @button-padding-v @button-padding-h;
 	display: inline-block;
 	transition: background-color .518s;
 	line-height: 1;
@@ -89,4 +89,16 @@ button {
         background-position: center 82%;
         // TODO: loading effect
 	}
+}
+
+// ina group of buttons beggingin and ending with fake buttons, chop off
+.btn-chop {
+    margin-left: -@button-sm-padding;
+    margin-right: -@button-sm-padding;
+}
+.btn-chop-start {
+    margin-left: -@button-sm-padding;
+}
+.btn-chop-end {
+    margin-right: -@button-sm-padding;
 }

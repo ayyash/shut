@@ -327,6 +327,16 @@ button:focus {
   background-color: #f3f3f3;
   background-position: center 82%;
 }
+.btn-chop {
+  margin-right: -0.8rem;
+  margin-left: -0.8rem;
+}
+.btn-chop-start {
+  margin-right: -0.8rem;
+}
+.btn-chop-end {
+  margin-left: -0.8rem;
+}
 /* affects wrapper and site width */
 .w100 {
   width: 100%!important;
@@ -540,6 +550,12 @@ button:focus {
 }
 .g-11 {
   grid-template-columns: 91.66666667% auto;
+}
+.g-content {
+  align-self: center;
+}
+.g-basic {
+  grid-template-columns: 3rem auto;
 }
 dl.grid dt {
   grid-column: 1;
@@ -1045,6 +1061,9 @@ dl.grid dd {
 .card-v .tail-v {
   margin-top: auto;
 }
+.card-btns button {
+  margin-left: 0.75rem;
+}
 .valign-center {
   align-items: center;
 }
@@ -1114,6 +1133,10 @@ p {
 .ltr {
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Roboto", "Segoe UI", "Fira Sans", "Helvetica Neue", Arial, sans-serif;
   direction: ltr;
+}
+.rtl {
+  font-family: Traditional Arabic, tahoma, sans-serif;
+  direction: rtl;
 }
 /* HTML tags redefined */
 a,
@@ -1559,10 +1582,6 @@ select,
 option,
 input {
   font-family: Traditional Arabic, tahoma, sans-serif;
-}
-.page,
-.singlepage,
-div.poppage {
   direction: rtl;
 }
 textarea {

@@ -1,3 +1,4 @@
+// dynamic dialog
 .dr-modal-overlay {
     position: fixed;
     top: 0;
@@ -7,6 +8,11 @@
     z-index: @modal-zindex - 10;
     background-color: @modal-bg;
 }
+// static dialog
+.modal-overlay {
+    display: none;
+}
+
 
 .modal {
     position: fixed;
@@ -17,7 +23,7 @@
     z-index: @modal-zindex;
     overflow: hidden;
     outline: 0;
-    display: none;
+    // display: none;
 }
 
 .modal-dialog {
@@ -27,8 +33,6 @@
     pointer-events: none; // TODO: some sort of animation
  
 }
-
-
 
 .modal-content {
     position: relative;

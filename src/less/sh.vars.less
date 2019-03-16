@@ -66,6 +66,8 @@
 
 // fonts
 @fontface: -apple-system, system-ui, BlinkMacSystemFont,  "Roboto", "Segoe UI", "Fira Sans", "Helvetica Neue", Arial, sans-serif;
+@fontface-ar: Traditional Arabic, tahoma, sans-serif;
+
 @htmlFontBase: 62.5%;
 @font-size: 1.4; // in rem
 @font-size-print: 80%;
@@ -86,7 +88,6 @@
 @font-weight: 400;
 @font-weight-bold: 700;
 
-@fontface-ar: Traditional Arabic, tahoma, sans-serif;
 
 // shadows
 @shadows: {
@@ -125,10 +126,13 @@
 @list-spacing: 0.7rem; // lists spacing (multiplied by two for padding and margin)
 @label-padding: 0.25rem 0.8rem;
 @label-radius: @radius;
-@button-padding: 1.2rem 1.6rem;
+
+@button-padding-h:  1.6rem;
+@button-padding-v: 1.2rem;
 @button-sm-padding: 0.8rem;
 
 @grid-column-height: 60px; 
+@grid-fixed-icon-width: @doublespace; // for g-basic
 
 // modals
 @modal-bg: fade(@black, 60);
