@@ -4,4 +4,8 @@
 	}
 	
 }
- 
+ .mediamax(@media, @rules){
+	 @media only screen and (max-width: @screen[$@media]){
+		 @rules();
+	 }
+ }

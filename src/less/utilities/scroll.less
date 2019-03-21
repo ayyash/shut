@@ -1,8 +1,8 @@
 
-.scroll() {
+.scroll(@width: 9px) {
 	&::-webkit-scrollbar {
-		width: 9px;
-		height: 9px;
+		width: @width;
+		height: @width;
 	}
 	&::-webkit-scrollbar-button:start:decrement, &::-webkit-scrollbar-button:end:increment {
 		display: block;
@@ -22,7 +22,7 @@
 	}
 	&::-webkit-scrollbar-thumb:horizontal {
 		width: 50px;
-		background-color: @grey;
+		background-color: @grey-dark;
 		border-radius: 8px;
 	}
 }

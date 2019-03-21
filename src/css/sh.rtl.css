@@ -926,6 +926,9 @@ dl.grid dd {
   z-index: 1030;
   background-color: rgba(0, 0, 0, 0.6);
 }
+.modal-overlay {
+  display: none;
+}
 .modal {
   position: fixed;
   top: 0;
@@ -935,7 +938,6 @@ dl.grid dd {
   z-index: 1040;
   overflow: hidden;
   outline: 0;
-  display: none;
 }
 .modal-dialog {
   position: relative;
@@ -996,7 +998,7 @@ dl.grid dd {
 }
 .modal-body::-webkit-scrollbar-thumb:horizontal {
   width: 50px;
-  background-color: #999999;
+  background-color: #263238;
   border-radius: 8px;
 }
 .modal-footer {
