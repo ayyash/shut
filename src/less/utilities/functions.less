@@ -26,6 +26,9 @@
   }
 }
 
+.resfont(@fontsize) when (@enable-res-fonts) {
+  font-size: @fontsize * @resFontFactor;
+}
 
 // TODO: might remove
 .clearfix() {

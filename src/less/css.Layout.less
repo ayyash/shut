@@ -14,13 +14,13 @@
 
 
 .media(md, {
-		
+	// remove as much as a scroll width
 	.page {
-		width: @screen[md] - @space * 2;
+		width: calc(@screen[md] - @space * 2);
 		padding: 0;
 	}
 	.singlepage {
-		width: @screen[sm] @space * 2;
+		width: calc(@screen[sm] @space * 2);
 	}
 		
 	.container {
@@ -32,21 +32,21 @@
 .media(lg, {
 		
 	.page {
-		width: @screen[lg] - @space * 2;
+		width: calc(@screen[lg] - @space * 2);
 
 	}
 	.singlepage {
-		width: @screen[md] - @space * 2;
+		width: calc(@screen[md] - @space * 2);
 	}
 });
 .media(xl, {
 		
 	.page {
-		width: @screen[xl] - @space * 2;
+		width: calc(@screen[xl] - @space * 2);
 
 	}
 	.singlepage {
-		width: @screen[md] - @space * 2;
+		width: calc(@screen[md] - @space * 2);
 	}
 });
 

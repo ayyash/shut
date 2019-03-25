@@ -81,9 +81,9 @@ p {
     font-weight: @font-weight-bold;
 }
 
-.face-italice {
+.face-italic {
     font-style: italic;
-}
+} 
 
 /* mixed content*/
 
@@ -149,3 +149,11 @@ del {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
+.media(md, {
+    // reduce size if enabled
+    html {
+        .resfont(@htmlFontBase);
+    }
+    
+});

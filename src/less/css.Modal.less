@@ -24,12 +24,12 @@
     z-index: @modal-zindex;
     overflow: hidden;
     outline: 0;
-    // display: none;
 }
 
 .modal-dialog {
     position: relative;
     width: auto;
+    // for mobile view to have enough padding
     margin: @modal-margin; // allow clicks to pass through for custom click handling to close modal
     pointer-events: none; // TODO: some sort of animation
     // WATCH:
@@ -71,9 +71,11 @@
     display: flex;
     align-items: flex-start; 
     justify-content: space-between; 
-    padding: @modal-padding;
+   
     // WATCH:
     align-items: center;
+
+    padding: @modal-padding;
     
 }
 // .modal-title {
@@ -81,7 +83,7 @@
 // }
 .modal-close {
    // icon
-   padding: @halfspace;
+//    padding: @halfspace;
    &:before {
        content: "x";
    }
@@ -108,12 +110,14 @@
        
         align-items: center;
         height: calc(100vh - @modal-margin * 2);
+        // height: 100vh;
     }
 }
 
 .modal-full-height {
     .modal-content {
         height: calc(100vh - @modal-margin * 2);
+        // height: 100vh;
     }
 }
 .modal-full-screen {
@@ -155,6 +159,9 @@
     .modal-half-screen .modal-dialog {
         max-width: 50vw;
     }
+    // .modal-title {
+    //     padding-left: @mainpad;
+    // }
 });
 
 

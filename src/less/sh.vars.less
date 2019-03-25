@@ -7,6 +7,7 @@
 @rem-enabled: true;
 @enable-rounded: true;
 @enable-icon-font: true;
+@enable-res-fonts: true; // allow scaling of fonts to change for smaller screens
 
 @icon-font: 'vpicons';
 @icon-vertical-align: middle;
@@ -69,6 +70,8 @@
 @fontface-ar: Traditional Arabic, tahoma, sans-serif;
 
 @htmlFontBase: 62.5%;
+@resFontFactor: 1.2; // how much to reduce font sizes for smaller screens
+
 @font-size: 1.4; // in rem
 @font-size-print: 80%;
 @font-multiplier: {
@@ -116,13 +119,13 @@
 // for forms @radius-input: 0;
 
 /* spacing and layout */
-@space: 		1.5rem;
+@space: 		15px;
 @halfspace: 	@space * 0.5;
 @extraspace: 	@space * 1.5;
 @doublespace: 	@space * 2;
 
 @box-border: 1px; // for white boxes
-@box-padding: 1rem;
+@box-padding: 10px;
 @list-spacing: 0.7rem; // lists spacing (multiplied by two for padding and margin)
 @label-padding: 0.25rem 0.8rem;
 @label-radius: @radius;

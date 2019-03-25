@@ -7,10 +7,10 @@
 .w100 {
     width: 100%!important;
 }
-
 .h100 {
-    height: 100vh;
+    height: 100%;
 }
+
 
 .generate-column(@column, @key: c) when (@column > 0) {
     .generate-column((@column - 1), @key);
