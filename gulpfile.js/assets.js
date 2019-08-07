@@ -11,10 +11,10 @@ var transform = require('gulp-transform');
 var shutConfig = require('./shut.config.json');
 
 var rtl = require('./rtl.js');
+var critical = require('./critical.js');
 
 // use less/sh.imports.less to create a less file of all ui* and media*, then generate src/css/sh.css
 const rawless = function() {
-
     return gulp
         .src(shutConfig.srcUrl + 'less/sh.imports.less')
         .pipe(
@@ -43,7 +43,7 @@ const rawless = function() {
         })
         .pipe(
             autoprefixer({
-                browsers: shutConfig.browserslist
+                overrideBrowserslist: shutConfig.browserslist
             })
         )
         .pipe(rename({ basename: shutConfig.projectName }))
@@ -76,7 +76,7 @@ const rawlessRtl = function(){
         })
         .pipe(
             autoprefixer({
-                browsers: shutConfig.browserslist
+                overrideBrowserslist: shutConfig.browserslist
             })
         )
         .pipe(rename({ basename: shutConfig.projectName, suffix: '.rtl' }))
@@ -94,6 +94,52 @@ const rawMirror = gulp.series(rawlessRtl, function(){
        .pipe(gulp.dest(shutConfig.distUrl + 'css/'));
  });
 
+ // remove non critical from sh.css and in sh.general.css
+ // may be i should make the critical less an isolated function from output css to reduce overhead on task
+ const rawNonCritical  = gulp.series(rawless, function() {
+    return gulp.src(`${shutConfig.distUrl}css/${shutConfig.projectName}.css`)
+        .pipe(transform(function(contents, file) {
+            return critical.CriticalText(contents, false);
+        }, {encoding: 'utf8'}))
+        // rename to .general
+        .pipe(rename({ basename: shutConfig.projectName, suffix: '.general' }))        
+        .pipe(gulp.dest(shutConfig.distUrl + 'css/'));
+        // .on('error', console.error.bind(console));
+ });
+
+ const rawCritical = function() {
+    return gulp.src(`${shutConfig.distUrl}css/${shutConfig.projectName}.css`)
+        .pipe(transform(function(contents, file) {
+            return critical.CriticalText(contents, true);
+        }, {encoding: 'utf8'}))
+        // rename to .general
+        .pipe(rename({ basename: shutConfig.projectName, suffix: '.critical' }))        
+        .pipe(gulp.dest(shutConfig.distUrl + 'css/'));
+        // .on('error', console.error.bind(console));
+ };
+
+ const rawNonCriticalRtl = gulp.series(rawMirror, function() {
+    return gulp.src(`${shutConfig.distUrl}css/${shutConfig.projectName}.rtl.css`)
+        .pipe(transform(function(contents, file) {
+            return critical.CriticalText(contents, false);
+        }, {encoding: 'utf8'}))
+        // rename to .general
+        .pipe(rename({ basename: shutConfig.projectName, suffix: '.general.rtl' }))        
+        .pipe(gulp.dest(shutConfig.distUrl + 'css/'));
+        // .on('error', console.error.bind(console));
+ });
+
+ const rawCriticalRtl = function() {
+    return gulp.src(`${shutConfig.distUrl}css/${shutConfig.projectName}.rtl.css`)
+        .pipe(transform(function(contents, file) {
+            return critical.CriticalText(contents, true);
+        }, {encoding: 'utf8'}))
+        // rename to .general
+        .pipe(rename({ basename: shutConfig.projectName, suffix: '.critical.rtl' }))        
+        .pipe(gulp.dest(shutConfig.distUrl + 'css/'))
+        .on('error', console.error.bind(console));
+ };
+ 
 const buildcss = function() {
     // minify the disturl and place in minisite public
 	// this step is not part of the shut, but rather the working environment of every project
@@ -116,6 +162,7 @@ const buildRtlcss = function(){
 }
 
 if (shutConfig.isRtl){
+    // produces both rtl and ltr
     exports.rawless = gulp.series(rawless, rawMirror);
     exports.buildcss = gulp.parallel(buildcss, buildRtlcss);
 
@@ -124,6 +171,7 @@ if (shutConfig.isRtl){
         gulp.watch('**/less/(sh|ui|rtl){1}\.*.less',  { ignoreInitial: false }, gulp.series(rawless, rawMirror));
 
     }
+    exports.critical =  gulp.series(rawNonCritical, rawCritical, rawNonCriticalRtl, rawCriticalRtl);
 
 } else {
 
@@ -134,5 +182,6 @@ if (shutConfig.isRtl){
         gulp.watch('**/less/(sh|ui){1}\.*.less',  { ignoreInitial: false }, rawless);
 
     }
+    exports.critical =  gulp.series(rawNonCritical, rawCritical);
 }
 
