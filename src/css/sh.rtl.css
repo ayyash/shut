@@ -2,6 +2,7 @@
 /* site defined vars */
 /* spacing and layout */
 /* resetting */
+/* CRITICAL BEGIN */
 * {
   margin: 0;
   padding: 0;
@@ -15,6 +16,7 @@ ul,
 li {
   list-style: none;
 }
+/* CRITICAL END */
 fieldset,
 form,
 iframe {
@@ -100,6 +102,7 @@ i.liga,
 .icon-inline:before {
   margin-left: 15px;
 }
+/* CRITICAL BEGIN */
 .rel {
   position: relative;
 }
@@ -109,6 +112,7 @@ i.liga,
 .r {
   float: left;
 }
+/* CRITICAL END */
 .clear {
   clear: both;
 }
@@ -218,6 +222,7 @@ ol.doublespacedout > li {
   background-color: yellow!important;
 }
 /* layout */
+/* CRITICAL BEGIN */
 .page {
   margin: 0 auto;
   padding: 15px;
@@ -256,6 +261,8 @@ ol.doublespacedout > li {
     width: calc(720px - 15px * 2);
   }
 }
+/* CRITICAL END */
+/* CRITICAL BEGIN */
 button {
   border: 0;
   background-color: transparent;
@@ -264,6 +271,7 @@ button {
 button:focus {
   outline: none;
 }
+/* CRITICAL END */
 .btn,
 .btn-rev,
 .btn-fake,
@@ -335,6 +343,7 @@ button:focus {
 .btn-chop-end {
   margin-left: -0.8rem;
 }
+/* CRITICAL BEGIN */
 /* affects wrapper and site width */
 .w100 {
   width: 100%!important;
@@ -915,6 +924,7 @@ dl.grid dd {
     display: block;
   }
 }
+/* CRITICAL END */
 .dr-modal-overlay {
   position: fixed;
   top: 0;
@@ -1124,6 +1134,7 @@ dl.grid dd {
   align-items: center;
 }
 /* font setting */
+/* CRITICAL BEGIN */
 html {
   font-size: 62.5%;
 }
@@ -1136,6 +1147,7 @@ input {
   font-size: 1.4rem;
   color: #202020;
 }
+/* CRITICAL END */
 section {
   margin-bottom: 22.5px;
 }
@@ -1186,6 +1198,7 @@ p {
   font-style: italic;
 }
 /* mixed content*/
+/* CRITICAL BEGIN */
 .ltr {
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Roboto", "Segoe UI", "Fira Sans", "Helvetica Neue", Arial, sans-serif;
   direction: ltr;
@@ -1194,6 +1207,7 @@ p {
   font-family: Traditional Arabic, tahoma, sans-serif;
   direction: rtl;
 }
+/* CRITICAL END */
 /* HTML tags redefined */
 a,
 .a {
@@ -1635,10 +1649,12 @@ table.rich th {
     color: #333;
   }
 }
+/* CRITICAL BEGIN */
 .ar {
   font-family: Traditional Arabic, tahoma, sans-serif;
   direction: rtl;
 }
+/* CRITICAL END */
 /* RTL BEGIN */
 body,
 textarea,
