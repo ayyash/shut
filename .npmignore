@@ -1,11 +1,8 @@
 .vscode
 node_modules/
 local/
-
-gulptasks/
-
 **/*.md
-
+_*/**
 minisite/
 gulpfile.js
 jsconfig.json
