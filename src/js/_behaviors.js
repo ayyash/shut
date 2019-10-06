@@ -1,5 +1,6 @@
-﻿
-(function ($) {
+﻿// redoing with vanilla javascript
+
+(function ($h) {
 	
 	// main definitions first
 
@@ -41,15 +42,36 @@
 	// document clicks
 	$.popbasket = [];
 
-	$.Behaviors = function (context, nonGreedy) {
-		// group data-behavior, and run functions with prepare-name of behavior
-		// if nonGreedy do not include context
-		var $allbehaviors;
-		if (context == null)
-			$allbehaviors = $("[data-behavior]");
-		else
-			$allbehaviors = nonGreedy ? $("[data-behavior]", context) : jQuery.merge(context.filter("[data-behavior]"), $("[data-behavior]", context));
+	// var _observer = new MutationObserver(function(mutationsList, o) {
+    //     for(var m of mutationsList) {
+    //         if (m.type == 'childList') {
+    //             // for every bind in behaviors list, rebind
+                
+    //             for(var i in window.Ws.Behaviors.Bind){
+    //                 window.Ws.Behaviors.Bind[i]();
+    //             }
 
+    //         }
+    //     }
+    // });
+    // window.setTimeout(() => {
+        
+    //     _observer.observe(document.body, {childList: true, subtree: true, attributes: false});        
+        
+	// }, 1000);
+	
+	$h.Behaviors = function (context, isGreedy) {
+		// group data-behavior, and run functions with prepare-name of behavior
+		// if isGreedy do include context
+		var $allbehaviors;
+		
+		if (context == null) {
+		// $allbehaviors = $("[data-behavior]");
+			$allbehaviors = document.querySelectorAll('[data-behavior]');
+		} else {
+			$allbehaviors = context.querySelectorAll('[data-behavior]');
+			// $allbehaviors = nonGreedy ? $("[data-behavior]", context) : jQuery.merge(context.filter("[data-behavior]"), $("[data-behavior]", context));
+		}
 
 		$.each($allbehaviors, function (i, o) {
 			var $t = $(this);
@@ -121,4 +143,4 @@
 
 
 
-})(jQuery);
+})(Shut);

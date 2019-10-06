@@ -966,22 +966,28 @@ dl.grid dd {
   box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.3);
   outline: 0;
 }
+/* RTL BEGIN */
 .animate.fromleft .modal-content {
-  transform: translateX(0);
-  animation: fromright 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateX(-100%);
+  animation: fromleft 0.15s cubic-bezier(0.4, 0, 0.2, 1) 0.15s;
+  animation-fill-mode: forwards;
 }
 .animate.fromright .modal-content {
-  transform: translateX(0);
-  animation: fromleft 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateX(100%);
+  animation: fromright 0.15s cubic-bezier(0.4, 0, 0.2, 1) 0.15s;
+  animation-fill-mode: forwards;
 }
 .animate.fromtop .modal-content {
-  transform: translateX(0);
-  animation: fromtop 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(-100%);
+  animation: fromtop 0.15s cubic-bezier(0.4, 0, 0.2, 1) 0.15s;
+  animation-fill-mode: forwards;
 }
 .animate.frombottom .modal-content {
-  transform: translateX(0);
-  animation: frombottom 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(100%);
+  animation: frombottom 0.15s cubic-bezier(0.4, 0, 0.2, 1) 0.15s;
+  animation-fill-mode: forwards;
 }
+/* RTL END */
 .modal-header {
   display: flex;
   align-items: flex-start;
@@ -1089,7 +1095,7 @@ dl.grid dd {
     transform: translateY(100%);
   }
   to {
-    transform: translateX(0);
+    transform: translateY(0);
   }
 }
 @keyframes fromtop {
@@ -1097,7 +1103,7 @@ dl.grid dd {
     transform: translateY(-100%);
   }
   to {
-    transform: translateX(0);
+    transform: translateY(0);
   }
 }
 /*Basic Card */
@@ -1249,11 +1255,13 @@ del {
   color: #959595;
   text-decoration: line-through;
 }
+/* CRITICAL BEGIN */
 @media only screen and (min-width: 720px) {
   html {
     font-size: 75%;
   }
 }
+/* CRITICAL END */
 .box {
   padding: 10px;
   border-radius: 3px;
@@ -1654,8 +1662,6 @@ table.rich th {
   font-family: Traditional Arabic, tahoma, sans-serif;
   direction: rtl;
 }
-/* CRITICAL END */
-/* RTL BEGIN */
 body,
 textarea,
 select,
@@ -1667,4 +1673,4 @@ input {
 textarea {
   overflow-x: hidden;
 }
-/* RTL END */
+/* CRITICAL END */

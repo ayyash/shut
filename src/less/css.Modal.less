@@ -50,24 +50,32 @@
     outline: 0;
     // add border radius here optionally
 }
+
+/* RTL BEGIN */
 .animate {
     &.fromleft .modal-content {
-        transform: translateX(0);
-        animation: fromleft .15s @trans-func;
+        transform: translateX(-100%);
+        animation: fromleft .15s @trans-func 0.15s;
+        animation-fill-mode: forwards;
+        
     }
     &.fromright .modal-content {
-        transform: translateX(0);
-        animation: fromright .15s @trans-func;
+        transform: translateX(100%);
+        animation: fromright .15s @trans-func 0.15s;
+        animation-fill-mode: forwards;
     }
     &.fromtop .modal-content {
-        transform: translateX(0);
-        animation: fromtop .15s @trans-func;
+        transform: translateY(-100%);
+        animation: fromtop .15s @trans-func 0.15s;
+        animation-fill-mode: forwards;
     }
     &.frombottom .modal-content {
-        transform: translateX(0);
-        animation: frombottom .15s @trans-func;
+        transform: translateY(100%); 
+        animation: frombottom .15s @trans-func 0.15s;
+        animation-fill-mode: forwards;
     }
 }
+/* RTL END */
 .modal-header {
     display: flex;
     align-items: flex-start; 
@@ -195,7 +203,7 @@
         transform: translateY(100%);
     }
     to {
-        transform: translateX(0);
+        transform: translateY(0);
     }
 }
 @keyframes fromtop {
@@ -203,7 +211,7 @@
         transform: translateY(-100%);
     }
     to {
-        transform: translateX(0);
+        transform: translateY(0);
     }
 }
 
