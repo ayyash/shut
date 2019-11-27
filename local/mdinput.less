@@ -1,0 +1,131 @@
+@md-input-padding: {
+    top: 20px;
+    right: 16px;
+    bottom: 6px;
+    left: 16px;
+}
+
+;
+.md-field-wrapper {
+    margin-bottom: @doublespace;
+}
+
+.md-field {
+    position: relative;
+    display: block;
+    background-color: @grey-light;
+    box-shadow: inset 0px 0px 3px 0px #00000044;
+    &.with-prefix {
+        padding-left: 2rem;
+    }
+    margin-bottom: @doublespace;
+
+}
+
+.md-help-text {
+    color: @text-light;
+    .small;
+    margin-left: @md-input-padding[left];
+
+}
+md-input + .md-help-text {
+    margin-top: -@extraspace;
+}
+
+.md-input {
+    border: 0;
+    outline: none;
+    padding: @md-input-padding[top] @md-input-padding[right] @md-input-padding[bottom] @md-input-padding[left];
+
+    background-color: transparent;
+    caret-color: @linkcolor;
+    &:focus {
+        outline: none;
+        border-bottom-color: @linkcolor;
+        box-shadow: 0 1px 0px 0px @linkcolor;
+    }
+    &:focus~.md-asterisk {
+        display: none;
+    }
+    &:focus~.md-label {
+        transform: translateY(-50%) scale(.75)
+    }
+}
+
+.md-label {
+    position: absolute;
+    top: @md-input-padding[top] - 7;
+    left: @md-input-padding[left];
+    color: @text-light; //padding-bottom: 0!important;
+    cursor: auto;
+    transform-origin: left; // transition: left 0.3s,  top 0.3s, font-size 0.3s;
+    transition: transform 0.3s;
+    &.focused {
+        // transform: translateY(142%);
+        transform: translateY(-50%) scale(.75)
+    }
+}
+
+.md-invalid-feedback {
+    background-color: @red;
+    color: @white;
+    .small();
+    position: absolute;
+    bottom: -24px;
+    left: 5px;
+    z-index: 1000;
+    border-radius: @radius;
+    padding: 2px 5px;
+    white-space: nowrap;
+    width: auto; // god damn u bootstrap
+    &:before {
+        border-color: @red;
+        content: "";
+        display: inline-block;
+        height: 0;
+        width: 0;
+        position: absolute;
+        left: 45%;
+        top: -4px;
+        border-style: solid;
+        border-color: transparent;
+        border-width: 0 4px 4px;
+        border-bottom-color: @red;
+    }
+    display: none;
+}
+
+.ng-validate-force-show() {
+    box-shadow+: inset 0 -2px 0px 0px @red;
+    ~.md-invalid-feedback,
+    ~.md-invalid-feedback--custom {
+        display: block;
+    }
+}
+
+.ng-validation(@selector) {
+    @{selector}.ng-dirty.ng-touched.ng-invalid {
+        .ng-validate-force-show();
+    }
+}
+
+.ng-forcevalidation(@selector) {
+    @{selector}.ng-invalid {
+        .ng-validate-force-show();
+    }
+}
+
+.ng-validation(input);
+.ng-validation(textarea);
+.ng-validation(select);
+.was-validated {
+    .ng-forcevalidation(input);
+    .ng-forcevalidation(textarea);
+    .ng-forcevalidation(select);
+}
+
+// allow custommd to show invalid the minute it is called, no touched and dirty because
+// there is no input associated
+.custommd.ng-invalid {
+    .ng-validate-force-show();
+}

@@ -1,0 +1,23 @@
+- get dependency packages? like selectisize, knob, chosen, autogrow...
+- npm jquery, and jqueryui
+- create shut config file where chosen behaviors can be added
+- gulp everything
+- create a minisite
+- genereate dist folder for minified files, make note that this is the folder to reference in projects
+
+- pack whats in nodemodules using gulp or webpack or systemjs
+- do i pack jquery andjqueryui? preferrably not, leno users will have it already
+
+
+branch
+done: merge to master
+update version to 4.0
+publish
+
+
+
+Jan 9
+use css vars as much as u can
+
+
+do icons first?
