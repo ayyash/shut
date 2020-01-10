@@ -74,7 +74,7 @@ textarea {
     src: url('../fonts/vpicons.svg#icons') format('svg');
   }
 }
-i.liga,
+.liga,
 .symbol:before,
 .symbolAfter:after {
   font-family: 'vpicons';
@@ -83,7 +83,6 @@ i.liga,
   font-weight: normal;
   font-variant: normal;
   display: inline-block;
-  line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   speak: none;
@@ -96,8 +95,6 @@ i.liga,
   font-variant-ligatures: discretionary-ligatures;
   /* ligatures? */
   content: attr(data-icon);
-  vertical-align: middle;
-  font-size: 200%;
 }
 .icon-inline:before {
   margin-right: 15px;
@@ -966,7 +963,6 @@ dl.grid dd {
   box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.3);
   outline: 0;
 }
-/* RTL BEGIN */
 .animate.fromleft .modal-content {
   transform: translateX(-100%);
   animation: fromleft 0.15s cubic-bezier(0.4, 0, 0.2, 1) 0.15s;
@@ -987,7 +983,6 @@ dl.grid dd {
   animation: frombottom 0.15s cubic-bezier(0.4, 0, 0.2, 1) 0.15s;
   animation-fill-mode: forwards;
 }
-/* RTL END */
 .modal-header {
   display: flex;
   align-items: flex-start;
@@ -1006,8 +1001,8 @@ dl.grid dd {
   scrollbar-width: thin;
 }
 .modal-body::-webkit-scrollbar {
-  width: 9px;
-  height: 9px;
+  width: 5px;
+  height: 5px;
 }
 .modal-body::-webkit-scrollbar-button:start:decrement,
 .modal-body::-webkit-scrollbar-button:end:increment {
@@ -1074,6 +1069,7 @@ dl.grid dd {
     max-width: 50vw;
   }
 }
+/* RTL BEGIN */
 @keyframes fromleft {
   from {
     transform: translateX(-100%);
@@ -1090,6 +1086,7 @@ dl.grid dd {
     transform: translateX(0);
   }
 }
+/* RTL END */
 @keyframes frombottom {
   from {
     transform: translateY(100%);
@@ -1274,7 +1271,7 @@ ul.boxed > li {
 }
 .box-yellow {
   background-color: #ffc400;
-  color: #202020;
+  color: #fff;
 }
 .box-yellow-light {
   background-color: #ffdc66;
@@ -1311,7 +1308,7 @@ ul.boxed > li {
 }
 .box-grey {
   background-color: #999999;
-  color: #202020;
+  color: #fff;
 }
 .box-white-light {
   background-color: #fff;
@@ -1334,7 +1331,7 @@ ul.boxed > li {
 }
 .box-blue-light {
   background-color: #0ee8ff;
-  color: #202020;
+  color: #fff;
 }
 .box-shadow {
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
@@ -1411,7 +1408,7 @@ a.label-red:hover {
 }
 .label-yellow {
   background-color: #ffc400;
-  color: #202020;
+  color: #fff;
 }
 a.label-yellow:hover {
   background-color: #ffd64d;
@@ -1459,7 +1456,7 @@ a.label-green-light:hover {
 }
 .label-blue-light {
   background-color: #0ee8ff;
-  color: #202020;
+  color: #fff;
 }
 a.label-blue-light:hover {
   background-color: #5befff;
@@ -1467,7 +1464,7 @@ a.label-blue-light:hover {
 }
 .label-light {
   background-color: #959595;
-  color: #202020;
+  color: #fff;
 }
 a.label-light:hover {
   background-color: #bbbbbb;
@@ -1483,7 +1480,7 @@ a.label-lighter:hover {
 }
 .label-grey {
   background-color: #999999;
-  color: #202020;
+  color: #fff;
 }
 a.label-grey:hover {
   background-color: #bfbfbf;

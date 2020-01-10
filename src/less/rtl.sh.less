@@ -1,6 +1,15 @@
 ﻿// import sh first
 @import "sh.less";
 
+.animate {
+    &.fromleft .modal-content {
+        transform: translateX(100%);
+    }
+    &.fromright .modal-content {
+        transform: translateX(-100%);
+    }
+}
+
 /* CRITICAL BEGIN */
 .ar {
 	font-family: @fontface-ar;

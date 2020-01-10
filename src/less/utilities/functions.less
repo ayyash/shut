@@ -1,10 +1,10 @@
 ﻿
 
 /* coloring forground */
-.fcolor (@c) when (lightness(@c) >= 50%) {
+.fcolor (@c) when (lightness(@c) > 60%) {
   color: @text-color;
 }
-.fcolor (@c) when (lightness(@c) < 50%) {
+.fcolor (@c) when (lightness(@c) <= 60%) {
   color: @white;
 }
 
