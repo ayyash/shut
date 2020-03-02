@@ -236,7 +236,7 @@ ol.doublespacedout > li {
     padding: 0;
   }
   .singlepage {
-    width: calc(600px 15px * 2);
+    width: calc(600px - 15px * 2);
   }
   .container {
     padding: 15px;
