@@ -1,4 +1,8 @@
-// RESET
+// those imports are included again in sub files to make use of reference import to css.*.css from angular .less file easier
+// since lesscss imports once, this has no effect on output css
+@import "utilities/border";
+@import "utilities/functions";
+
 /* CRITICAL BEGIN */
 button {
     border: 0;
@@ -46,10 +50,8 @@ button {
 .btn-rev {
     color: @white;
     background-color: @linkcolor;
-    // .gradient(lighten(@linkcolor, 10%), @linkcolor);
     &:hover {
         background-color: lighten(@linkcolor, 10%);
-        // .gradient(lighten(@linkcolor, 10%), lighten(@linkcolor, 5%));
         color: @white;
     }
 }
