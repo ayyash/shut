@@ -1,16 +1,10 @@
 // OBSOLETE file
 const gulp = require('gulp');
 
-var less = require('gulp-less');
-var cssmin = require('gulp-cssmin');
 var concat = require('gulp-concat');
-var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
 var inject = require('gulp-inject');
-//var wrap = require('gulp-wrap');
 var replace = require('gulp-replace');
-var htmlmin = require('gulp-htmlmin');
-// var del = require('del');
 var shutConfig = require(__dirname + '/shut.config.json');
 // change to have srcUrl for minisite only
 
