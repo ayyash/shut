@@ -18,51 +18,56 @@ ul.boxed > li {
 }
 
 
-.box-yellow {
-    .colorbox(@yellow);
-}
+each(@colors, {
 
-.box-yellow-light {
-    .colorbox(@yellow-light);
-}
+    .box-@{key} {
+        .colorbox(@value);
+    }
+    
+});
 
-.box-red {
-    .colorbox(@red);
-}
 
-.box-red-light {
-    .colorbox(@red-light);
-}
+// .box-yellow {
+//     .colorbox(@yellow);
+// }
 
-// .box-white {
-//     .colorbox(@white);
+// .box-yellow-light {
+//     .colorbox(@yellow-light);
+// }
+
+// .box-red {
+//     .colorbox(@red);
+// }
+
+// .box-red-light {
+//     .colorbox(@red-light);
 // }
 
 
-.box-green {
-    .colorbox(@green);
-}
+// .box-green {
+//     .colorbox(@green);
+// }
 
-.box-green-light {
-    .colorbox(@green-light);
-}
+// .box-green-light {
+//     .colorbox(@green-light);
+// }
 
-.box-grey-light {
-    .colorbox(@grey-light);
-}
+// .box-grey-light {
+//     .colorbox(@grey-light);
+// }
 
 .box-white-dark {
     border: @box-border solid @grey-dark;
     .colorbox(@white);
 }
 
-.box-grey-dark {
-    .colorbox(@grey-dark);
-}
+// .box-grey-dark {
+//     .colorbox(@grey-dark);
+// }
 
-.box-grey {
-    .colorbox(@grey);
-}
+// .box-grey {
+//     .colorbox(@grey);
+// }
 
 .box-white-light {
     .box-white();
@@ -74,16 +79,16 @@ ul.boxed > li {
 }
 .box-white {
     border: @box-border solid @grey-light;
-    .colorbox(@white);
+    
 }
 
-.box-blue {
-    .colorbox(@blue);
-}
+// .box-blue {
+//     .colorbox(@blue);
+// }
 
-.box-blue-light {
-    .colorbox(@blue-light);
-}
+// .box-blue-light {
+//     .colorbox(@blue-light);
+// }
 
 // add shadows
 .box-shadow {
