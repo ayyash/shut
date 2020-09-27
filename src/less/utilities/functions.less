@@ -43,7 +43,10 @@
 }
 
 // exact width should not be used!
-.columns(@column: 1, @shift: 0) {
-  width: percentage((@column / @wrapper)) - @shift;
+.columns(@column: 1, @shift: 0) when (@shift <= 0)  {
+  width: percentage(@column / @wrapper);
+}
+.columns(@column: 1, @shift: 0) when (@shift > 0 ){
+  width: calc(percentage(@column / @wrapper) - @shift);
 }
 

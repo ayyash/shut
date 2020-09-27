@@ -1,6 +1,6 @@
 ﻿// redoing with vanilla javascript
 
-(function ($h) {
+(function ($) {
 	
 	// main definitions first
 

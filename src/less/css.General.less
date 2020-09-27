@@ -120,6 +120,7 @@
 	padding-bottom: @space;
 }
 
+
 .bthick {
 	border-bottom: 3px solid @b-color;
 	padding-bottom: @space;
@@ -128,6 +129,14 @@
 .bthick-dark {
 	border-bottom: 3px solid @b-dark-color;
 	padding-bottom: @space;
+}
+
+// bthin for grid
+.g-bthin > * {
+    .bthin();
+}
+.g-bthin-dark > * {
+	.bthin-dark();
 }
 
 

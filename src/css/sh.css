@@ -64,6 +64,7 @@ textarea {
 /* icons*/
 @font-face {
   font-family: 'vpicons';
+  font-display: block;
   src: url('../fonts/vpicons.ttf') format('truetype'), url('../fonts/vpicons.woff') format('woff'), url('../fonts/vpicons.svg#icons') format('svg');
   font-weight: normal;
   font-style: normal;
@@ -216,6 +217,14 @@ ol.doublespacedout > li {
 }
 .bthick-dark {
   border-bottom: 3px solid #263238;
+  padding-bottom: 15px;
+}
+.g-bthin > * {
+  border-bottom: 1px solid #999999;
+  padding-bottom: 15px;
+}
+.g-bthin-dark > * {
+  border-bottom: 1px solid #263238;
   padding-bottom: 15px;
 }
 .dev {
@@ -567,20 +576,6 @@ button:focus {
 }
 .g-basic {
   grid-template-columns: 30px auto;
-}
-dl.grid dt {
-  grid-column: 1;
-}
-dl.grid dd {
-  grid-column: 2;
-}
-.g-bthin > * {
-  border-bottom: 1px solid #999999;
-  padding-bottom: 15px;
-}
-.g-bthin-dark > * {
-  border-bottom: 1px solid #263238;
-  padding-bottom: 15px;
 }
 .md-only {
   display: none;

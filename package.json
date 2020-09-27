@@ -6,7 +6,8 @@
   "scripts": {
     "start": "gulp rawshut && gulp default",
     "build": "gulp buildshut",
-    "minisite": "gulp rawless && gulp buildcss"
+    "minisite": "gulp rawless && gulp buildcss",
+    "install:dev": "npm install --save-dev gulp gulp-autoprefixer gulp-concat gulp-cssmin gulp-inject gulp-less gulp-rename gulp-transform gulp-uglify gulp-replace"
   },
   "repository": {
     "type": "git",

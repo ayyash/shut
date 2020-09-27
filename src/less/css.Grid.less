@@ -1,7 +1,6 @@
-﻿
+﻿@import (reference) 'utilities/media.less';
 
 /* CRITICAL BEGIN */
-@wrapper: 12; // columns
 /* affects wrapper and site width */
 
 .w100 {
@@ -96,22 +95,15 @@
 }
 
 // special grid for dl
-dl.grid {
-	dt {
-		grid-column: 1;
-	}
-	dd {
-        grid-column: 2;
-	}
-}
+// dl.grid {
+// 	dt {
+// 		grid-column: 1;
+// 	}
+// 	dd {
+//         grid-column: 2;
+// 	}
+// }
 
-// bthin for grid
-.g-bthin > * {
-    .bthin();
-}
-.g-bthin-dark > * {
-	.bthin-dark();
-}
 
 // only
 .md-only {
