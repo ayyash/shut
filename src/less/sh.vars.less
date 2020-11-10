@@ -10,9 +10,33 @@
 @enable-res-fonts: true; // allow scaling of fonts to change for smaller screens
 
 @icon-font: 'vpicons';
-@icon-vertical-align: middle;
-@icon-font-size: 200%;
 @icon-inline-margin: @space;
+
+// fonts
+@fontface: -apple-system, system-ui, BlinkMacSystemFont,  "Roboto", "Segoe UI", "Fira Sans", "Helvetica Neue", Arial, sans-serif;
+@fontface-ar: Traditional Arabic, tahoma, sans-serif;
+
+@htmlFontBase: 62.5%;
+@resFontFactor: 1.2; // how much to reduce font sizes for smaller screens
+
+@font-size: 1.4; // in rem
+@font-size-print: 80%;
+@font-multiplier: {
+	larger: 3.5;
+	large: 3;
+	f1: 2.5;
+	f2:  2;
+	f3: 1.75;
+	f4: 1.5;
+	f5: 1.25;
+	f6: 1;
+	small: 0.9;
+	smaller: 0.8;
+};
+
+@font-weight-light: 300;
+@font-weight: 400;
+@font-weight-bold: 700;
 
 // colors
 @text-color: #202020; // basic text color
@@ -57,6 +81,16 @@
 	grey-dark: @grey-dark;
 };
 
+@front-color-contrast: 43%;
+
+// table colors
+@table-th-border-color: @grey-dark;
+@table-td-border-color: @grey-light;
+@table-ft-border-color: @grey-dark;
+@table-spaced: @space;
+@table-half-spaced: @halfspace;
+@table-striped-bg-color: @grey-light;
+@table-th-bg-color: @grey-light;
 
 @lightLabel: 15; // light labels on hover of a link to how much percentage
 
@@ -66,40 +100,22 @@
 @b-color: @grey; // bthin and bthick
 @b-dark-color: @grey-dark; // bthin-dark and bthick-dark
 
-// fonts
-@fontface: -apple-system, system-ui, BlinkMacSystemFont,  "Roboto", "Segoe UI", "Fira Sans", "Helvetica Neue", Arial, sans-serif;
-@fontface-ar: Traditional Arabic, tahoma, sans-serif;
-
-@htmlFontBase: 62.5%;
-@resFontFactor: 1.2; // how much to reduce font sizes for smaller screens
-
-@font-size: 1.4; // in rem
-@font-size-print: 80%;
-@font-multiplier: {
-	larger: 3.5;
-	large: 3;
-	f1: 2.5;
-	f2:  2;
-	f3: 1.75;
-	f4: 1.5;
-	f5: 1.25;
-	f6: 1;
-	small: 0.9;
-	smaller: 0.8;
-};
-
-@font-weight-light: 300;
-@font-weight: 400;
-@font-weight-bold: 700;
-
 
 // shadows
+// @shadows: {
+//     zero: none;
+//     level1: 0 0 5px 0 rgba(0,0,0,.1); 
+//     level2: 0 2px 2px 0 rgba(@black,0.14), 0 1px 5px 0 rgba(@black,0.12), 0 3px 1px -2px rgba(@black,0.2);
+//     level3: 0 6px 10px 0 rgba(@black,0.14), 0 1px 18px 0 rgba(@black,0.12), 0 3px 5px -1px rgba(@black,0.3);
+//     level4: 0 16px 24px 2px rgba(@black,0.14), 0 6px 30px 5px rgba(@black,0.12), 0 8px 10px -5px rgba(@black,0.3);
+// };
+
 @shadows: {
-    zero: none;
-    level1: 0 0 5px 0 rgba(0,0,0,.1); 
-    level2: 0 2px 2px 0 rgba(@black,0.14), 0 1px 5px 0 rgba(@black,0.12), 0 3px 1px -2px rgba(@black,0.2);
-    level3: 0 6px 10px 0 rgba(@black,0.14), 0 1px 18px 0 rgba(@black,0.12), 0 3px 5px -1px rgba(@black,0.3);
-    level4: 0 16px 24px 2px rgba(@black,0.14), 0 6px 30px 5px rgba(@black,0.12), 0 8px 10px -5px rgba(@black,0.3);
+	none: none;
+    shallow: 0 0 5px 0 rgba(0,0,0,.1); 
+    normal: 0 2px 2px 0 rgba(@black,0.14), 0 1px 5px 0 rgba(@black,0.12), 0 3px 1px -2px rgba(@black,0.2);
+    deep: 0 6px 10px 0 rgba(@black,0.14), 0 1px 18px 0 rgba(@black,0.12), 0 3px 5px -1px rgba(@black,0.3);
+    deeper: 0 16px 24px 2px rgba(@black,0.14), 0 6px 30px 5px rgba(@black,0.12), 0 8px 10px -5px rgba(@black,0.3);
 };
 
 // breakpoints
@@ -137,7 +153,6 @@
 
 @wrapper: 12; // columns
 @grid-column-height: 60px; 
-@grid-fixed-icon-width: @doublespace; // for g-basic
 
 // modals
 @modal-bg: fade(@black, 60);

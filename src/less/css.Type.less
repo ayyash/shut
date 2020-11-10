@@ -75,15 +75,24 @@ p {
 }
 
 .weight-light {
-    font-weight: @font-weight-light;
+    font-weight: floor(@font-weight-light / 100) * 100;
+    @supports (font-variation-settings: "wght" @font-weight-light) {
+        font-weight: @font-weight-light;
+    }
 }
 
 .weight-normal {
-    font-weight: @font-weight;
+    font-weight: floor(@font-weight / 100) * 100;
+    @supports (font-variation-settings: "wght" @font-weight) {
+        font-weight: @font-weight;
+    }
 }
 
 .weight-bold {
-    font-weight: @font-weight-bold;
+    font-weight: floor(@font-weight-bold / 100) * 100;
+    @supports (font-variation-settings: "wght" @font-weight-bold) {
+        font-weight: @font-weight-bold;
+    }
 }
 
 .face-italic {
@@ -125,17 +134,17 @@ a.cam,
     }
 }
 
+// TODO: double check
 a[rel='track']:visited {
     color: @visitedcolor;
 }
 
 a:hover,
+.a:hover,
 a[rel='track']:hover {
     color: @altcolor;
 }
 
-p.normalsize,
-.normalsize p,
 .normalsize {
     #rem>.font-size(@font-size) !important;
     font-family: @fontface;

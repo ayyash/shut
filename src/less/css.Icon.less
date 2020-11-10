@@ -51,10 +51,7 @@
     font-variant-ligatures: discretionary-ligatures;
     /* ligatures? */
     content: attr(data-icon);
-    // moved out of framework
-    // vertical-align: @icon-vertical-align;
-    // font-size: @icon-font-size;
-    // line-height: 1;
+    
 }
 
 // generating .icon-name classes from sh.icons.less
@@ -66,6 +63,7 @@
     }
 }
 
+// may be should remove from shut
 .displayIcon(@value) {
     /*this is for plain icons content */
     content: @value;

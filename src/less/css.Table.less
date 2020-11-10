@@ -19,59 +19,63 @@ table {
 table.tabulated {
 	th {
 		padding-bottom: 2px;
-		border-bottom: 1px solid @grey-dark;
+		border-bottom: 1px solid @table-th-border-color;
+		font-weight: @font-weight-bold;
 	}
 	td {
 		padding: 2px 0;
-		border-bottom: 1px solid @grey-light;
+		border-bottom: 1px solid @table-td-border-color;
 	}
 	tfoot {
 		td {
-			border-top: 2px solid @grey-dark;
+			border-top: 2px solid @table-ft-border-color;
 		}
 	}
 }
 
 
 table.spacedout {
-	td, th {padding: @space;}
+	td, th {padding: @table-spaced;}
 }
 
 table.bordered {
-	td, th {border:1px solid @grey-light;}
+	td, th {border:1px solid @table-td-border-color;}
 	tfoot {
 		td {
-			border-top: 2px solid @grey;
+			border-top: 2px solid @table-ft-border-color;
 		}
 	}
 }
 
 
-table.tabulated th {
-	font-weight: @font-weight-bold;
-}
 
 table.striped {
 	tbody tr:nth-child(odd) {
-		background-color: @grey-light;
+		background-color: @table-striped-bg-color;
 	}
 }
 
 
 table.rich {
 	th, td {
-		border: 1px solid @grey-light;
-		padding: @halfspace;
+		border: 1px solid @table-td-border-color;
+		padding: @table-half-spaced;
 	}
 	th {
 		font-weight: @font-weight-bold;
-		background-color: @grey-light;
-		border: 1px solid @grey;
-		border-bottom: 2px solid @grey-dark;
+		background-color: @table-th-bg-color;
+		border: 1px solid lighten(@table-th-border-color, 50%);
+		border-bottom: 2px solid @table-th-border-color
+	}
+	tfoot {
+		td {
+			border-top: 2px solid lighten(@table-ft-border-color, 50%);
+			background-color: lighten(@table-th-bg-color, 2%);
+		}
 	}
 }
 
-.tresp {
+.table-h {
 	overflow-y: hidden;
 	overflow-x: auto;
 	width:100%;

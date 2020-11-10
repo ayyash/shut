@@ -15,6 +15,17 @@
 .forprint {display: none; }
 
 
+// only
+.md-only {
+    display: none;
+}
+.lg-only {
+    display: none;
+}
+
+
+
+
 .media(md, {
 	// remove as much as a scroll width
 	.page {
@@ -30,6 +41,15 @@
 		padding: @mainpad;
 	}
 
+	.md-only {
+        display: block;
+    }
+
+    // hide
+    .xs-hide {
+        display: none;
+    }
+
 });
 .media(lg, {
 		
@@ -40,6 +60,12 @@
 	.singlepage {
 		width: calc(@screen[md] - @space * 2);
 	}
+	.lg-only {
+        display: block;
+    }
+    .md-hide {
+        display: none;
+    }
 });
 .media(xl, {
 		

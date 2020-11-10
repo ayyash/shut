@@ -1,7 +1,9 @@
 @import "utilities/scroll";
 // dynamic dialog
-// VER_NEXT: animate opacity
-.dr-modal-overlay {
+
+// static dialog
+.modal-overlay {
+    display: none;
     position: fixed;
     top: 0;
     right: 0;
@@ -9,11 +11,6 @@
     left: 0;
     z-index: @modal-zindex - 10;
     background-color: @modal-bg;
-}
-
-// static dialog
-.modal-overlay {
-    display: none;
 }
 
 
@@ -47,8 +44,8 @@
     max-height: calc(100vh - @modal-margin * 2);
     pointer-events: auto;
     background-color: @white;
-    background-clip: padding-box;
-    box-shadow: @shadows[level4]; // Remove focus outline from opened modal
+    background-clip: padding-box; 
+    box-shadow: @shadows[deeper]; // Remove focus outline from opened modal
     outline: 0;
     // add border radius here optionally
 }
@@ -97,8 +94,6 @@
 // }
 .modal-close {
 
-    // icon
-    //    padding: @halfspace;
     &:before {
         content: "x";
     }

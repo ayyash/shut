@@ -35,15 +35,30 @@
         width: calc(percentage(@column / @wrapper) - @halfspace);
     }
 }
-.generate-heights(@column) when (@column > 0){
-    .generate-heights((@column - 1));
-    .h-@{column},
-    .uh-@{column} > li {
-        min-height: (@grid-column-height) * @column;
-    }
-    
+
+.generate-min-heights(@from, @to) {
+
+    each(range(@from,@to), {
+        .h-@{value},
+        .uh-@{value} > li {
+            min-height: (@grid-column-height) * @value;
+        }
+    });
 }
-.generate-heights(6);
+
+.generate-max-heights(@from, @to) {
+
+    each(range(@from,@to), {
+        .hm-@{value},
+        .uhm-@{value} > li {
+            max-height: (@grid-column-height) * @value;
+        }
+    });
+}
+
+// TODO: make variable
+.generate-min-heights(1, 6);
+.generate-max-heights(1, 6);
 
 // default for small screens all percentages apply only for xs
 // then col.md apply 100% for small screens
@@ -61,7 +76,7 @@
     width: 100%;
 }
 
-.generate-offset(12);
+.generate-offset(11);
 .generate-column(12);
 
 .row-spaced {
@@ -85,56 +100,24 @@
 }
 .generate-grid(11);
 
-// basic grid where first column decides the width
-.g-content {
-    align-self: center; 
-}
-.g-basic {
-    grid-template-columns:  @grid-fixed-icon-width auto;
-    
-}
 
-// special grid for dl
-// dl.grid {
-// 	dt {
-// 		grid-column: 1;
-// 	}
-// 	dd {
-//         grid-column: 2;
-// 	}
-// }
-
-
-// only
-.md-only {
-    display: none;
-}
-.lg-only {
-    display: none;
-}
-
-.flex-nowrap {
-	flex-wrap: nowrap;
-}
 
 .media(md, {
     
-    .generate-offset(12, md);
+    .generate-offset(11, md);
     .generate-grid(11, gmd);
     .generate-column(12, md);
     
     .row-spaced {
         .generate-spaced-column(12, md);
     }
-    .md-only {
-        display: block;
-    }
+    
     
 });
 
 .media(lg, {
     
-    .generate-offset(12, lg);
+    .generate-offset(11, lg);
     .generate-grid(11, glg);
     
     .generate-column(12, lg); 
@@ -142,9 +125,7 @@
     .row-spaced {
         .generate-spaced-column(12, lg);
     }
-    .lg-only {
-        display: block;
-    }
+    
 });
 
 /* CRITICAL END */

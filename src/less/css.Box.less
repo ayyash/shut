@@ -27,52 +27,17 @@ each(@colors, {
 });
 
 
-// .box-yellow {
-//     .colorbox(@yellow);
-// }
-
-// .box-yellow-light {
-//     .colorbox(@yellow-light);
-// }
-
-// .box-red {
-//     .colorbox(@red);
-// }
-
-// .box-red-light {
-//     .colorbox(@red-light);
-// }
-
-
-// .box-green {
-//     .colorbox(@green);
-// }
-
-// .box-green-light {
-//     .colorbox(@green-light);
-// }
-
-// .box-grey-light {
-//     .colorbox(@grey-light);
-// }
 
 .box-white-dark {
     border: @box-border solid @grey-dark;
     .colorbox(@white);
 }
 
-// .box-grey-dark {
-//     .colorbox(@grey-dark);
-// }
 
-// .box-grey {
-//     .colorbox(@grey);
+// .box-white-light {
+//     .box-white();
+//     border: @box-border solid @grey-light;
 // }
-
-.box-white-light {
-    .box-white();
-    border: @box-border solid @grey-light;
-}
 .box-white-normal {
     border: @box-border solid @grey;
     .colorbox(@white);
@@ -82,33 +47,9 @@ each(@colors, {
     
 }
 
-// .box-blue {
-//     .colorbox(@blue);
-// }
+each(@shadows, {
+    .box-shadow-@{key} {
+        box-shadow: @value;
+    }
+});
 
-// .box-blue-light {
-//     .colorbox(@blue-light);
-// }
-
-// add shadows
-.box-shadow {
-    // default shadow level 2
-    box-shadow: @shadows[level2];
-    &-none {
-        // this should never be used, if ever, it means u wrote ur css or html wrong
-        box-shadow: none;
-    }
-    &-shallow {
-        box-shadow: @shadows[level1];
-    }
-    &-deep {
-        box-shadow: @shadows[level3];
-    }
-    &-deeper {
-        box-shadow: @shadows[level4];
-    }
-}
-
-.box-radius {
-    border-radius: @radius;
-}

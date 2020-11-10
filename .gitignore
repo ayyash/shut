@@ -1,6 +1,7 @@
 .vscode
 node_modules/
 _node_modules/
+fontfiles/
 
 npm-debug.log
 _*/**
