@@ -1,16 +1,19 @@
 ﻿
 /* layout */
 /* CRITICAL BEGIN */
-.page {
+.page,
+.singlepage {
   // defines page width
 	margin: 0 auto;
-	padding: @mainpad;
-}
-.singlepage {
-	margin: 0 auto;
-	padding: @mainpad;
+	width: 100%;
+	// padding: @mainpad; 
 	
 }
+.container {
+	// adds padding
+	padding: @mainpad;
+}
+
 
 .forprint {display: none; }
 
@@ -27,20 +30,16 @@
 
 
 .media(md, {
-	// remove as much as a scroll width
+	// remove as much as a scroll width (mainpad * 2 is good enough but might need more)
 	.page {
-		width: calc(@screen[md] - @space * 2);
-		padding: 0;
+		max-width: @screen[md];
+		// width: calc(@screen[md] - @mainpad * 2);
+		// padding: 0;
 	}
 	.singlepage {
-		width: calc(@screen[sm] - @space * 2);
+		max-width: @screen[sm];
 	}
 		
-	.container {
-		// adds padding
-		padding: @mainpad;
-	}
-
 	.md-only {
         display: block;
     }
@@ -54,11 +53,12 @@
 .media(lg, {
 		
 	.page {
-		width: calc(@screen[lg] - @space * 2);
+		max-width: @screen[lg];
+		// width: calc(@screen[lg] - @mainpad * 2);
 
 	}
 	.singlepage {
-		width: calc(@screen[md] - @space * 2);
+		max-width: @screen[md];
 	}
 	.lg-only {
         display: block;
@@ -70,11 +70,12 @@
 .media(xl, {
 		
 	.page {
-		width: calc(@screen[xl] - @space * 2);
+		max-width: @screen[xl];
+		// width: calc(@screen[xl] - @mainpad * 2);
 
 	}
 	.singlepage {
-		width: calc(@screen[md] - @space * 2);
+		max-width: @screen[md];
 	}
 });
 
