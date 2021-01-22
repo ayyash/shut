@@ -1,7 +1,7 @@
 const gulp = require('gulp');
 
 var less = require('gulp-less');
-var cssmin = require('gulp-clean-css'); // use gulp-cssmin instead
+var cssmin = require('gulp-cssmin'); 
 var rename = require('gulp-rename');
 var inject = require('gulp-inject');
 var autoprefixer = require('gulp-autoprefixer');

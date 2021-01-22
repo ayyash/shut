@@ -1,5 +1,5 @@
 var gulp = require('gulp');
-var gulpConfig = require('./config.json');
+var gulpConfig = require('./shut.config.json');
 var transform = require('gulp-transform');
 var inject = require('gulp-inject');
 
