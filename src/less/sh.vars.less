@@ -2,18 +2,18 @@
 /* site defined vars */
 
 @font-url: '../fonts/';
-@image-url: '../images/';
+// @image-url: '../images/'; i never use this
 
 @rem-enabled: true;
 @enable-rounded: true;
-@enable-icon-font: true;
+@enable-icon-font: false;
 @enable-res-fonts: true; // allow scaling of fonts to change for smaller screens
 
 @icon-font: 'vpicons';
 @icon-inline-margin: @space;
 
 // fonts
-@fontface: -apple-system, system-ui, BlinkMacSystemFont,  "Roboto", "Segoe UI", "Fira Sans", "Helvetica Neue", Arial, sans-serif;
+@fontface: -apple-system, BlinkMacSystemFont,  "Roboto", "Segoe UI", "Fira Sans", "Helvetica Neue", Arial, sans-serif;
 @fontface-ar: Traditional Arabic, tahoma, sans-serif;
 
 @htmlFontBase: 62.5%;
@@ -33,6 +33,8 @@
 	small: 0.9;
 	smaller: 0.8;
 };
+@custom-font-multiplier: {
+}
 
 @font-weight-light: 300;
 @font-weight: 400;
@@ -124,7 +126,7 @@
 	sm: 600px; // mobile interface
 	md: 720px; // tablet portrait
 	lg: 960px; // the usual desktop and landscape tablets
-	xl: 1280px; // unusually large with special treatment, else always fall back to normal 960
+	xl: 1280px; // more popular small desktop
 	ds: 1600px; // up above desktop
 	};
 

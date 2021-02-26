@@ -19,19 +19,14 @@ a.label {
     transition: background-color 0.15s,  color 0.15s;
 }
 
-.colorlabel (@c) {
-   
-    background-color: @c;
-    .fcolor(@c);
-}
 
 each(@colors, {
 
     .label-@{key} {
-        .colorlabel(@value);
+        .colorbox(@value);
     }
     a.label-@{key}:hover {
-        .colorlabel(lighten(@value, 15));
+        .colorbox(lighten(@value, @lightLabel));
         
     }
 });

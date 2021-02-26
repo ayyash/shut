@@ -73,6 +73,26 @@ const fwCritical = gulp.series(fwCss, function () {
         .on('error', console.error.bind(console));
 });
 
+const fwNonCriticalRtl = gulp.series(fwCss, function () {
+    return gulp.src(shutConfig.shutUrl + 'css/sh.rtl.css')
+        .pipe(transform(function (contents, file) {
+            return critical.CriticalText(contents, false);
+        }, { encoding: 'utf8' }))
+        // rename to .general
+        .pipe(rename({ basename: 'sh', suffix: '.rtl.general' }))
+        .pipe(gulp.dest(shutConfig.shutUrl + 'css/'))
+        .on('error', console.error.bind(console));
+});
+const fwCriticalRtl = gulp.series(fwCss, function () {
+    return gulp.src(shutConfig.shutUrl + 'css/sh.rtl.css')
+        .pipe(transform(function (contents, file) {
+            return critical.CriticalText(contents, true);
+        }, { encoding: 'utf8' }))
+        // rename to .general
+        .pipe(rename({ basename: 'sh', suffix: '.rtl.critical' }))
+        .pipe(gulp.dest(shutConfig.shutUrl + 'css/'))
+        .on('error', console.error.bind(console));
+});
 
 
 // minify src/css/sh.css into dist/css/sh.min.css
@@ -93,7 +113,7 @@ const fwBuildRtlCss = function () {
         .pipe(gulp.dest(shutConfig.shutDistUrl + 'css'));
 };
 
-
+// copy images and fonts, if any, to dist/
 const fwDistResources = function () {
     return gulp
         .src([shutConfig.shutUrl + 'fonts/*', shutConfig.shutUrl + 'images/*'], { base: shutConfig.shutUrl })
@@ -115,6 +135,7 @@ if (shutConfig.isRtl) {
     exports.watch = function () {
         gulp.watch(shutConfig.shutUrl + 'less/(sh|css|rtl){1}\.*.less', { ignoreInitial: false }, rawAll);
     };
+    exports.criticalshut = gulp.parallel(fwCritical, fwNonCritical, fwNonCriticalRtl, fwCriticalRtl);
 
 } else {
     exports.rawshut = fwCss;
@@ -122,9 +143,9 @@ if (shutConfig.isRtl) {
     exports.watch = function () {
         gulp.watch(shutConfig.shutUrl + 'less/(sh|css){1}\.*.less', { ignoreInitial: false }, fwCss);
     };
+    exports.criticalshut = gulp.parallel(fwCritical, fwNonCritical);
 }
 
-exports.criticalshut = gulp.parallel(fwCritical, fwNonCritical);
 
 // function getShutScripts() {
 //     var arr = [];

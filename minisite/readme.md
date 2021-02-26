@@ -8,8 +8,6 @@ Inside minisite folder an example implementation of the shut framework. The fram
 
 To do that, in development site (minisite/src an example implementation), a LESS folder is added, which contains four essential framework files:
 
-- **sh.framework.less**: these are initially defined by the framework, but contain color, icon and design definitions, thus they were extracted and placed asside for front end developer to mutuate as desired.
-
 - **sh.icons.less**: these are the icons initially defined by the font added "vpicons", again, because is project related, it was extracted and placed outside. The way the icons were created, is to allow for maximum applicability. They exists as ".icon-name" and also as a LESS variable "@icon-name" making it usable elsewhere in LESS files. (More on that here <http://vinepaper.com/shutv2/elements/icons>).
 
 - **sh.vars.less**: This is where variables can be redefined, colors, grid layout, fonts, icon-fonts, urls, and general design aspects. You can add your variables here, and start using them in your own LESS files based on Shut framework.

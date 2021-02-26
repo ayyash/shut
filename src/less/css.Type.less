@@ -30,11 +30,7 @@ p {
 /* font size */
 
 // Note to self: this prevents reuse mixins in css, keep open
-// each(@font-multiplier, {
-//     .@{key} {
-//         #rem>.font-size(@value * @font-size);
-//     }
-// });
+
 .larger {
     #rem>.font-size(@font-multiplier[larger] * @font-size); 
 }
@@ -73,6 +69,12 @@ p {
 .smaller {
      #rem>.font-size(@font-multiplier[smaller] * @font-size);
 }
+
+each(@custom-font-multiplier, {
+    .@{key} {
+        #rem>.font-size(@value * @font-size);
+    }
+});
 
 .weight-light {
     font-weight: floor(@font-weight-light / 100) * 100;
@@ -169,7 +171,8 @@ del {
 .media(md, {
     // reduce size if enabled
     html {
-        .resfont(@htmlFontBase);
+        // .resfont(@htmlFontBase);
+		#rem > .res-font-size(@htmlFontBase);
     }
     
 });

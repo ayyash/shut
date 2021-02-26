@@ -56,7 +56,6 @@
     });
 }
 
-// TODO: make variable
 .generate-min-heights(1, 6);
 .generate-max-heights(1, 6);
 
@@ -76,11 +75,11 @@
     width: 100%;
 }
 
-.generate-offset(11);
-.generate-column(12);
+.generate-offset(@wrapper - 1);
+.generate-column(@wrapper);
 
 .row-spaced {
-    .generate-spaced-column(12);
+    .generate-spaced-column(@wrapper);
 }
 
 // grid
@@ -98,18 +97,18 @@
 .grid.spacedout {
     grid-gap: @space;
 }
-.generate-grid(11);
+.generate-grid(@wrapper - 1);
 
 
 
 .media(md, {
     
-    .generate-offset(11, md);
-    .generate-grid(11, gmd);
-    .generate-column(12, md);
+    .generate-offset(@wrapper - 1, md);
+    .generate-grid(@wrapper - 1, gmd);
+    .generate-column(@wrapper, md);
     
     .row-spaced {
-        .generate-spaced-column(12, md);
+        .generate-spaced-column(@wrapper, md);
     }
     
     
@@ -117,13 +116,13 @@
 
 .media(lg, {
     
-    .generate-offset(11, lg);
-    .generate-grid(11, glg);
+    .generate-offset(@wrapper - 1, lg);
+    .generate-grid(@wrapper - 1, glg);
     
-    .generate-column(12, lg); 
+    .generate-column(@wrapper, lg); 
     
     .row-spaced {
-        .generate-spaced-column(12, lg);
+        .generate-spaced-column(@wrapper, lg);
     }
     
 });
