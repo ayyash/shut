@@ -129,7 +129,7 @@ if (shutConfig.isRtl) {
     exports.buildshut = gulp.parallel(fwDistResources,
         gulp.series(
             rawAll,
-            gulp.parallel(fwBuildCss, fwBuildRtlCss)
+            gulp.series(fwBuildCss, fwBuildRtlCss)
         )
     );
     exports.watch = function () {
