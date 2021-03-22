@@ -1,6 +1,7 @@
 const fw = require('./fw');
 const assets = require('./assets');
 const icons = require('./icons');
+const include = require('./include');
 
 
 // exports.default = watch;
@@ -16,3 +17,6 @@ exports.assets = assets.watch; // watch minisite to create src/css/sh.css
 exports.critical = assets.critical; // watch minisite to create src/css/sh.general.css and sh.critical.css
 
 exports.iconset = icons.iconset;
+
+exports.createLocal = include.createLocalIndex; // create index file under local folder
+exports.watchLocal = include.watch; // watch and create index

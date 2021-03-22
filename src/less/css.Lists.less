@@ -1,6 +1,6 @@
 
 ul.normal>li, .normal>ul>li {
-	margin-left: @extraspace;
+	margin-inline-start: @extraspace;
 	list-style-type: disc;
 }
 
@@ -15,15 +15,15 @@ ol.normal {
 /**** nested lists for multiple uls */
 
 ul.nestedlist>li>ul, div.nestedlist>ul, ol.nestedlist>li>ol {
-	padding-left: @doublespace;
+	padding-inline-start: @doublespace;
 }
 
 
 /*Basic list*/
 .thelist() {
 	> li {
-		padding-bottom: @list-spacing;
-		margin-bottom: @list-spacing;
+		padding-block-end: @list-spacing;
+		margin-block-end: @list-spacing;
 	}
 }
 /* listings */
@@ -33,7 +33,7 @@ ul.nestedlist>li>ul, div.nestedlist>ul, ol.nestedlist>li>ol {
 
 .blist {
 	> li {
-		border-bottom: 1px solid @rowlist-border;
+		border-block-end: 1px solid @rowlist-border;
 	}
 }
 // easy quick shortcut

@@ -63,8 +63,8 @@ button {
 	
     font-weight: @font-weight-bold;
 
-    padding-left: @button-sm-padding;
-    padding-right: @button-sm-padding;
+    padding-inline-start: @button-sm-padding;
+    padding-inline-end: @button-sm-padding;
 	&:hover {
 		color: @linkcolor;
 	}
@@ -98,12 +98,12 @@ button {
 
 // ina group of buttons beggingin and ending with fake buttons, chop off
 .btn-chop {
-    margin-left: -@button-sm-padding;
-    margin-right: -@button-sm-padding;
+    margin-inline-start: -@button-sm-padding;
+    margin-inline-end: -@button-sm-padding;
 }
 .btn-chop-start {
-    margin-left: -@button-sm-padding;
+    margin-inline-start: -@button-sm-padding;
 }
 .btn-chop-end {
-    margin-right: -@button-sm-padding;
+    margin-inline-end: -@button-sm-padding;
 }

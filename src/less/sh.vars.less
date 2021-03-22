@@ -36,6 +36,8 @@
 @custom-font-multiplier: {
 }
 
+
+
 @font-weight-light: 300;
 @font-weight: 400;
 @font-weight-bold: 700;
@@ -144,7 +146,7 @@
 @doublespace: 	@space * 2;
 
 @box-border: 1px; // for white boxes
-@box-padding: 10px;
+@box-padding: 1rem;
 @list-spacing: 0.7rem; // lists spacing (multiplied by two for padding and margin)
 @label-padding: 0.25rem 0.8rem;
 @label-radius: @radius;
@@ -152,6 +154,10 @@
 @button-padding-h:  1.6rem;
 @button-padding-v: 1.2rem;
 @button-sm-padding: 0.8rem;
+
+// form specific
+@input-radius: @radius;
+@input-padding: @halfspace @space;
 
 @wrapper: 12; // columns
 @grid-column-height: 60px; 
@@ -165,3 +171,8 @@
 @modal-scrollbar-width: 5px;
 
 @trans-func: cubic-bezier(.4,0,.2,1); // basic most used animation
+
+// TODO: expose css vars used
+:root {
+	--sh-font-weight-light: @font-weight-light;
+}

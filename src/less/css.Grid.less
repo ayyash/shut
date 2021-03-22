@@ -23,7 +23,7 @@
 .generate-offset(@column, @key: c) when (@column > 0) {
     .generate-offset((@column - 1), @key);
     .offset-@{key}-@{column} {
-        margin-left: percentage(@column / @wrapper);
+        margin-inline-start: percentage(@column / @wrapper);
     }
 }
 

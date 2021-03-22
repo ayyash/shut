@@ -16,20 +16,20 @@
 		top: -@arrowWidth;
 		border-width: 0 @arrowWidth @arrowWidth;
 		border-style: solid;
-		border-top-color: transparent;	
-		border-right-color: transparent;
-		border-left-color: transparent;
+		border-block-start-color: transparent;	
+		border-inline-end-color: transparent;
+		border-inline-start-color: transparent;
 	}
 
 	.left(@arrowWidth: 5px) {
 		top: 30%;
 		left: -@arrowWidth;
 		border-width: @arrowWidth;
-		border-left-width: 0;
+		border-inline-start-width: 0;
 		border-style: solid;
-		border-top-color: transparent;
-		border-bottom-color: transparent;
-		border-left-color: transparent;
+		border-block-start-color: transparent;
+		border-block-end-color: transparent;
+		border-inline-start-color: transparent;
 	}
 
 	.below(@arrowWidth: 5px) {
@@ -37,9 +37,9 @@
 		bottom: -@arrowWidth;
 		border-width: @arrowWidth @arrowWidth 0;
 		border-style: solid;
-		border-right-color: transparent;
-		border-bottom-color: transparent;
-		border-left-color: transparent;
+		border-inline-end-color: transparent;
+		border-block-end-color: transparent;
+		border-inline-start-color: transparent;
 	}
 
 	.right(@arrowWidth: 5px) {
@@ -47,63 +47,63 @@
 		right: -@arrowWidth;
 		border-width: @arrowWidth 0 @arrowWidth @arrowWidth;
 		border-style: solid;
-		border-top-color: transparent;
-		border-right-color: transparent;
-		border-bottom-color: transparent;
+		border-block-start-color: transparent;
+		border-inline-end-color: transparent;
+		border-block-end-color: transparent;
 	}
 }
 
 #pointer() {
 	.left(@arrowWidth: 6px) {
-		margin-right: @arrowWidth + 2;
+		margin-inline-end: @arrowWidth + 2;
 		.arrowreset();
 		#arrow > .left(@arrowWidth);
 	}
 
 	.up(@arrowWidth: 6px) {
-		margin-right: @arrowWidth + 2;
+		margin-inline-end: @arrowWidth + 2;
 		.arrowreset();
 		#arrow > .above(@arrowWidth);
 	}
 
 	.down(@arrowWidth: 6px) {
-		margin-right: @arrowWidth + 2;
+		margin-inline-end: @arrowWidth + 2;
 		.arrowreset();
 		#arrow > .below(@arrowWidth);
 	}
 
 	.right(@arrowWidth: 6px) {
-		margin-right: @arrowWidth + 2;
+		margin-inline-end: @arrowWidth + 2;
 		.arrowreset();
 		#arrow > .right(@arrowWidth);
 	}
 
 	.diagonalupleft(@arrowWidth: 8px) {
-		margin-right: @arrowWidth;
+		margin-inline-end: @arrowWidth;
 		.arrowreset();
 		#arrow > .right(@arrowWidth);
-		border-top-width: 0;
+		border-block-start-width: 0;
 	}
 
 	.diagonalupright(@arrowWidth: 8px) {
-		margin-right: @arrowWidth;
+		margin-inline-end: @arrowWidth;
 		.arrowreset();
 		#arrow > .left(@arrowWidth);
-		border-top-width: 0;
+		border-block-start-width: 0;
 	}
 
 	.diagonaldownleft(@arrowWidth: 8px) {
-		margin-right: @arrowWidth;
+		margin-inline-end: @arrowWidth;
 		.arrowreset();
 		#arrow > .right(@arrowWidth);
-		border-bottom-width: 0;
+		border-block-end-width: 0;
 	}
 
 	.diagonaldownright(@arrowWidth: 8px) {
-		margin-right: @arrowWidth;
+		margin-inline-end: @arrowWidth;
 		/* reset */
 		.arrowreset();
 		#arrow > .left(@arrowWidth);
-		border-bottom-width: 0;
+		border-block-end-width: 0;
 	}
 }

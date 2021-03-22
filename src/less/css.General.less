@@ -26,23 +26,23 @@
 
 
 .breath, ul.breathout>li, ol.breathout>li {
-	padding-top: @halfspace;
-	padding-bottom:@halfspace;
+	padding-block-start: @halfspace;
+	padding-block-end:@halfspace;
 }
 
 .spaced, ul.spacedout>li, ol.spacedout>li  {
-	margin-bottom: @space;
+	margin-block-end: @space;
 }
 
 .doublespaced, ul.doubledspacedout>li, ol.doublespacedout>li{
-	margin-bottom: @doublespace;
+	margin-block-end: @doublespace;
 }
 
 .rbreath {
-	padding-right: @halfspace;
+	padding-inline-end: @halfspace;
 }
 .lbreath {
-	padding-left: @halfspace;
+	padding-inline-start: @halfspace;
 }
 .hbreath {
 	.rbreath();
@@ -50,10 +50,10 @@
 }
 
 .rpad {
-	padding-right: @space;
+	padding-inline-end: @space;
 }
 .lpad {
-	padding-left: @space;
+	padding-inline-start: @space;
 }
 .hpad {
 	.rpad();
@@ -61,10 +61,10 @@
 }
 
 .lspace {
-	margin-left: @space;
+	margin-inline-start: @space;
 }
 .rspace {
-	margin-right: @space;
+	margin-inline-end: @space;
 }
 .hspace {
 	.lspace();
@@ -72,22 +72,22 @@
 } 
 // rare, very rare
 .padtop {
-	padding-top: @space; /* to be used only in extreme cases */
+	padding-block-start: @space; /* to be used only in extreme cases */
 }
 .spacetop {
-	margin-top: @space;  /* to be used only in extreme cases */
+	margin-block-start: @space;  /* to be used only in extreme cases */
 }
 
 .center {
-	margin-left: auto;
-	margin-right: auto;
+	margin-inline-start: auto;
+	margin-inline-end: auto;
 }
 // used for flex layouts
 .lauto {
-	margin-left: auto;
+	margin-inline-start: auto;
 }
 .rauto {
-	margin-right: auto;
+	margin-inline-end: auto;
 }
  
 
@@ -131,23 +131,23 @@
 
 /*** border bottom, thin and thick ***/
 .bthin {
-	border-bottom: 1px solid @b-color;
-	padding-bottom: @space;
+	border-block-end: 1px solid @b-color;
+	padding-block-end: @space;
 }
 .bthin-dark {
-	border-bottom: 1px solid @b-dark-color;
-	padding-bottom: @space;
+	border-block-end: 1px solid @b-dark-color;
+	padding-block-end: @space;
 }
 
 
 .bthick {
-	border-bottom: 3px solid @b-color;
-	padding-bottom: @space;
+	border-block-end: 3px solid @b-color;
+	padding-block-end: @space;
 }
 
 .bthick-dark {
-	border-bottom: 3px solid @b-dark-color;
-	padding-bottom: @space;
+	border-block-end: 3px solid @b-dark-color;
+	padding-block-end: @space;
 }
 
 // bthin for grid
