@@ -2,7 +2,30 @@
 /* site defined vars */
 /* spacing and layout */
 :root {
+  --sh-fontface: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Fira Sans", "Helvetica Neue", Arial, sans-serif;
+  --sh-fontface-ar: Traditional Arabic, tahoma, sans-serif;
+  --sh-font-size: 1.4;
   --sh-font-weight-light: 300;
+  --sh-font-weight: 400;
+  --sh-font-weight-bold: 700;
+  --sh-text-color: #202020;
+  --sh-text-light: #959595;
+  --sh-text-lighter: #cccccc;
+  --sh-text-dark: #202020;
+  --sh-white: #fff;
+  --sh-grey-light: #f3f3f3;
+  --sh-grey: #999999;
+  --sh-grey-dark: #263238;
+  --sh-black: #000;
+  --sh-red: #f31109;
+  --sh-yellow: #ffc400;
+  --sh-green: #57b347;
+  --sh-blue: #0097A7;
+  --sh-red-light: #f96e69;
+  --sh-yellow-light: #ffdc66;
+  --sh-green-light: #98d28e;
+  --sh-blue-light: #0ee8ff;
+  --sh-space: 15px;
 }
 /* resetting */
 /* CRITICAL BEGIN */

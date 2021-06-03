@@ -2,14 +2,13 @@
 /* site defined vars */
 
 @font-url: '../fonts/';
-// @image-url: '../images/'; i never use this
 
 @rem-enabled: true;
 @enable-rounded: true;
 @enable-icon-font: false;
 @enable-res-fonts: true; // allow scaling of fonts to change for smaller screens
 
-@icon-font: 'vpicons';
+@icon-font: 'shuticons';
 @icon-inline-margin: @space;
 
 // fonts
@@ -106,13 +105,6 @@
 
 
 // shadows
-// @shadows: {
-//     zero: none;
-//     level1: 0 0 5px 0 rgba(0,0,0,.1); 
-//     level2: 0 2px 2px 0 rgba(@black,0.14), 0 1px 5px 0 rgba(@black,0.12), 0 3px 1px -2px rgba(@black,0.2);
-//     level3: 0 6px 10px 0 rgba(@black,0.14), 0 1px 18px 0 rgba(@black,0.12), 0 3px 5px -1px rgba(@black,0.3);
-//     level4: 0 16px 24px 2px rgba(@black,0.14), 0 6px 30px 5px rgba(@black,0.12), 0 8px 10px -5px rgba(@black,0.3);
-// };
 
 @shadows: {
 	none: none;
@@ -174,5 +166,29 @@
 
 // TODO: expose css vars used
 :root {
+	--sh-fontface: @fontface;
+	--sh-fontface-ar: @fontface-ar;
+	--sh-font-size: @font-size;
 	--sh-font-weight-light: @font-weight-light;
+	--sh-font-weight: @font-weight;
+	--sh-font-weight-bold: @font-weight-bold;
+	--sh-text-color: @text-color;
+	--sh-text-light: @text-light;
+	--sh-text-lighter: @text-lighter;
+	--sh-text-dark: @text-dark;
+	--sh-white: @white;
+	--sh-grey-light: @grey-light;
+	--sh-grey: @grey;
+	--sh-grey-dark: @grey-dark;
+	--sh-black: @black;
+	--sh-red: @red;
+	--sh-yellow: @yellow;
+	--sh-green: @green;
+	--sh-blue: @blue;
+	--sh-red-light: @red-light;
+	--sh-yellow-light: @yellow-light;
+	--sh-green-light: @green-light;
+	--sh-blue-light: @blue-light;
+	--sh-space: @space;
+
 }

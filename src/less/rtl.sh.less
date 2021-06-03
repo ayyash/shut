@@ -10,22 +10,29 @@
     }
 }
 
+// new: reflect icons for arabic (to be reviewed later)
+.symbolDef() {
+    transform: scaleX(-1);
+    filter: FlipH; // might remove
+    -ms-filter: "FlipH";
+}
 /* CRITICAL BEGIN */
 .ar {
-	font-family: @fontface-ar;
-	direction: rtl;
+    font-family: @fontface-ar;
+    direction: rtl;
 }
 
+body,
+textarea,
+select,
+option,
+input {
+    font-family: @fontface-ar;
+    direction: rtl;
+}
 
-	body, textarea, select, option, input 
-	{
-		font-family: @fontface-ar;
-		direction:rtl;
-	}
-	
-
-	textarea {
-		overflow-x: hidden; 
-	}
+textarea {
+    overflow-x: hidden;
+}
 
 /* CRITICAL END */
