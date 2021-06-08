@@ -3,7 +3,7 @@
 /* spacing and layout */
 :root {
   --sh-fontface: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Fira Sans", "Helvetica Neue", Arial, sans-serif;
-  --sh-fontface-ar: Traditional Arabic, tahoma, sans-serif;
+  --sh-fontface-ar: "Traditional Arabic", tahoma, sans-serif;
   --sh-font-size: 1.4;
   --sh-font-weight-light: 300;
   --sh-font-weight: 400;
@@ -1302,7 +1302,7 @@ p {
   direction: ltr;
 }
 .rtl {
-  font-family: Traditional Arabic, tahoma, sans-serif;
+  font-family: "Traditional Arabic", tahoma, sans-serif;
   direction: rtl;
 }
 /* CRITICAL END */

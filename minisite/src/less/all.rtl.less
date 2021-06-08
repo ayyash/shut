@@ -1,20 +1,52 @@
+// you vars
+@import "sh.vars.less";
+
+/* resetting */
+@import "css.Reset";
+
+// include if used
+@import "utilities/arrow";
+@import "utilities/border";
+@import "utilities/gradient";
+@import "utilities/functions.less";
+@import "utilities/media";
+@import "utilities/scroll";
+
+@import "css.Icon.less";
 
 
-@import url("sh.less");
+@import "css.General.less";
+@import "css.Layout.less";
+@import "css.Button.less";
+@import "css.Forms.less";
+@import "css.Grid.less";
+@import "css.Modal.less";
+@import "css.Card.less";
+@import "css.Type.less"; 
+@import "css.Box.less";
+@import "css.Label.less";
+@import "css.Lists.less";
+@import "css.Table.less";
+
+/* Print */
+@import "media.print.less";
+
+
+// you vars, overwrites shut vars
+@import "sh._vars.less";
+
 
 // inject:uiless
-@import "ui.icons.less";
-@import "ui.toaster.less";
 @import "ui._web.less";
+@import "ui.icons.less";
 // endinject
-
 
 // inject:medialess
 // endinject
-
- 
 // import the rtl from shut
-@import "rtl.sh.less";
+@import "css.rtl.Icon.less";
+@import "css.rtl.Modal.less";
+@import "css.rtl.Type.less";
 
 // inject:rtlless
 @import "rtl._web.less";

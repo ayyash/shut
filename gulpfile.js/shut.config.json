@@ -7,19 +7,6 @@
     "shutDistUrl": "./dist/",
     "projectName": "sh",
     "isRtl": true,
-    "scripts": [
-        "Ajax",
-        "AutoComplete",
-        "Chosen",
-        "Date",
-        "Expand",
-        "FormControls",
-        "Forms",
-        "Label", 
-        "Modal", 
-        "Validate",
-        "Web" 
-    ],
     "browserslist": [
         "> 6%"
       ]

@@ -674,7 +674,7 @@ input {
   direction: ltr;
 }
 .rtl {
-  font-family: Traditional Arabic, tahoma, sans-serif;
+  font-family: "Traditional Arabic", tahoma, sans-serif;
   direction: rtl;
 }
 /* CRITICAL END */
@@ -687,7 +687,7 @@ input {
 /* CRITICAL END */
 /* CRITICAL BEGIN */
 .ar {
-  font-family: Traditional Arabic, tahoma, sans-serif;
+  font-family: "Traditional Arabic", tahoma, sans-serif;
   direction: rtl;
 }
 body,
@@ -695,7 +695,7 @@ textarea,
 select,
 option,
 input {
-  font-family: Traditional Arabic, tahoma, sans-serif;
+  font-family: "Traditional Arabic", tahoma, sans-serif;
   direction: rtl;
 }
 textarea {

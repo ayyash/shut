@@ -674,7 +674,7 @@ input {
   direction: ltr;
 }
 .rtl {
-  font-family: Traditional Arabic, tahoma, sans-serif;
+  font-family: "Traditional Arabic", tahoma, sans-serif;
   direction: rtl;
 }
 /* CRITICAL END */

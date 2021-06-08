@@ -51,7 +51,7 @@ const rawless = function() {
         .on('error', console.error.bind(console));
 };
 
-// use sh.rtl.imports.less, concat to sh.imports.less, the inject rtl.*.less to generate src/css/sh.rtl.css
+// use all.less, concat to sh.rtl.imports.less, the inject rtl.*.less to generate src/css/sh.rtl.css
 const rawlessRtl = function(){
     return gulp.src([shutConfig.srcUrl + 'less/all.less', shutConfig.srcUrl + 'less/sh.rtl.imports.less'])
         .pipe(concat('all.rtl.less', { newLine: '' }))
