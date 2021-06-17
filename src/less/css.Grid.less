@@ -15,7 +15,7 @@
     .generate-column((@column - 1), @key);
     .@{key}-@{column},
     &.u@{key}-@{column} > li {
-        width: percentage(@column / @wrapper);
+        width: percentage((@column / @wrapper));
     }
 }
 
@@ -23,7 +23,7 @@
 .generate-offset(@column, @key: c) when (@column > 0) {
     .generate-offset((@column - 1), @key);
     .offset-@{key}-@{column} {
-        margin-inline-start: percentage(@column / @wrapper);
+        margin-inline-start: percentage((@column / @wrapper));
     }
 }
 
@@ -32,7 +32,7 @@
     .generate-spaced-column((@column - 1), @key);
     > .@{key}-@{column},
     &.u@{key}-@{column} > li {
-        width: calc(percentage(@column / @wrapper) - @halfspace);
+        width: calc(percentage((@column / @wrapper)) - @halfspace);
     }
 }
 
@@ -86,7 +86,7 @@
 .generate-grid(@column, @key: g) when (@column > 0) {
     .generate-grid((@column - 1), @key);
     .@{key}-@{column} {
-        grid-template-columns: percentage(@column / @wrapper) auto;
+        grid-template-columns: percentage((@column / @wrapper)) auto;
         
     }
 }

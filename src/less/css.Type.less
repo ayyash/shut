@@ -77,21 +77,21 @@ each(@custom-font-multiplier, {
 });
 
 .weight-light {
-    font-weight: floor(@font-weight-light / 100) * 100;
+    font-weight: floor((@font-weight-light / 100)) * 100;
     @supports (font-variation-settings: "wght" @font-weight-light) {
         font-weight: @font-weight-light;
     }
 }
 
 .weight-normal {
-    font-weight: floor(@font-weight / 100) * 100;
+    font-weight: floor((@font-weight / 100)) * 100;
     @supports (font-variation-settings: "wght" @font-weight) {
         font-weight: @font-weight;
     }
 }
 
 .weight-bold {
-    font-weight: floor(@font-weight-bold / 100) * 100;
+    font-weight: floor((@font-weight-bold / 100)) * 100;
     @supports (font-variation-settings: "wght" @font-weight-bold) {
         font-weight: @font-weight-bold;
     }

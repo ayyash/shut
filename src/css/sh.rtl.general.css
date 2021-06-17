@@ -538,7 +538,6 @@ ol.doublespacedout > li {
 .card .tail {
   margin-inline-start: auto;
   /* for all browsers, except chrome, inherit flex display */
-  display: inherit;
 }
 .card .corner {
   position: absolute;
