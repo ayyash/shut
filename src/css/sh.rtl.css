@@ -17,6 +17,9 @@
   --sh-grey: #999999;
   --sh-grey-dark: #263238;
   --sh-black: #000;
+  --sh-linkcolor: #0c00b4;
+  --sh-visitedcolor: #800080;
+  --sh-altcolor: #048bca;
   --sh-red: #f31109;
   --sh-yellow: #ffc400;
   --sh-green: #57b347;
@@ -322,28 +325,30 @@ button:focus {
   cursor: default;
 }
 .btn {
-  color: #0c00b4;
-  background-color: #f3f3f3;
+  --sh-fade-grey: rgba(243, 243, 243, 0.5);
+  color: var(--sh-linkcolor);
+  background-color: var(--sh-grey-light);
 }
 .btn:hover {
-  background-color: rgba(243, 243, 243, 0.5);
+  background-color: var(--sh-fade-grey);
   box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.5);
 }
 .btn-rev {
-  color: #fff;
-  background-color: #0c00b4;
+  --sh-link-light: #0f00e7;
+  color: var(--sh-white);
+  background-color: var(--sh-linkcolor);
 }
 .btn-rev:hover {
-  background-color: #0f00e7;
-  color: #fff;
+  background-color: --sh-link-light;
+  color: var(--sh-white);
 }
 .btn-fake {
-  font-weight: 700;
+  font-weight: var(--sh-font-weight-bold);
   padding-inline-start: 0.8rem;
   padding-inline-end: 0.8rem;
 }
 .btn-fake:hover {
-  color: #0c00b4;
+  color: var(--sh-linkcolor);
 }
 .btn-diff {
   background-color: #f31109;
@@ -357,8 +362,8 @@ button:focus {
   padding: 0.8rem;
 }
 .btn-busy[disabled] {
-  color: #959595;
-  background-color: #f3f3f3;
+  color: var(--sh-text-light);
+  background-color: var(--sh-grey-light);
   background-position: center 82%;
 }
 .btn-chop {
@@ -1225,9 +1230,9 @@ textarea,
 select,
 option,
 input {
-  font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Fira Sans", "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--sh-fontface);
   font-size: 1.4rem;
-  color: #202020;
+  color: var(--sh-text-color);
 }
 /* CRITICAL END */
 section {
@@ -1297,11 +1302,11 @@ p {
 /* mixed content*/
 /* CRITICAL BEGIN */
 .ltr {
-  font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Fira Sans", "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--sh-fontface);
   direction: ltr;
 }
 .rtl {
-  font-family: "Traditional Arabic", tahoma, sans-serif;
+  font-family: var(--fontface-ar);
   direction: rtl;
 }
 /* CRITICAL END */
@@ -1309,7 +1314,7 @@ p {
 a,
 .a {
   /* mimic a href */
-  color: #0c00b4;
+  color: var(--sh-linkcolor);
   text-decoration: none;
   cursor: pointer;
 }
@@ -1317,32 +1322,32 @@ a,
 a.cam,
 .a.cam,
 .cam {
-  color: #202020;
+  color: var(--sh-text-color);
   cursor: pointer;
 }
 a.cam:hover,
 .a.cam:hover,
 .cam:hover {
-  color: #0c00b4;
+  color: var(--sh-linkcolor);
 }
 a[rel='track']:visited {
-  color: #800080;
+  color: var(--sh-visitedcolor);
 }
 a:hover,
 .a:hover,
 a[rel='track']:hover {
-  color: #048bca;
+  color: var(--sh-altcolor);
 }
 .normalsize {
   font-size: 1.4rem !important;
-  font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Fira Sans", "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--sh-fontface);
 }
 .sup {
   font-size: 70%;
   vertical-align: 4px;
 }
 .del {
-  color: #959595;
+  color: var(--sh-text-light);
   text-decoration: line-through;
 }
 /* CRITICAL BEGIN */

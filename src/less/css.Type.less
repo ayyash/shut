@@ -13,9 +13,9 @@ textarea,
 select,
 option,
 input {
-    font-family: @fontface;
+    font-family: var(--sh-fontface);
     #rem>.font-size(@font-size);
-    color: @text-color;
+    color: var(--sh-text-color);
 }
 /* CRITICAL END */
 
@@ -105,11 +105,11 @@ each(@custom-font-multiplier, {
 /* CRITICAL BEGIN */
 
 .ltr {
-    font-family: @fontface;
+    font-family: var(--sh-fontface);
     direction: ltr;
 }
 .rtl {
-    font-family: @fontface-ar;
+    font-family: var(--fontface-ar);
     direction: rtl;
 }
 /* CRITICAL END */
@@ -119,7 +119,7 @@ each(@custom-font-multiplier, {
 a,
 .a {
     /* mimic a href */
-    color: @linkcolor;
+    color: var(--sh-linkcolor);
     text-decoration: none;
     cursor: pointer;
 }
@@ -129,27 +129,27 @@ a,
 a.cam,
 .a.cam,
 .cam {
-    color: @text-color;
+    color: var(--sh-text-color);
     cursor: pointer;
     &:hover {
-        color: @linkcolor;
+        color: var(--sh-linkcolor);
     }
 }
 
 // TODO: double check
 a[rel='track']:visited {
-    color: @visitedcolor;
+    color: var(--sh-visitedcolor);
 }
 
 a:hover,
 .a:hover,
 a[rel='track']:hover {
-    color: @altcolor;
+    color: var(--sh-altcolor);
 }
 
 .normalsize {
     #rem>.font-size(@font-size) !important;
-    font-family: @fontface;
+    font-family: var(--sh-fontface);
 }
 
 .sup {
@@ -158,7 +158,7 @@ a[rel='track']:hover {
 }
 
 .del {
-    color: @text-light;
+    color: var(--sh-text-light);
     text-decoration: line-through;
 }
 

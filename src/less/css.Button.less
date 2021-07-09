@@ -39,39 +39,47 @@ button {
     }
 }
 
+
 .btn {
-    color: @linkcolor;
-    background-color: @grey-light;
+// TODO: move these specifics elshewhere in prep to have them as css variables
+	--sh-fade-grey: fade(@grey-light, 50%);
+
+    color: var(--sh-linkcolor);
+    background-color: var(--sh-grey-light);
     &:hover {
-        background-color: fade(@grey-light, 50%);
+        background-color: var(--sh-fade-grey);
         // FIXME: remove this
         box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.5);
     }
 }
 
 .btn-rev {
-    color: @white;
-    background-color: @linkcolor;
+// TODO: move this out of here
+	--sh-link-light: lighten(@linkcolor, 10%);
+
+    color: var(--sh-white);
+    background-color: var(--sh-linkcolor);
     &:hover {
-        background-color: lighten(@linkcolor, 10%);
-        color: @white;
+        background-color: --sh-link-light;
+        color: var(--sh-white);
     }
 }
 
 // a text button with no paddings
 .btn-fake {
 	
-    font-weight: @font-weight-bold;
+    font-weight: var(--sh-font-weight-bold);
 
     padding-inline-start: @button-sm-padding;
     padding-inline-end: @button-sm-padding;
 	&:hover {
-		color: @linkcolor;
+		color: var(--sh-linkcolor);
 	}
 }
 
 
 .btn-diff {
+// this is fixed coloring, no need to link to css vars
     background-color: @btn-diff-bg;
     .fcolor(@btn-diff-bg);
     &:hover {
@@ -88,8 +96,8 @@ button {
 .btn-busy {
 	// busy buttons loading effect when disabled
 	&[disabled] {
-		color: @text-light;
-		background-color: @grey-light;
+		color: var(--sh-text-light);
+		background-color: var(--sh-grey-light);
 		
         background-position: center 82%;
         // TODO: loading effect
