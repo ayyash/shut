@@ -23,12 +23,15 @@
   --sh-red: #f31109;
   --sh-yellow: #ffc400;
   --sh-green: #57b347;
-  --sh-blue: #0097A7;
+  --sh-blue: #0097a7;
   --sh-red-light: #f96e69;
   --sh-yellow-light: #ffdc66;
   --sh-green-light: #98d28e;
   --sh-blue-light: #0ee8ff;
   --sh-space: 15px;
+  --sh-rowlist-border: #f3f3f3;
+  --sh-b-color: #999999;
+  --sh-b-dark-color: #263238;
 }
 /* resetting */
 /* CRITICAL BEGIN */
@@ -208,27 +211,27 @@ ol.doublespacedout > li {
 }
 /*** border bottom, thin and thick ***/
 .bthin {
-  border-block-end: 1px solid #999999;
+  border-block-end: 1px solid var(--sh-b-color);
   padding-block-end: 15px;
 }
 .bthin-dark {
-  border-block-end: 1px solid #263238;
+  border-block-end: 1px solid var(--sh-b-dark-color);
   padding-block-end: 15px;
 }
 .bthick {
-  border-block-end: 3px solid #999999;
+  border-block-end: 3px solid var(--sh-b-color);
   padding-block-end: 15px;
 }
 .bthick-dark {
-  border-block-end: 3px solid #263238;
+  border-block-end: 3px solid var(--sh-b-dark-color);
   padding-block-end: 15px;
 }
 .g-bthin > * {
-  border-block-end: 1px solid #999999;
+  border-block-end: 1px solid var(--sh-b-color);
   padding-block-end: 15px;
 }
 .g-bthin-dark > * {
-  border-block-end: 1px solid #263238;
+  border-block-end: 1px solid var(--sh-b-dark-color);
   padding-block-end: 15px;
 }
 .dev {
@@ -1380,7 +1383,7 @@ ul.boxed > li {
   color: #fff;
 }
 .box-blue {
-  background-color: #0097A7;
+  background-color: #0097a7;
   color: #fff;
 }
 .box-red-light {
@@ -1457,7 +1460,7 @@ ul.boxed > li {
   color: #57b347;
 }
 .blue {
-  color: #0097A7;
+  color: #0097a7;
 }
 .red-light {
   color: #f96e69;
@@ -1519,7 +1522,7 @@ a.label-green:hover {
   color: #202020;
 }
 .label-blue {
-  background-color: #0097A7;
+  background-color: #0097a7;
   color: #fff;
 }
 a.label-blue:hover {
@@ -1626,14 +1629,14 @@ ol.nestedlist > li > ol {
   margin-block-end: 0.7rem;
 }
 .blist > li {
-  border-block-end: 1px solid #f3f3f3;
+  border-block-end: 1px solid var(--sh-rowlist-border);
 }
 .rowlist > li {
   padding-block-end: 0.7rem;
   margin-block-end: 0.7rem;
 }
 .rowlist > li {
-  border-block-end: 1px solid #f3f3f3;
+  border-block-end: 1px solid var(--sh-rowlist-border);
 }
 /**** comma seperated items */
 ul.commalist {
