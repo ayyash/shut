@@ -1,8 +1,11 @@
+// replaceing gulp-cssmin with gulp-clean-css, the output is almost the same
+// removing autoprefixer, should never rely on unsupported features in shut
+
 var gulp = require('gulp');
 var less = require('gulp-less');
-var cssmin = require('gulp-cssmin');
+var cleancss = require('gulp-clean-css');
 var rename = require('gulp-rename');
-var autoprefixer = require('gulp-autoprefixer');
+// var autoprefixer = require('gulp-autoprefixer');
 var transform = require('gulp-transform');
 var concat = require('gulp-concat');
 
@@ -18,10 +21,9 @@ const fwCss = function () {
 	return gulp
 		.src(shutConfig.shutUrl + 'less/sh.less')
 		.pipe(less())
-		.pipe(autoprefixer(
-			{ overrideBrowserslist: shutConfig.browserslist }
-		))
-		// .pipe(cssmin())
+		// .pipe(autoprefixer(
+		// 	{ overrideBrowserslist: shutConfig.browserslist }
+		// ))
 		.pipe(rename({ basename: 'sh' }))
 		.pipe(gulp.dest(shutConfig.shutUrl + 'css'));
 };
@@ -31,11 +33,11 @@ const fwCss = function () {
 const fwRtlCss = function () {
 	return gulp
 		.src([shutConfig.shutUrl + 'less/sh.less', shutConfig.shutUrl + 'less/sh.rtl.less'])
-		 .pipe(concat('all.rtl.less', { newLine: '',  }))
+		.pipe(concat('all.rtl.less', { newLine: '', }))
 		.pipe(less())
-		.pipe(autoprefixer(
-			{ overrideBrowserslist: shutConfig.browserslist }
-		))
+		// .pipe(autoprefixer(
+		// 	{ overrideBrowserslist: shutConfig.browserslist }
+		// ))
 		.pipe(rename({ basename: 'sh', suffix: '.rtl' }))
 		.pipe(gulp.dest(shutConfig.shutUrl + 'css'));
 
@@ -101,7 +103,14 @@ const fwCriticalRtl = gulp.series(fwCss, function () {
 const fwBuildCss = function () {
 	return gulp
 		.src(shutConfig.shutUrl + 'css/sh.css')
-		.pipe(cssmin())
+		.pipe(cleancss({
+			// level: 2 did not produce the same output
+			level: {
+				2: {
+					all: true
+				}
+			}
+		}))
 		.pipe(rename({ basename: 'sh', suffix: '.min' }))
 		.pipe(gulp.dest(shutConfig.shutDistUrl + 'css'));
 };
@@ -110,7 +119,14 @@ const fwBuildCss = function () {
 const fwBuildRtlCss = function () {
 	return gulp
 		.src(shutConfig.shutUrl + 'css/sh.rtl.css')
-		.pipe(cssmin())
+		// fix this
+		.pipe(cleancss({
+			level: {
+				2: {
+					all: true
+				}
+			}
+		}))
 		.pipe(rename({ basename: 'sh', suffix: '.rtl.min' }))
 		.pipe(gulp.dest(shutConfig.shutDistUrl + 'css'));
 };

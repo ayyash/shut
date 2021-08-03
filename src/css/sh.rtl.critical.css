@@ -663,18 +663,18 @@ textarea,
 select,
 option,
 input {
-  font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Fira Sans", "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--sh-fontface);
   font-size: 1.4rem;
-  color: #202020;
+  color: var(--sh-text-color);
 }
 /* CRITICAL END */
 /* CRITICAL BEGIN */
 .ltr {
-  font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Fira Sans", "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--sh-fontface);
   direction: ltr;
 }
 .rtl {
-  font-family: "Traditional Arabic", tahoma, sans-serif;
+  font-family: var(--fontface-ar);
   direction: rtl;
 }
 /* CRITICAL END */
