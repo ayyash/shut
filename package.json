@@ -7,7 +7,7 @@
 		"start": "gulp rawshut && gulp default && gulp watchLocal",
 		"build": "gulp buildshut",
 		"minisite": "gulp rawless && gulp buildcss",
-		"deply": "gulp createLocalIndex",
+		"deploy": "gulp buildshut && gulp createLocal",
 		"install:dev": "npm install --save-dev gulp gulp-autoprefixer gulp-concat gulp-clean-css gulp-inject gulp-less gulp-rename gulp-transform gulp-uglify gulp-replace"
 	},
 	"repository": {
