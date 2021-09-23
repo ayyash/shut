@@ -32,7 +32,7 @@
     .generate-spaced-column((@column - 1), @key);
     > .@{key}-@{column},
     &.u@{key}-@{column} > li {
-        width: calc(percentage((@column / @wrapper)) - @halfspace);
+        width: calc(percentage((@column / @wrapper)) - @gutterspace);
     }
 }
 

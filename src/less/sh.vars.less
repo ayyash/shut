@@ -16,13 +16,14 @@
     "Helvetica Neue", Arial, sans-serif;
 @fontface-ar: "Traditional Arabic", tahoma, sans-serif;
 
-@htmlFontBase: 62.5%;
-@resFontFactor: 1.2; // how much to reduce font sizes for smaller screens
+@htmlFontBase: 62.5%; // mobile html font-size
+@resFontFactor: 1.2; // how much to increase font sizes for larger than md screens
 
-@font-size: 1.4; // in rem
+@font-size: 1.4; // in rem = 14px
 @font-size-print: 80%;
 
 // do not remove these, they are explicitly used
+
 @font-multiplier: {
     larger: 3.5;
     large: 3;
@@ -35,12 +36,23 @@
     small: 0.9;
     smaller: 0.8;
 };
+
 @custom-font-multiplier: {
 };
 
 @font-weight-light: 300;
 @font-weight: 400;
+@font-weight-medium: 500;
 @font-weight-bold: 700;
+
+// add other wieghts to create .weight-[key]: font-weight: [value]
+@font-weight-set: {
+	light: @font-weight-light;
+	normal: @font-weight;
+	medium: @font-weight-medium;
+	bold: @font-weight-bold;
+};
+
 
 // colors
 @text-color: #202020; // basic text color
@@ -136,7 +148,7 @@
 // for forms @radius-input: 0;
 
 /* spacing and layout */
-@space: 15px;
+@space: 2.4rem;
 @halfspace: @space * 0.5;
 @extraspace: @space * 1.5;
 @doublespace: @space * 2;
@@ -150,6 +162,8 @@
 @button-padding-h: 1.6rem;
 @button-padding-v: 1.2rem;
 @button-sm-padding: 0.8rem;
+@button-hover: fade(@grey-light, 50%);
+@button-rev-hover: lighten(@linkcolor, 10%);
 
 // form specific
 @input-radius: @radius;
@@ -157,6 +171,7 @@
 
 @wrapper: 12; // columns
 @grid-column-height: 60px;
+@gutterspace: @halfspace;
 
 // modals
 @modal-bg: fade(@black, 60);
@@ -175,6 +190,7 @@
     --sh-font-weight-light: @font-weight-light;
     --sh-font-weight: @font-weight;
     --sh-font-weight-bold: @font-weight-bold;
+    --sh-font-weight-medium: @font-weight-medium;
     --sh-text-color: @text-color;
     --sh-text-light: @text-light;
     --sh-text-lighter: @text-lighter;
@@ -199,4 +215,7 @@
     --sh-rowlist-border: @rowlist-border;
     --sh-b-color: @b-color;
     --sh-b-dark-color: @b-dark-color;
+	--sh-btn-hover: @button-hover;
+	--sh-btn-rev-hover: @button-rev-hover;
+
 }

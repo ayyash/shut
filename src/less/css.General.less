@@ -6,44 +6,57 @@
 .l {
 	float: left;
 }
+
 .r {
 	float: right;
 }
+
 /* CRITICAL END */
- 
+
 .clear {
 	clear: both;
 }
+
 .txt-r {
 	text-align: right;
 }
+
 .txt-c {
 	text-align: center;
 }
+
 .txt-l {
 	text-align: left;
 }
 
 
-.breath, ul.breathout>li, ol.breathout>li {
+.breath,
+ul.breathout>li,
+ol.breathout>li {
 	padding-block-start: @halfspace;
-	padding-block-end:@halfspace;
+	padding-block-end: @halfspace;
 }
 
-.spaced, ul.spacedout>li, ol.spacedout>li  {
+.spaced,
+ul.spacedout>li,
+ol.spacedout>li {
 	margin-block-end: @space;
 }
 
-.doublespaced, ul.doubledspacedout>li, ol.doublespacedout>li{
+.doublespaced,
+ul.doubledspacedout>li,
+ol.doublespacedout>li {
 	margin-block-end: @doublespace;
 }
 
 .rbreath {
 	padding-inline-end: @halfspace;
 }
+
 .lbreath {
 	padding-inline-start: @halfspace;
 }
+
 .hbreath {
 	.rbreath();
 	.lbreath();
@@ -52,9 +65,11 @@
 .rpad {
 	padding-inline-end: @space;
 }
+
 .lpad {
 	padding-inline-start: @space;
 }
+
 .hpad {
 	.rpad();
 	.lpad();
@@ -63,38 +78,46 @@
 .lspace {
 	margin-inline-start: @space;
 }
+
 .rspace {
 	margin-inline-end: @space;
 }
+
 .hspace {
 	.lspace();
 	.rspace();
-} 
+}
+
 // rare, very rare
 .padtop {
-	padding-block-start: @space; /* to be used only in extreme cases */
+	padding-block-start: @space;
+	/* to be used only in extreme cases */
 }
+
 .spacetop {
-	margin-block-start: @space;  /* to be used only in extreme cases */
+	margin-block-start: @space;
+	/* to be used only in extreme cases */
 }
 
 .center {
 	margin-inline-start: auto;
 	margin-inline-end: auto;
 }
+
 // used for flex layouts
 .lauto {
 	margin-inline-start: auto;
 }
+
 .rauto {
 	margin-inline-end: auto;
 }
- 
+
 
 .text-nowrap {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 
 .wrap-break {
@@ -104,6 +127,7 @@
 .wrap-none {
 	white-space: nowrap;
 }
+
 .center-content {
 	display: flex;
 	justify-content: center;
@@ -132,7 +156,12 @@
 .dscroll {
 	overflow-x: hidden;
 	overflow-y: auto;
-	
+
+}
+
+// ADDED 2.6.4, i seccumb
+.dflex {
+	display: flex;
 }
 
 /*** border bottom, thin and thick ***/
@@ -140,6 +169,7 @@
 	border-block-end: 1px solid var(--sh-b-color);
 	padding-block-end: @space;
 }
+
 .bthin-dark {
 	border-block-end: 1px solid var(--sh-b-dark-color);
 	padding-block-end: @space;
@@ -157,17 +187,18 @@
 }
 
 // bthin for grid
-.g-bthin > * {
-    .bthin();
+.g-bthin>* {
+	.bthin();
 }
-.g-bthin-dark > * {
+
+.g-bthin-dark>* {
 	.bthin-dark();
 }
 
 
 .dev {
-    display: inline-block!important;
-    font-size: 11px!important;
-    color: red!important;
-    background-color: yellow!important;
+	display: inline-block !important;
+	font-size: 11px !important;
+	color: red !important;
+	background-color: yellow !important;
 }

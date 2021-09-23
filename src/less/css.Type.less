@@ -14,7 +14,7 @@ select,
 option,
 input {
     font-family: var(--sh-fontface);
-    #rem>.font-size(@font-size);
+    #rem > .font-size(@font-size);
     color: var(--sh-text-color);
 }
 /* CRITICAL END */
@@ -32,42 +32,42 @@ p {
 // Note to self: this prevents reuse mixins in css, keep open
 
 .larger {
-    #rem>.font-size(@font-multiplier[larger] * @font-size); 
+    #rem > .font-size(@font-multiplier[larger] * @font-size);
 }
 .large {
-     #rem>.font-size(@font-multiplier[large] * @font-size);
+    #rem > .font-size(@font-multiplier[large] * @font-size);
 }
 
 .f1 {
-     #rem>.font-size(@font-multiplier[f1] * @font-size);
+    #rem > .font-size(@font-multiplier[f1] * @font-size);
 }
 
 .f2 {
-     #rem>.font-size(@font-multiplier[f2] * @font-size);
+    #rem > .font-size(@font-multiplier[f2] * @font-size);
 }
 
 .f3 {
-     #rem>.font-size(@font-multiplier[f3] * @font-size);
+    #rem > .font-size(@font-multiplier[f3] * @font-size);
 }
- 
+
 .f4 {
-     #rem>.font-size(@font-multiplier[f4] * @font-size);
+    #rem > .font-size(@font-multiplier[f4] * @font-size);
 }
 
 .f5 {
-     #rem>.font-size(@font-multiplier[f5] * @font-size);
+    #rem > .font-size(@font-multiplier[f5] * @font-size);
 }
 
 .f6 {
-     #rem>.font-size(@font-multiplier[f6] * @font-size);
+    #rem > .font-size(@font-multiplier[f6] * @font-size);
 }
 
 .small {
-     #rem>.font-size(@font-multiplier[small] * @font-size);
+    #rem > .font-size(@font-multiplier[small] * @font-size);
 }
 
 .smaller {
-     #rem>.font-size(@font-multiplier[smaller] * @font-size);
+    #rem > .font-size(@font-multiplier[smaller] * @font-size);
 }
 
 each(@custom-font-multiplier, {
@@ -76,30 +76,39 @@ each(@custom-font-multiplier, {
     }
 });
 
-.weight-light {
-    font-weight: floor((@font-weight-light / 100)) * 100;
-    @supports (font-variation-settings: "wght" @font-weight-light) {
-        font-weight: @font-weight-light;
-    }
-}
+// .weight-light {
+//     font-weight: floor((@font-weight-light / 100)) * 100;
+//     @supports (font-variation-settings: "wght" @font-weight-light) {
+//         font-weight: @font-weight-light;
+//     }
+// }
 
-.weight-normal {
-    font-weight: floor((@font-weight / 100)) * 100;
-    @supports (font-variation-settings: "wght" @font-weight) {
-        font-weight: @font-weight;
-    }
-}
+// .weight-normal {
+//     font-weight: floor((@font-weight / 100)) * 100;
+//     @supports (font-variation-settings: "wght" @font-weight) {
+//         font-weight: @font-weight;
+//     }
+// }
 
-.weight-bold {
-    font-weight: floor((@font-weight-bold / 100)) * 100;
-    @supports (font-variation-settings: "wght" @font-weight-bold) {
-        font-weight: @font-weight-bold;
-    }
-}
+// .weight-bold {
+//     font-weight: floor((@font-weight-bold / 100)) * 100;
+//     @supports (font-variation-settings: "wght" @font-weight-bold) {
+//         font-weight: @font-weight-bold;
+//     }
+// } 
+
+each(@font-weight-set, {
+	.weight-@{key} {
+		font-weight: floor((@value / 100)) * 100;
+		@supports (font-variation-settings: "wght" @value) {
+			font-weight: @value;
+		}
+	}
+});
 
 .face-italic {
     font-style: italic;
-} 
+}
 
 /* mixed content*/
 /* CRITICAL BEGIN */
@@ -137,18 +146,18 @@ a.cam,
 }
 
 // TODO: double check
-a[rel='track']:visited {
+a[rel="track"]:visited {
     color: var(--sh-visitedcolor);
 }
 
 a:hover,
 .a:hover,
-a[rel='track']:hover {
+a[rel="track"]:hover {
     color: var(--sh-altcolor);
 }
 
 .normalsize {
-    #rem>.font-size(@font-size) !important;
+    #rem > .font-size(@font-size) !important;
     font-family: var(--sh-fontface);
 }
 
@@ -169,7 +178,7 @@ a[rel='track']:hover {
 }
 /* CRITICAL BEGIN */
 .media(md, {
-    // reduce size if enabled
+    // increase size if enabled
     html {
 		#rem > .res-font-size(@htmlFontBase);
     }
