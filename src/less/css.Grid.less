@@ -32,7 +32,7 @@
     .generate-spaced-column((@column - 1), @key);
     > .@{key}-@{column},
     &.u@{key}-@{column} > li {
-        width: calc(percentage((@column / @wrapper)) - @gutterspace);
+        width: calc(percentage((@column / @wrapper)) - @gutterspace/2);
     }
 }
 
@@ -68,17 +68,20 @@
 }
 .row-spaced {
     justify-content: space-between;
+
 }
 
 // for gaps without space between
 .row-gap {
-	gap: @halfspace;
+	gap: @gutterspace;
 }
 
 .col,
 .ucol > li {
     width: 100%;
 }
+
+
 
 .generate-offset(@wrapper - 1);
 .generate-column(@wrapper);

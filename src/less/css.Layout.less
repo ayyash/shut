@@ -1,83 +1,101 @@
-﻿
-/* layout */
+﻿/* layout */
 /* CRITICAL BEGIN */
 .page,
 .singlepage {
-  // defines page width
+	// defines page width
 	margin: 0 auto;
 	width: 100%;
 	// padding: @mainpad; 
-	
+
 }
+
 .container {
 	// adds padding
 	padding: @mainpad;
 }
 
 
-.forprint {display: none; }
+.forprint {
+	display: none;
+}
 
 
 // only
 .md-only {
-    display: none;
+	display: none;
 }
+
 .lg-only {
-    display: none;
+	display: none;
 }
 
 
 
 
 .media(md, {
-	// remove as much as a scroll width (mainpad * 2 is good enough but might need more)
-	.page {
-		max-width: @screen[md];
-		// width: calc(@screen[md] - @mainpad * 2);
-		// padding: 0;
-	}
-	.singlepage {
-		max-width: @screen[sm];
-	}
-		
-	.md-only {
-        display: block;
-    }
 
-    // hide
-    .xs-hide {
-        display: none;
-    }
+		// remove as much as a scroll width (mainpad * 2 is good enough but might need more)
+		.page {
+			max-width: @screen[md];
+			// width: calc(@screen[md] - @mainpad * 2);
+			// padding: 0;
+		}
 
-});
+		.singlepage {
+			max-width: @screen[sm];
+		}
+
+		// FIXME: this is too chaotic for mdonly and mdhide
+		.md-only {
+			display: block;
+		}
+
+		.md-hide {
+			display: none;
+		}
+
+		// hide
+		.xs-hide {
+			display: none;
+		}
+
+	}
+
+);
+
 .media(lg, {
-		
-	.page {
-		max-width: @screen[lg];
-		// width: calc(@screen[lg] - @mainpad * 2);
+
+		.page {
+			max-width: @screen[lg];
+			// width: calc(@screen[lg] - @mainpad * 2);
+
+		}
+
+		.singlepage {
+			max-width: @screen[md];
+		}
+
+		.lg-only {
+			display: block;
+		}
 
 	}
-	.singlepage {
-		max-width: @screen[md];
-	}
-	.lg-only {
-        display: block;
-    }
-    .md-hide {
-        display: none;
-    }
-});
+
+);
+
 .media(xl, {
-		
-	.page {
-		max-width: @screen[xl];
-		// width: calc(@screen[xl] - @mainpad * 2);
 
+		.page {
+			max-width: @screen[xl];
+			// width: calc(@screen[xl] - @mainpad * 2);
+
+		}
+
+		.singlepage {
+			max-width: @screen[md];
+		}
 	}
-	.singlepage {
-		max-width: @screen[md];
-	}
-});
+
+);
 
 /* CRITICAL END */
-
