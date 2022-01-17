@@ -15,49 +15,22 @@
 }
 
 
-.forprint {
-	display: none;
-}
-
-
-// only
-.md-only {
-	display: none;
-}
-
-.lg-only {
-	display: none;
-}
-
+// md-hide lg-hide
 
 
 
 .media(md, {
 
-		// remove as much as a scroll width (mainpad * 2 is good enough but might need more)
 		.page {
-			max-width: @screen[md];
-			// width: calc(@screen[md] - @mainpad * 2);
-			// padding: 0;
+			max-width: @screen[md];		
 		}
 
 		.singlepage {
 			max-width: @screen[sm];
 		}
 
-		// FIXME: this is too chaotic for mdonly and mdhide
-		.md-only {
-			display: block;
-		}
+	
 
-		.md-hide {
-			display: none;
-		}
-
-		// hide
-		.xs-hide {
-			display: none;
-		}
 
 	}
 
@@ -75,9 +48,7 @@
 			max-width: @screen[md];
 		}
 
-		.lg-only {
-			display: block;
-		}
+	
 
 	}
 

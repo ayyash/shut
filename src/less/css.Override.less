@@ -1,0 +1,39 @@
+.forprint {
+	display: none;
+}
+
+
+// only
+.md-only {
+	display: none;
+}
+
+.lg-only {
+	display: none;
+}
+
+.media(md, {
+
+		// FIXME: this is too chaotic for mdonly and mdhide
+		.md-only {
+			display: var(--sh-only-display);
+		}
+
+		.md-hide {
+			display: none;
+		}
+	}
+
+);
+
+.media(lg, {
+		.lg-only {
+			display: var(--sh-only-display);
+		}
+
+		.lg-hide {
+			display: none;
+		}
+	}
+
+);

@@ -35,6 +35,7 @@
   --sh-b-dark-color: #263238;
   --sh-btn-hover: rgba(243, 243, 243, 0.5);
   --sh-btn-rev-hover: #0f00e7;
+  --sh-only-display: block;
 }
 /* resetting */
 /* CRITICAL BEGIN */
@@ -195,6 +196,7 @@ ol.doublespacedout > li {
   white-space: nowrap;
 }
 .center-content {
+  --sh-only-display: flex;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -206,6 +208,7 @@ ol.doublespacedout > li {
   display: none;
 }
 .dinline {
+  --sh-only-display: inline-block;
   display: inline-block;
 }
 .dblock {
@@ -216,6 +219,7 @@ ol.doublespacedout > li {
   overflow-y: auto;
 }
 .dflex {
+  --sh-only-display: flex;
   display: flex;
 }
 /*** border bottom, thin and thick ***/
@@ -259,30 +263,12 @@ ol.doublespacedout > li {
 .container {
   padding: 2.4rem;
 }
-.forprint {
-  display: none;
-}
-.md-only {
-  display: none;
-}
-.lg-only {
-  display: none;
-}
 @media only screen and (min-width: 720px) {
   .page {
     max-width: 720px;
   }
   .singlepage {
     max-width: 600px;
-  }
-  .md-only {
-    display: block;
-  }
-  .md-hide {
-    display: none;
-  }
-  .xs-hide {
-    display: none;
   }
 }
 @media only screen and (min-width: 960px) {
@@ -291,9 +277,6 @@ ol.doublespacedout > li {
   }
   .singlepage {
     max-width: 720px;
-  }
-  .lg-only {
-    display: block;
   }
 }
 @media only screen and (min-width: 1280px) {
@@ -307,6 +290,7 @@ ol.doublespacedout > li {
 /* CRITICAL END */
 /*Basic Card */
 .card {
+  --sh-only-display: flex;
   position: relative;
   display: flex;
   overflow: hidden;
@@ -373,9 +357,11 @@ ol.nestedlist > li > ol {
 }
 /**** comma seperated items */
 ul.commalist {
+  --sh-only-display: inline;
   display: inline;
 }
 ul.commalist li {
+  --sh-only-display: inline-block;
   display: inline-block;
 }
 ul.commalist li:after {
@@ -510,6 +496,7 @@ table.rich tfoot td {
 }
 .row,
 .row-spaced {
+  --sh-only-display: flex;
   display: flex;
   flex-wrap: wrap;
 }
@@ -653,6 +640,7 @@ table.rich tfoot td {
   width: calc(100% - 2.4rem/2);
 }
 .grid {
+  --sh-only-display: grid;
   display: grid;
 }
 .grid.spacedout {
@@ -1034,6 +1022,7 @@ button:focus {
 .btn-rev,
 .btn-fake,
 .btn-diff {
+  --sh-only-display: inline-block;
   padding: 1.2rem 1.6rem;
   display: inline-block;
   transition: background-color 0.518s;
@@ -1233,6 +1222,7 @@ ul.boxed > li {
 .label {
   padding: 0.25rem 0.8rem;
   border-radius: 3px;
+  --sh-only-display: inline-block;
   display: inline-block;
 }
 a.label {
@@ -1346,6 +1336,7 @@ a.label-grey-dark:hover {
   border: 1px solid #999999;
   padding: 0.25rem 0.8rem;
   border-radius: 3px;
+  --sh-only-display: inline-block;
   display: inline-block;
 }
 .modal-overlay {
@@ -1675,6 +1666,31 @@ a[rel="track"]:hover {
   }
 }
 /* CRITICAL END */
+.forprint {
+  display: none;
+}
+.md-only {
+  display: none;
+}
+.lg-only {
+  display: none;
+}
+@media only screen and (min-width: 720px) {
+  .md-only {
+    display: var(--sh-only-display);
+  }
+  .md-hide {
+    display: none;
+  }
+}
+@media only screen and (min-width: 960px) {
+  .lg-only {
+    display: var(--sh-only-display);
+  }
+  .lg-hide {
+    display: none;
+  }
+}
 /* Print */
 @media print {
   body,
