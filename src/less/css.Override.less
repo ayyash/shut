@@ -1,7 +1,28 @@
+// display props
+// redo like this https://getbootstrap.com/docs/5.1/utilities/display/
+
 .forprint {
 	display: none;
 }
 
+.hidden {
+	display: none;
+}
+
+
+.dflex {
+	--sh-only-display: flex;
+	display: flex;
+}
+
+.dinline {
+	--sh-only-display: inline-block;
+	display: inline-block;
+}
+
+.dblock {
+	display: block;
+}
 
 // only
 .md-only {
@@ -16,7 +37,7 @@
 
 		// FIXME: this is too chaotic for mdonly and mdhide
 		.md-only {
-			display: var(--sh-only-display);
+			display: var(--sh-only-display, block);
 		}
 
 		.md-hide {
@@ -28,7 +49,7 @@
 
 .media(lg, {
 		.lg-only {
-			display: var(--sh-only-display);
+			display: var(--sh-only-display, block);
 		}
 
 		.lg-hide {
