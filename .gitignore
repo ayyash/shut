@@ -2,7 +2,8 @@
 node_modules/
 _node_modules/
 fontfiles/
-
+/gulpbin
+/src/js
 npm-debug.log
 _*/**
 .suo
