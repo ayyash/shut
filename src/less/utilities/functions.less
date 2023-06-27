@@ -1,68 +1,54 @@
-﻿
-
-/* coloring forground */
+﻿/* coloring forground */
 .fcolor (@c) {
-  color: contrast(@c, @text-color, @white, @front-color-contrast);
+    color: contrast(@c, @text-color, @white, @front-color-contrast);
 
 }
 
 .colorbox (@c) {
-   
     background-color: @c;
     .fcolor(@c);
 }
 
 
 /* rem */
-
 #rem() {
 
-	.font-size(@value) when not(@rem-enabled) {
-		font-size: @value * 10px;
-	}
+    .font-size(@value) when not(@rem-enabled) {
+        font-size: @value * 10px;
+    }
 
-	.font-size(@value) when (@rem-enabled) {
-		font-size: @value * 1rem;
-  }
-  .padding(@value) {
-    // don't use rem for padding unless rem is enabled, else leave
-    padding: @value * 1rem;
-  }
+    .font-size(@value) when (@rem-enabled) {
+        font-size: @value * 1rem;
+    }
 
-  .res-font-size(@value) when not(@rem-enabled) {
-    font-size: @value * 10px * if((@enable-res-fonts), @resFontFactor, 1);
-  }
+    .padding(@value) {
+        // don't use rem for padding unless rem is enabled, else leave
+        padding: @value * 1rem;
+    }
 
-  .res-font-size(@value) when(@rem-enabled) {
-    font-size: @value * 1rem * if((@enable-res-fonts), @resFontFactor, 1);
-  } 
-  
+    .res-font-size(@value) when not(@rem-enabled) {
+        font-size: @value * 10px * if((@enable-res-fonts), @resFontFactor, 1);
+    }
+
+    .res-font-size(@value) when(@rem-enabled) {
+        font-size: @value * 1rem * if((@enable-res-fonts), @resFontFactor, 1);
+    }
+
 }
 
 // obsolete
 .resfont(@fontsize) when (@enable-res-fonts) {
-  font-size: @fontsize * @resFontFactor;
+    font-size: @fontsize * @resFontFactor;
 }
-
-// TODO: might remove
-.clearfix() {
-    zoom: 1;
-    &:before,
-    &:after {
-        content: '';
-        display: block;
-        clear: both;
-        zoom: 1;
-    }
-}
-
 // exact width should not be used!
-.columns(@column: 1, @shift: 0) when (@shift <= 0)  {
-  width: percentage((@column / @wrapper));
+.columns(@column: 1, @shift: 0) when (@shift <=0) {
+    width: percentage((@column / @wrapper));
 }
-.columns(@column: 1, @shift: 0) when (@shift > 0 ){
-  width: calc(percentage((@column / @wrapper)) - @shift);
+
+.columns(@column: 1, @shift: 0) when (@shift > 0) {
+    width: calc(percentage((@column / @wrapper)) - @shift);
 }
+
 .offset(@offset: 1) {
-	margin-inline-start: percentage((@offset / @wrapper));
+    margin-inline-start: percentage((@offset / @wrapper));
 }
