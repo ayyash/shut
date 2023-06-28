@@ -102,23 +102,23 @@ textarea {
   position: relative;
 }
 .l {
-  float: left;
+  float: inline-start;
 }
 .r {
-  float: right;
+  float: inline-end;
 }
 /* CRITICAL END */
 .clear {
   clear: both;
 }
 .txt-r {
-  text-align: right;
+  text-align: end;
 }
 .txt-c {
   text-align: center;
 }
 .txt-l {
-  text-align: left;
+  text-align: start;
 }
 .breath,
 ul.breathout > li,
@@ -204,23 +204,9 @@ ol.doublespacedout > li {
 .flex-nowrap {
   flex-wrap: nowrap;
 }
-.hidden {
-  display: none;
-}
-.dinline {
-  --sh-only-display: inline-block;
-  display: inline-block;
-}
-.dblock {
-  display: block;
-}
 .dscroll {
   overflow-x: hidden;
   overflow-y: auto;
-}
-.dflex {
-  --sh-only-display: flex;
-  display: flex;
 }
 /*** border bottom, thin and thick ***/
 .bthin {
@@ -293,7 +279,6 @@ ol.doublespacedout > li {
   --sh-only-display: flex;
   position: relative;
   display: flex;
-  overflow: hidden;
 }
 .card .tail {
   margin-inline-start: auto;
@@ -323,6 +308,9 @@ ol.doublespacedout > li {
 }
 .valign-top {
   align-items: flex-start;
+}
+.overflow-hidden {
+  overflow: hidden;
 }
 ul.normal > li,
 .normal > ul > li {
@@ -380,14 +368,14 @@ table td {
   vertical-align: top;
 }
 table th {
-  text-align: left;
+  text-align: start;
 }
 table.txt-r th,
 table th.txt-r {
-  text-align: right;
+  text-align: end;
 }
 table caption {
-  text-align: left;
+  text-align: start;
 }
 table.tabulated th {
   padding-block-end: 2px;
@@ -441,7 +429,7 @@ table.rich tfoot td {
 /* CRITICAL BEGIN */
 /* affects wrapper and site width */
 .w100 {
-  width: 100%!important;
+  width: 100% !important;
 }
 .h100 {
   height: 100%;
@@ -639,6 +627,57 @@ table.rich tfoot td {
 .row-spaced.uc-12 > li {
   width: calc(100% - 2.4rem/2);
 }
+.row-c {
+  container-type: inline-size;
+}
+.row-c .cc-1,
+.row-c.ucc-1 > li {
+  width: 8.33333333%;
+}
+.row-c .cc-2,
+.row-c.ucc-2 > li {
+  width: 16.66666667%;
+}
+.row-c .cc-3,
+.row-c.ucc-3 > li {
+  width: 25%;
+}
+.row-c .cc-4,
+.row-c.ucc-4 > li {
+  width: 33.33333333%;
+}
+.row-c .cc-5,
+.row-c.ucc-5 > li {
+  width: 41.66666667%;
+}
+.row-c .cc-6,
+.row-c.ucc-6 > li {
+  width: 50%;
+}
+.row-c .cc-7,
+.row-c.ucc-7 > li {
+  width: 58.33333333%;
+}
+.row-c .cc-8,
+.row-c.ucc-8 > li {
+  width: 66.66666667%;
+}
+.row-c .cc-9,
+.row-c.ucc-9 > li {
+  width: 75%;
+}
+.row-c .cc-10,
+.row-c.ucc-10 > li {
+  width: 83.33333333%;
+}
+.row-c .cc-11,
+.row-c.ucc-11 > li {
+  width: 91.66666667%;
+}
+.row-c .cc-12,
+.row-c.ucc-12 > li {
+  width: 100%;
+}
 .grid {
   --sh-only-display: grid;
   display: grid;
@@ -678,6 +717,106 @@ table.rich tfoot td {
 }
 .g-11 {
   grid-template-columns: 91.66666667% auto;
+}
+@container (width > 720px ) {
+  .row-c .cmd-1,
+  .row-c.ucmd-1 > li {
+    width: 8.33333333%;
+  }
+  .row-c .cmd-2,
+  .row-c.ucmd-2 > li {
+    width: 16.66666667%;
+  }
+  .row-c .cmd-3,
+  .row-c.ucmd-3 > li {
+    width: 25%;
+  }
+  .row-c .cmd-4,
+  .row-c.ucmd-4 > li {
+    width: 33.33333333%;
+  }
+  .row-c .cmd-5,
+  .row-c.ucmd-5 > li {
+    width: 41.66666667%;
+  }
+  .row-c .cmd-6,
+  .row-c.ucmd-6 > li {
+    width: 50%;
+  }
+  .row-c .cmd-7,
+  .row-c.ucmd-7 > li {
+    width: 58.33333333%;
+  }
+  .row-c .cmd-8,
+  .row-c.ucmd-8 > li {
+    width: 66.66666667%;
+  }
+  .row-c .cmd-9,
+  .row-c.ucmd-9 > li {
+    width: 75%;
+  }
+  .row-c .cmd-10,
+  .row-c.ucmd-10 > li {
+    width: 83.33333333%;
+  }
+  .row-c .cmd-11,
+  .row-c.ucmd-11 > li {
+    width: 91.66666667%;
+  }
+  .row-c .cmd-12,
+  .row-c.ucmd-12 > li {
+    width: 100%;
+  }
+}
+@container (width > 960px ) {
+  .row-c .clg-1,
+  .row-c.uclg-1 > li {
+    width: 8.33333333%;
+  }
+  .row-c .clg-2,
+  .row-c.uclg-2 > li {
+    width: 16.66666667%;
+  }
+  .row-c .clg-3,
+  .row-c.uclg-3 > li {
+    width: 25%;
+  }
+  .row-c .clg-4,
+  .row-c.uclg-4 > li {
+    width: 33.33333333%;
+  }
+  .row-c .clg-5,
+  .row-c.uclg-5 > li {
+    width: 41.66666667%;
+  }
+  .row-c .clg-6,
+  .row-c.uclg-6 > li {
+    width: 50%;
+  }
+  .row-c .clg-7,
+  .row-c.uclg-7 > li {
+    width: 58.33333333%;
+  }
+  .row-c .clg-8,
+  .row-c.uclg-8 > li {
+    width: 66.66666667%;
+  }
+  .row-c .clg-9,
+  .row-c.uclg-9 > li {
+    width: 75%;
+  }
+  .row-c .clg-10,
+  .row-c.uclg-10 > li {
+    width: 83.33333333%;
+  }
+  .row-c .clg-11,
+  .row-c.uclg-11 > li {
+    width: 91.66666667%;
+  }
+  .row-c .clg-12,
+  .row-c.uclg-12 > li {
+    width: 100%;
+  }
 }
 @media only screen and (min-width: 720px) {
   .offset-md-1 {
@@ -1342,19 +1481,13 @@ a.label-grey-dark:hover {
 .modal-overlay {
   display: none;
   position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  inset: 0;
   z-index: 1030;
   background-color: rgba(0, 0, 0, 0.6);
 }
 .modal {
   position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  inset: 0;
   z-index: 1040;
   overflow: hidden;
   outline: 0;
@@ -1428,8 +1561,8 @@ a.label-grey-dark:hover {
 .modal-body::-webkit-scrollbar-track-piece {
   background-color: #f3f3f3;
   border-radius: 0;
-  border-bottom-right-radius: 8px;
-  border-bottom-left-radius: 8px;
+  border-end-end-radius: 8px;
+  border-end-start-radius: 8px;
 }
 .modal-body::-webkit-scrollbar-thumb:vertical {
   height: 50px;
@@ -1537,10 +1670,10 @@ button {
 }
 /* CRITICAL END */
 section {
-  margin-bottom: 3.6rem;
+  margin-block-end: 3.6rem;
 }
 p {
-  margin-bottom: 2.4rem;
+  margin-block-end: 2.4rem;
 }
 /* font size */
 .larger {
@@ -1615,7 +1748,7 @@ p {
   direction: ltr;
 }
 .rtl {
-  font-family: var(--fontface-ar);
+  font-family: var(--sh-fontface-ar);
   direction: rtl;
 }
 /* CRITICAL END */
@@ -1666,31 +1799,6 @@ a[rel="track"]:hover {
   }
 }
 /* CRITICAL END */
-.forprint {
-  display: none;
-}
-.md-only {
-  display: none;
-}
-.lg-only {
-  display: none;
-}
-@media only screen and (min-width: 720px) {
-  .md-only {
-    display: var(--sh-only-display);
-  }
-  .md-hide {
-    display: none;
-  }
-}
-@media only screen and (min-width: 960px) {
-  .lg-only {
-    display: var(--sh-only-display);
-  }
-  .lg-hide {
-    display: none;
-  }
-}
 /* Print */
 @media print {
   body,
@@ -1725,5 +1833,44 @@ a[rel="track"]:hover {
   a,
   .a {
     color: #333;
+  }
+}
+.forprint {
+  display: none;
+}
+.hidden {
+  display: none;
+}
+.dflex {
+  --sh-only-display: flex;
+  display: flex;
+}
+.dinline {
+  --sh-only-display: inline-block;
+  display: inline-block;
+}
+.dblock {
+  display: block;
+}
+.md-only {
+  display: none;
+}
+.lg-only {
+  display: none;
+}
+@media only screen and (min-width: 720px) {
+  .md-only {
+    display: var(--sh-only-display, block);
+  }
+  .md-hide {
+    display: none;
+  }
+}
+@media only screen and (min-width: 960px) {
+  .lg-only {
+    display: var(--sh-only-display, block);
+  }
+  .lg-hide {
+    display: none;
   }
 }

@@ -4,8 +4,9 @@
 /* affects wrapper and site width */
 
 .w100 {
-    width: 100%!important;
+    width: 100% !important;
 }
+
 .h100 {
     height: 100%;
 }
@@ -13,8 +14,9 @@
 
 .generate-column(@column, @key: c) when (@column > 0) {
     .generate-column((@column - 1), @key);
+
     .@{key}-@{column},
-    &.u@{key}-@{column} > li {
+    &.u@{key}-@{column}>li {
         width: percentage((@column / @wrapper));
     }
 }
@@ -22,6 +24,7 @@
 
 .generate-offset(@column, @key: c) when (@column > 0) {
     .generate-offset((@column - 1), @key);
+
     .offset-@{key}-@{column} {
         margin-inline-start: percentage((@column / @wrapper));
     }
@@ -30,15 +33,17 @@
 // spaced out begins at md only
 .generate-spaced-column(@column, @key: c) when (@column > 0) {
     .generate-spaced-column((@column - 1), @key);
-    > .@{key}-@{column},
-    &.u@{key}-@{column} > li {
+
+    >.@{key}-@{column},
+    &.u@{key}-@{column}>li {
         width: calc(percentage((@column / @wrapper)) - @gutterspace/2);
     }
 }
 
 .generate-min-heights(@from, @to) {
 
-    each(range(@from,@to), {
+    each(range(@from, @to), {
+
         .h-@{value},
         .uh-@{value} > li {
             min-height: (@grid-column-height) * @value;
@@ -48,7 +53,8 @@
 
 .generate-max-heights(@from, @to) {
 
-    each(range(@from,@to), {
+    each(range(@from, @to), {
+
         .hm-@{value},
         .uhm-@{value} > li {
             max-height: (@grid-column-height) * @value;
@@ -62,27 +68,28 @@
 // default for small screens all percentages apply only for xs
 // then col.md apply 100% for small screens
 // then col.lg apply 100% for small screens
-.row, .row-spaced {
-	--sh-only-display: flex;
+.row,
+.row-spaced {
+    --sh-only-display: flex;
     display: flex;
     flex-wrap: wrap;
 }
+
 .row-spaced {
     justify-content: space-between;
 
 }
 
+
 // for gaps without space between
 .row-gap {
-	gap: @gutterspace;
+    gap: @gutterspace;
 }
 
 .col,
-.ucol > li {
+.ucol>li {
     width: 100%;
 }
-
-
 
 .generate-offset(@wrapper - 1);
 .generate-column(@wrapper);
@@ -91,50 +98,71 @@
     .generate-spaced-column(@wrapper);
 }
 
+.row-c {
+    container-type: inline-size;
+    .generate-column(@wrapper, cc); 
+}
+
+
 // grid
 .generate-grid(@column, @key: g) when (@column > 0) {
     .generate-grid((@column - 1), @key);
+
     .@{key}-@{column} {
         grid-template-columns: percentage((@column / @wrapper)) auto;
-        
+
     }
 }
+
 .grid {
-	--sh-only-display: grid;
+    --sh-only-display: grid;
     display: grid;
-	
+
 }
+
 .grid.spacedout {
     grid-gap: @space;
 }
+
 .generate-grid(@wrapper - 1);
 
 
+.container(md, {
+    .row-c { 
+        .generate-column(@wrapper, cmd);
+    }    
+});
+
+.container(lg, {
+    .row-c { 
+        .generate-column(@wrapper, clg);
+    }    
+});
 
 .media(md, {
-    
+
     .generate-offset(@wrapper - 1, md);
     .generate-grid(@wrapper - 1, gmd);
     .generate-column(@wrapper, md);
-    
+
     .row-spaced {
         .generate-spaced-column(@wrapper, md);
     }
-    
-    
+
+
 });
 
 .media(lg, {
-    
+
     .generate-offset(@wrapper - 1, lg);
     .generate-grid(@wrapper - 1, glg);
-    
-    .generate-column(@wrapper, lg); 
-    
+
+    .generate-column(@wrapper, lg);
+
     .row-spaced {
         .generate-spaced-column(@wrapper, lg);
     }
-    
+
 });
 
 /* CRITICAL END */

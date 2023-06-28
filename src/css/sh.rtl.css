@@ -102,23 +102,23 @@ textarea {
   position: relative;
 }
 .l {
-  float: right;
+  float: inline-start;
 }
 .r {
-  float: left;
+  float: inline-end;
 }
 /* CRITICAL END */
 .clear {
   clear: both;
 }
 .txt-r {
-  text-align: left;
+  text-align: end;
 }
 .txt-c {
   text-align: center;
 }
 .txt-l {
-  text-align: right;
+  text-align: start;
 }
 .breath,
 ul.breathout > li,
@@ -204,23 +204,9 @@ ol.doublespacedout > li {
 .flex-nowrap {
   flex-wrap: nowrap;
 }
-.hidden {
-  display: none;
-}
-.dinline {
-  --sh-only-display: inline-block;
-  display: inline-block;
-}
-.dblock {
-  display: block;
-}
 .dscroll {
   overflow-x: hidden;
   overflow-y: auto;
-}
-.dflex {
-  --sh-only-display: flex;
-  display: flex;
 }
 /*** border bottom, thin and thick ***/
 .bthin {
@@ -293,7 +279,6 @@ ol.doublespacedout > li {
   --sh-only-display: flex;
   position: relative;
   display: flex;
-  overflow: hidden;
 }
 .card .tail {
   margin-inline-start: auto;
@@ -323,6 +308,9 @@ ol.doublespacedout > li {
 }
 .valign-top {
   align-items: flex-start;
+}
+.overflow-hidden {
+  overflow: hidden;
 }
 ul.normal > li,
 .normal > ul > li {
@@ -380,14 +368,14 @@ table td {
   vertical-align: top;
 }
 table th {
-  text-align: right;
+  text-align: start;
 }
 table.txt-r th,
 table th.txt-r {
-  text-align: left;
+  text-align: end;
 }
 table caption {
-  text-align: right;
+  text-align: start;
 }
 table.tabulated th {
   padding-block-end: 2px;
@@ -1342,19 +1330,13 @@ a.label-grey-dark:hover {
 .modal-overlay {
   display: none;
   position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+  inset: 0;
   z-index: 1030;
   background-color: rgba(0, 0, 0, 0.6);
 }
 .modal {
   position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+  inset: 0;
   z-index: 1040;
   overflow: hidden;
   outline: 0;
@@ -1428,8 +1410,8 @@ a.label-grey-dark:hover {
 .modal-body::-webkit-scrollbar-track-piece {
   background-color: #f3f3f3;
   border-radius: 0;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
+  border-end-end-radius: 8px;
+  border-end-start-radius: 8px;
 }
 .modal-body::-webkit-scrollbar-thumb:vertical {
   height: 50px;
@@ -1537,10 +1519,10 @@ button {
 }
 /* CRITICAL END */
 section {
-  margin-bottom: 3.6rem;
+  margin-block-end: 3.6rem;
 }
 p {
-  margin-bottom: 2.4rem;
+  margin-block-end: 2.4rem;
 }
 /* font size */
 .larger {
@@ -1615,7 +1597,7 @@ p {
   direction: ltr;
 }
 .rtl {
-  font-family: var(--fontface-ar);
+  font-family: var(--sh-fontface-ar);
   direction: rtl;
 }
 /* CRITICAL END */
@@ -1666,31 +1648,6 @@ a[rel="track"]:hover {
   }
 }
 /* CRITICAL END */
-.forprint {
-  display: none;
-}
-.md-only {
-  display: none;
-}
-.lg-only {
-  display: none;
-}
-@media only screen and (min-width: 720px) {
-  .md-only {
-    display: var(--sh-only-display);
-  }
-  .md-hide {
-    display: none;
-  }
-}
-@media only screen and (min-width: 960px) {
-  .lg-only {
-    display: var(--sh-only-display);
-  }
-  .lg-hide {
-    display: none;
-  }
-}
 /* Print */
 @media print {
   body,
@@ -1727,6 +1684,45 @@ a[rel="track"]:hover {
     color: #333;
   }
 }
+.forprint {
+  display: none;
+}
+.hidden {
+  display: none;
+}
+.dflex {
+  --sh-only-display: flex;
+  display: flex;
+}
+.dinline {
+  --sh-only-display: inline-block;
+  display: inline-block;
+}
+.dblock {
+  display: block;
+}
+.md-only {
+  display: none;
+}
+.lg-only {
+  display: none;
+}
+@media only screen and (min-width: 720px) {
+  .md-only {
+    display: var(--sh-only-display, block);
+  }
+  .md-hide {
+    display: none;
+  }
+}
+@media only screen and (min-width: 960px) {
+  .lg-only {
+    display: var(--sh-only-display, block);
+  }
+  .lg-hide {
+    display: none;
+  }
+}
 .animate.fromleft .modal-content {
   transform: translateX(100%);
 }
@@ -1735,7 +1731,7 @@ a[rel="track"]:hover {
 }
 /* CRITICAL BEGIN */
 .ar {
-  font-family: "Traditional Arabic", tahoma, sans-serif;
+  font-family: var(--sh-fontface-ar);
   direction: rtl;
 }
 body,
@@ -1744,7 +1740,7 @@ select,
 option,
 button,
 input {
-  font-family: "Traditional Arabic", tahoma, sans-serif;
+  font-family: var(--sh-fontface-ar);
   direction: rtl;
 }
 textarea {

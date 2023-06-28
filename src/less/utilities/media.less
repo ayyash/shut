@@ -1,11 +1,23 @@
 .media(@media, @rules) {
-	@media only screen and (min-width: @screen[$@media]) {
-		@rules();
-	}
-	
+    @media only screen and (min-width: @screen[$@media]) {
+        @rules();
+    }
+
 }
- .mediamax(@media, @rules){
-	 @media only screen and (max-width: @screen[$@media]){
-		 @rules();
-	 }
- }
+
+.mediamax(@media, @rules) {
+    @media only screen and (max-width: @screen[$@media]) {
+        @rules();
+    }
+}
+
+
+
+.container(@media, @rules) {
+    @x: @screen[$@media];
+    @container (width > @x ) {
+        @rules();
+    }
+}
+
+;

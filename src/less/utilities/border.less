@@ -1,8 +1,7 @@
 
 /* Border Radius*/
 .border-radius(@radius: 2px)  when (@enable-rounded) {
-
-	#border-radius > .all(@radius);
+	border-radius: @radius;
 }
 .border-radius(@radius: 2px)  when not (@enable-rounded) {
 	
