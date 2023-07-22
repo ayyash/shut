@@ -1,0 +1,67 @@
+@import (reference) 'utilities/media.less';
+@import (reference) 'utilities/functions.less';
+
+/* CRITICAL BEGIN */
+/* affects wrapper and site width */
+
+.w100 {
+    width: 100% !important;
+}
+
+// default for small screens all percentages apply only for xs
+// then col.md apply 100% for small screens
+// then col.lg apply 100% for small screens
+.row,
+.row-spaced {
+    --sh-only-display: flex;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row-spaced {
+    justify-content: space-between;
+
+}
+
+// for gaps without space between
+.row-gap {
+    gap: @gutterspace;
+}
+
+.col,
+.ucol>li {
+    width: 100%;
+}
+
+.generate-offset(@wrapper - 1);
+.generate-column(@wrapper);
+
+.row-spaced {
+    .generate-spaced-column(@wrapper);
+}
+
+
+.media(md, {
+
+    .generate-offset(@wrapper - 1, md);
+    .generate-column(@wrapper, md);
+
+    .row-spaced {
+        .generate-spaced-column(@wrapper, md);
+    }
+
+
+});
+
+.media(lg, {
+
+    .generate-offset(@wrapper - 1, lg);
+    .generate-column(@wrapper, lg);
+
+    .row-spaced {
+        .generate-spaced-column(@wrapper, lg);
+    }
+
+});
+
+/* CRITICAL END */

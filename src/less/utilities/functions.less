@@ -52,3 +52,53 @@
 .offset(@offset: 1) {
     margin-inline-start: percentage((@offset / @wrapper));
 }
+
+.generate-column(@column, @key: c) when (@column > 0) {
+    .generate-column((@column - 1), @key);
+
+    .@{key}-@{column},
+    &.u@{key}-@{column}>li {
+        width: percentage((@column / @wrapper));
+    }
+}
+
+
+.generate-offset(@column, @key: c) when (@column > 0) {
+    .generate-offset((@column - 1), @key);
+
+    .offset-@{key}-@{column} {
+        margin-inline-start: percentage((@column / @wrapper));
+    }
+}
+
+// spaced out begins at md only
+.generate-spaced-column(@column, @key: c) when (@column > 0) {
+    .generate-spaced-column((@column - 1), @key);
+
+    >.@{key}-@{column},
+    &.u@{key}-@{column}>li {
+        width: calc(percentage((@column / @wrapper)) - @gutterspace/2);
+    }
+}
+
+.generate-min-heights(@from, @to) {
+
+    each(range(@from, @to), {
+
+        .h-@{value},
+        .uh-@{value} > li {
+            min-height: (@grid-column-height) * @value;
+        }
+    });
+}
+
+.generate-max-heights(@from, @to) {
+
+    each(range(@from, @to), {
+
+        .hm-@{value},
+        .uhm-@{value} > li {
+            max-height: (@grid-column-height) * @value;
+        }
+    });
+}

@@ -1,0 +1,26 @@
+
+@import (reference) 'utilities/media.less';
+
+.row-c {
+    container-type: inline-size;
+    .generate-column(@wrapper, cc); 
+}
+
+
+.container(xs, {
+    .row-c { 
+        .generate-column(@wrapper, cxs);
+    }    
+});
+
+.container(md, {
+    .row-c { 
+        .generate-column(@wrapper, cmd);
+    }    
+});
+
+.container(lg, {
+    .row-c { 
+        .generate-column(@wrapper, clg);
+    }    
+});

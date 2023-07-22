@@ -35,10 +35,13 @@
     f6: 1;
     small: 0.9;
     smaller: 0.8;
-};
+}
 
-@custom-font-multiplier: {
-};
+;
+
+@custom-font-multiplier: {}
+
+;
 
 @font-weight-light: 300;
 @font-weight: 400;
@@ -47,11 +50,13 @@
 
 // add other wieghts to create .weight-[key]: font-weight: [value]
 @font-weight-set: {
-	light: @font-weight-light;
-	normal: @font-weight;
-	medium: @font-weight-medium;
-	bold: @font-weight-bold;
-};
+    light: @font-weight-light;
+    normal: @font-weight;
+    medium: @font-weight-medium;
+    bold: @font-weight-bold;
+}
+
+;
 
 
 // colors
@@ -95,7 +100,9 @@
     grey: @grey;
     grey-light: @grey-light;
     grey-dark: @grey-dark;
-};
+}
+
+;
 
 @front-color-contrast: 43%;
 
@@ -123,12 +130,14 @@
     shallow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
     normal: 0 2px 2px 0 rgba(@black, 0.14), 0 1px 5px 0 rgba(@black, 0.12),
         0 3px 1px -2px rgba(@black, 0.2);
-// keep "deep": referecnced in css.Modal
+    // keep "deep": referecnced in css.Modal
     deep: 0 6px 10px 0 rgba(@black, 0.14), 0 1px 18px 0 rgba(@black, 0.12),
         0 3px 5px -1px rgba(@black, 0.3);
     deeper: 0 16px 24px 2px rgba(@black, 0.14),
         0 6px 30px 5px rgba(@black, 0.12), 0 8px 10px -5px rgba(@black, 0.3);
-};
+}
+
+;
 
 // breakpoints
 @screen: {
@@ -138,7 +147,9 @@
     lg: 960px; // the usual desktop and landscape tablets, KEEP
     xl: 1280px; // more popular small desktop, KEEP
     ds: 1600px; // up above desktop
-};
+}
+
+;
 
 // content padding
 @mainpad: @space;
@@ -162,6 +173,7 @@
 @button-padding-h: 1.6rem;
 @button-padding-v: 1.2rem;
 @button-sm-padding: 0.8rem;
+@button-bg-color: @grey-light;
 @button-hover: fade(@grey-light, 50%);
 @button-rev-hover: lighten(@linkcolor, 10%);
 
@@ -215,9 +227,18 @@
     --sh-rowlist-border: @rowlist-border;
     --sh-b-color: @b-color;
     --sh-b-dark-color: @b-dark-color;
-	--sh-btn-hover: @button-hover;
-	--sh-btn-rev-hover: @button-rev-hover;
+    --sh-btn-hover: @button-hover;
+    --sh-btn-rev-hover: @button-rev-hover;
+    --sh-btn-bg: @button-bg-color;
 
-	--sh-only-display: block;
+    --sh-only-display: block;
+
+    --sh-modal-index: @modal-zindex;
+    --sh-modal-margin: @modal-margin;
+    --sh-modal-padding: @modal-padding;
+    --sh-modal-scrollbar-width: @modal-scrollbar-width;
+    --sh-modal-bg: @modal-bg;
+    --sh-modal-index-10: calc(@modal-zindex - 10);
+
 
 }
