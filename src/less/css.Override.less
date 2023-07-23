@@ -11,12 +11,10 @@
 
 
 .dflex {
-	--sh-only-display: flex;
 	display: flex;
 }
 
 .dinline {
-	--sh-only-display: inline-block;
 	display: inline-block;
 }
 
@@ -33,28 +31,28 @@
 	display: none;
 }
 
-.media(md, {
+// 	FIXME: this is too chaotic for mdonly and mdhide
+// .media(md, {
 
-		// FIXME: this is too chaotic for mdonly and mdhide
-		.md-only {
-			display: var(--sh-only-display, block);
-		}
+// 		.md-only {
+// 			display: var(--sh-only-display, block);
+// 		}
 
-		.md-hide {
-			display: none;
-		}
-	}
+// 		.md-hide {
+// 			display: none;
+// 		}
+// 	}
 
-);
+// );
 
-.media(lg, {
-		.lg-only {
-			display: var(--sh-only-display, block);
-		}
+// .media(lg, {
+// 		.lg-only {
+// 			display: var(--sh-only-display, block);
+// 		}
 
-		.lg-hide {
-			display: none;
-		}
-	}
+// 		.lg-hide {
+// 			display: none;
+// 		}
+// 	}
 
-);
+// );

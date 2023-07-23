@@ -12,8 +12,7 @@ each(@colors, {
 // label
 .label {
     padding: @label-padding;
-    .border-radius(@label-radius); 
-	--sh-only-display:  inline-block;
+    .border-radius(var(--sh-label-radius)); 
     display: inline-block;
 }
 a.label {
