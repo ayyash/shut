@@ -11,12 +11,13 @@ each(@colors, {
 
 // label
 .label {
-    padding: @label-padding;
-    .border-radius(var(--sh-label-radius)); 
+    padding: var(--sh-label-padding);
+    .border-radius(var(--sh-label-radius));
     display: inline-block;
 }
+
 a.label {
-    transition: background-color 0.15s,  color 0.15s;
+    transition: background-color 0.15s, color 0.15s;
 }
 
 
@@ -25,14 +26,15 @@ each(@colors, {
     .label-@{key} {
         .colorbox(@value);
     }
+
     a.label-@{key}:hover {
+        // conisder color-mix with white
         .colorbox(lighten(@value, @lightLabel));
-        
+
     }
 });
 
 .label-white {
-    border: @box-border solid @grey;
+    border: @box-border solid var(--sh-grey);
     .label();
 }
-

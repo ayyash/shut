@@ -8,21 +8,23 @@ button {
     border: 0;
     background-color: transparent;
     cursor: pointer;
+
     &:focus {
         outline: none;
     }
 }
+
 /* CRITICAL END */
 
-.btntemplate(){
-	padding: var(--sh-btn-padding-v) var(--sh-btn-padding-h);
-	display: inline-block;
-	transition: background-color .3s ease-in-out;
-	line-height: 1;
-	.border-radius(var(--sh-radius));
-	text-transform: uppercase;
-	font-size: 90%;
-	cursor: pointer;
+.btntemplate() {
+    padding: var(--sh-btn-padding-v) var(--sh-btn-padding-h);
+    display: inline-block;
+    transition: background-color .3s ease-in-out;
+    line-height: 1;
+    .border-radius(var(--sh-radius));
+    text-transform: uppercase;
+    font-size: 90%;
+    cursor: pointer;
     border: 0;
 }
 
@@ -31,17 +33,20 @@ button {
 .btn-fake,
 .btn-diff {
     .btntemplate();
+
     &[disabled] {
         opacity: 0.5;
         cursor: default;
     }
 }
+
 .btn {
     color: var(--sh-linkcolor);
     background-color: var(--sh-btn-bg);
+
     &:hover {
         background-color: var(--sh-btn-hover);
-		color: var(--sh-linkcolor);
+        color: var(--sh-linkcolor);
     }
 }
 
@@ -49,25 +54,30 @@ button {
 
     color: var(--sh-white);
     background-color: var(--sh-linkcolor);
+
     &:hover {
         background-color: var(--sh-btn-rev-hover);
-		color: var(--sh-white);
+        color: var(--sh-white);
     }
 }
 
 // a text button with no paddings
 .btn-fake {
+    // TODO: what if its variable
     font-weight: var(--sh-font-weight-bold);
     padding-inline: var(--sh-btn-sm-padding);
-	&:hover {
-		color: var(--sh-linkcolor);
-	}
+
+    &:hover {
+        color: var(--sh-linkcolor);
+    }
 }
 
 // dont over do it, no vars here
+// TODO: too many LESS functions
 .btn-diff {
     background-color: var(--sh-btn-diff-bg);
     .fcolor(@btn-diff-bg);
+
     &:hover {
         background-color: darken(@btn-diff-bg, 20%);
         .fcolor(darken(@btn-diff-bg, 20%));
@@ -80,21 +90,24 @@ button {
 
 
 .btn-busy {
-	// busy buttons loading effect when disabled
-	&[disabled] {
-		color: var(--sh-text-light);
-		background-color: var(--sh-grey-light);
+
+    // busy buttons loading effect when disabled
+    &[disabled] {
+        color: var(--sh-text-light);
+        background-color: var(--sh-grey-light);
         background-position: center 82%;
-	}
+    }
 }
 
 // ina group of buttons beginning and ending with fake buttons, chop off
 .btn-chop {
     margin-inline: calc(-1 * var(--sh-btn-sm-padding));
 }
+
 .btn-chop-start {
     margin-inline-start: calc(-1 * var(--sh-btn-sm-padding));
 }
+
 .btn-chop-end {
     margin-inline-end: calc(-1 * var(--sh-btn-sm-padding));
 }

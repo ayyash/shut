@@ -2,7 +2,7 @@
 @import "utilities/functions";
 
 .box {
-    padding: @box-padding;
+    padding: var(--sh-box-padding);
     .border-radius(var(--sh-radius));
     position: relative;
 }
@@ -21,7 +21,7 @@ each(@colors, {
 
 
 .box-white-dark {
-    border: @box-border solid @grey-dark;
+    border: @box-border solid var(--sh-grey-dark);
     .colorbox(@white);
 }
 
@@ -31,11 +31,11 @@ each(@colors, {
 //     border: @box-border solid @grey-light;
 // }
 .box-white-normal {
-    border: @box-border solid @grey;
+    border: @box-border solid var(--sh-grey);
     .colorbox(@white);
 }
 .box-white {
-    border: @box-border solid @grey-light;
+    border: @box-border solid var(--sh-grey-light);
     
 }
 

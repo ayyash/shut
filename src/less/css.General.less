@@ -1,189 +1,198 @@
 ﻿/* CRITICAL BEGIN */
 .rel {
-	position: relative;
+    position: relative;
 }
 
+// Not yet supported by all browsers
 .l {
-	float: inline-start;
+    float: left;
+
+    @supports (float: "inline-start") {
+        float: inline-start;
+    }
 }
 
 .r {
-	float: inline-end;
+    float: right;
+
+    @supports (float: "inline-end") {
+        float: inline-end;
+    }
 }
 
 /* CRITICAL END */
 
 .clear {
-	clear: both;
+    clear: both;
 }
 
 .txt-r {
-	text-align: end;
+    text-align: end;
 }
 
 .txt-c {
-	text-align: center;
+    text-align: center;
 }
 
 .txt-l {
-	text-align: start;
+    text-align: start;
 }
 
 
 .breath,
 ul.breathout>li,
 ol.breathout>li {
-	padding-block-start: @halfspace;
-	padding-block-end: @halfspace;
+    padding-block-start: @halfspace;
+    padding-block-end: @halfspace;
 }
 
 .spaced,
 ul.spacedout>li,
 ol.spacedout>li {
-	margin-block-end: @space;
+    margin-block-end: @space;
 }
 
 .doublespaced,
 ul.doubledspacedout>li,
 ol.doublespacedout>li {
-	margin-block-end: @doublespace;
+    margin-block-end: @doublespace;
 }
 
 .rbreath {
-	padding-inline-end: @halfspace;
+    padding-inline-end: @halfspace;
 }
 
 .lbreath {
-	padding-inline-start: @halfspace;
+    padding-inline-start: @halfspace;
 }
 
 .hbreath {
-	.rbreath();
-	.lbreath();
+    .rbreath();
+    .lbreath();
 }
 
 .rpad {
-	padding-inline-end: @space;
+    padding-inline-end: @space;
 }
 
 .lpad {
-	padding-inline-start: @space;
+    padding-inline-start: @space;
 }
 
 .hpad {
-	.rpad();
-	.lpad();
+    .rpad();
+    .lpad();
 }
 
 .lspace {
-	margin-inline-start: @space;
+    margin-inline-start: @space;
 }
 
 .rspace {
-	margin-inline-end: @space;
+    margin-inline-end: @space;
 }
 
 .hspace {
-	.lspace();
-	.rspace();
+    .lspace();
+    .rspace();
 }
 
 // rare, very rare
 .padtop {
-	padding-block-start: @space;
-	/* to be used only in extreme cases */
+    padding-block-start: @space;
+    /* to be used only in extreme cases */
 }
 
 .spacetop {
-	margin-block-start: @space;
-	/* to be used only in extreme cases */
+    margin-block-start: @space;
+    /* to be used only in extreme cases */
 }
 
 .center {
-	margin-inline-start: auto;
-	margin-inline-end: auto;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
 }
 
 // used for flex layouts
 .lauto {
-	margin-inline-start: auto;
+    margin-inline-start: auto;
 }
 
 .rauto {
-	margin-inline-end: auto;
+    margin-inline-end: auto;
 }
 
 
 .text-nowrap {
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .wrap-break {
-	word-wrap: break-word;
+    word-wrap: break-word;
 }
 
 .wrap-none {
-	white-space: nowrap;
+    white-space: nowrap;
 }
 
 .center-content {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
 .flex-nowrap {
-	flex-wrap: nowrap;
+    flex-wrap: nowrap;
 }
 
 
 
 // ADDED 2.6.3, let project determine the type and shape of scrolling
 .dscroll {
-	overflow-x: hidden;
-	overflow-y: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
 
 }
 
 
 /*** border bottom, thin and thick ***/
 .bthin {
-	border-block-end: 1px solid var(--sh-b-color);
-	padding-block-end: @space;
+    border-block-end: 1px solid var(--sh-b-color);
+    padding-block-end: @space;
 }
 
 .bthin-dark {
-	border-block-end: 1px solid var(--sh-b-dark-color);
-	padding-block-end: @space;
+    border-block-end: 1px solid var(--sh-b-dark-color);
+    padding-block-end: @space;
 }
 
 
 .bthick {
-	border-block-end: 3px solid var(--sh-b-color);
-	padding-block-end: @space;
+    border-block-end: 3px solid var(--sh-b-color);
+    padding-block-end: @space;
 }
 
 .bthick-dark {
-	border-block-end: 3px solid var(--sh-b-dark-color);
-	padding-block-end: @space;
+    border-block-end: 3px solid var(--sh-b-dark-color);
+    padding-block-end: @space;
 }
 
 // bthin for grid
 .g-bthin>* {
-	.bthin();
+    .bthin();
 }
 
 .g-bthin-dark>* {
-	.bthin-dark();
+    .bthin-dark();
 }
 
 
 .dev {
-	display: inline-block !important;
-	font-size: 11px !important;
-	color: red !important;
-	background-color: yellow !important;
+    display: inline-block !important;
+    font-size: 11px !important;
+    color: red !important;
+    background-color: yellow !important;
 }
