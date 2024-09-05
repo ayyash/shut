@@ -5,19 +5,12 @@
 
 // Not yet supported by all browsers
 .l {
-    float: left;
-
-    @supports (float: "inline-start") {
-        float: inline-start;
-    }
+    float: inline-start;
 }
 
-.r {
-    float: right;
+.r { 
+    float: inline-end;
 
-    @supports (float: "inline-end") {
-        float: inline-end;
-    }
 }
 
 /* CRITICAL END */

@@ -121,25 +121,58 @@ textarea {
 /* coloring forground */
 /* rem */
 /* icons*/
+@font-face {
+  font-family: "shuticons";
+  font-display: block;
+  src: local("shuticons"), url("../fonts/shuticons.ttf") format("truetype"), url("../fonts/shuticons.woff") format("woff"), url("../fonts/shuticons.svg#icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  @font-face {
+    font-family: "shuticons";
+    src: url("../fonts/shuticons.svg#icons") format("svg");
+  }
+}
+.liga,
+.symbol:before,
+.symbolAfter:after {
+  font-family: "shuticons";
+  text-transform: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  speak: none;
+  font-smooth: always;
+  /* Enable Ligatures ================ */
+  letter-spacing: 0;
+  -webkit-font-feature-settings: "liga";
+  -moz-font-feature-settings: "liga=1";
+  -moz-font-feature-settings: "liga";
+  -ms-font-feature-settings: "liga" 1;
+  -o-font-feature-settings: "liga";
+  font-feature-settings: "liga";
+  -webkit-font-variant-ligatures: discretionary-ligatures;
+  font-variant-ligatures: discretionary-ligatures;
+  /* ligatures? */
+  content: attr(data-icon);
+}
+.icon-inline:before {
+  margin-inline-end: 2.4rem;
+}
 /* CRITICAL BEGIN */
 .rel {
   position: relative;
 }
 .l {
-  float: left;
-}
-@supports (float: "inline-start") {
-  .l {
-    float: inline-start;
-  }
+  float: inline-start;
 }
 .r {
-  float: right;
-}
-@supports (float: "inline-end") {
-  .r {
-    float: inline-end;
-  }
+  float: inline-end;
 }
 /* CRITICAL END */
 .clear {
