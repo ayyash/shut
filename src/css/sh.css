@@ -2,6 +2,10 @@
 /* site defined vars */
 /* spacing and layout */
 :root {
+  --sh-space: 2.4rem;
+  --sh-halfspace: 1.2rem;
+  --sh-extraspace: 3.6rem;
+  --sh-doublespace: 4.8rem;
   --sh-fontface: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Fira Sans", "Helvetica Neue", Arial, sans-serif;
   --sh-fontface-ar: "Traditional Arabic", tahoma, sans-serif;
   --sh-font-size: 1.4;
@@ -50,6 +54,7 @@
   --sh-label-padding: 0.25rem 0.8rem;
   --sh-mainpad: 2.4rem;
   --sh-box-padding: 1rem;
+  --sh-box-border: 1px;
   --sh-list-spacing: 0.7rem;
   --sh-table-th-border-color: #263238;
   --sh-table-td-border-color: #f3f3f3;
