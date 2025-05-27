@@ -18,24 +18,25 @@ each(@colors, {
     
 });
 
+// VER_NEXT: added just one bordered without background
+.box-border {
+    border: var(--sh-box-border) solid var(--sh-grey-dark);
+
+}
 
 
 .box-white-dark {
-    border: @box-border solid var(--sh-grey-dark);
-    .colorbox(@white);
+    border: var(--sh-box-border) solid var(--sh-grey-dark);
+    background-color: var(--sh-white);
 }
 
 
-// .box-white-light {
-//     .box-white();
-//     border: @box-border solid @grey-light;
-// }
 .box-white-normal {
-    border: @box-border solid var(--sh-grey);
-    .colorbox(@white);
+    border: var(--sh-box-border) solid var(--sh-grey);
+    background-color: var(--sh-white);
 }
 .box-white {
-    border: @box-border solid var(--sh-grey-light);
+    border: var(--sh-box-border) solid var(--sh-grey-light);
     
 }
 
