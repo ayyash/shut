@@ -1,12 +1,6 @@
 @import "utilities/border";
 @import "utilities/functions";
 
-each(@colors, {
-    .@{key} {
-        color: @value;
-    }
-
-});
 
 
 // label
@@ -38,3 +32,9 @@ each(@colors, {
     border: @box-border solid var(--sh-grey);
     .label();
 }
+each(@colors, {
+  .@{key} {
+    color: @value;
+  }
+
+});
