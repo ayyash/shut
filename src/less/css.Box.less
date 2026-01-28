@@ -2,20 +2,20 @@
 @import "utilities/functions";
 
 .box {
-    padding: var(--sh-box-padding);
-    .border-radius(var(--sh-radius));
-    position: relative;
+  padding: var(--sh-box-padding);
+  .border-radius(var(--sh-radius));
+  position: relative;
 }
-ul.boxed > li {
-    .box();
+
+ul.boxed>li {
+  .box();
 }
 
 // theme this if possible
 each(@colors, {
-    .box-@{key} {
-        .colorbox(@value);
-    }
-    
+  .box-@{key} {
+    .colorbox(@value);
+  }
 });
 
 
@@ -26,8 +26,7 @@ each(@colors, {
 
 
 each(@shadows, {
-    .box-shadow-@{key} {
-        box-shadow: @value;
-    }
+  .box-shadow-@{key} {
+    box-shadow: @value;
+  }
 });
-
