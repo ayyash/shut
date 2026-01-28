@@ -18,27 +18,12 @@ each(@colors, {
     
 });
 
-// VER_NEXT: added just one bordered without background
-.box-border {
-    border: var(--sh-box-border) solid var(--sh-grey-dark);
 
+// radius only
+.box-radius {
+  .border-radius(var(--sh-radius));
 }
 
-
-.box-white-dark {
-    border: var(--sh-box-border) solid var(--sh-grey-dark);
-    background-color: var(--sh-white);
-}
-
-
-.box-white-normal {
-    border: var(--sh-box-border) solid var(--sh-grey);
-    background-color: var(--sh-white);
-}
-.box-white {
-    border: var(--sh-box-border) solid var(--sh-grey-light);
-    
-}
 
 each(@shadows, {
     .box-shadow-@{key} {
